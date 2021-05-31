@@ -7,8 +7,8 @@ package events;
 
 /**
  *
- * @author meriam
+ * @author a_h_s
  */
-public class NewClass {
+public class Checkbelt {
     
 }
