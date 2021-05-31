@@ -18,6 +18,21 @@ public class BatteryConsumption {
     public BatteryConsumption(int batteryLevel) {
         this.batteryLevel = batteryLevel;
     }
+
+    public int getBatteryLevel() {
+        return batteryLevel;
+    }
+
+    public void setBatteryLevel(int batteryLevel) {
+        this.batteryLevel = batteryLevel;
+    }
     
+    public String monitorBatteryLevel (batteryLevel) {
+        
+        return "h";
+    }
     
+    public void chargeBattery(){
+        
+    }
 }
