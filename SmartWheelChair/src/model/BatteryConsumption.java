@@ -10,5 +10,14 @@ package model;
  * @author Mariam
  */
 public class BatteryConsumption {
+    private int batteryLevel;
+
+    public BatteryConsumption() {
+    }
+
+    public BatteryConsumption(int batteryLevel) {
+        this.batteryLevel = batteryLevel;
+    }
+    
     
 }
