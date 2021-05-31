@@ -9,6 +9,6 @@ package events;
  *
  * @author a_h_s
  */
-public class Checkbelt {
+public class newevent {
     
 }
