@@ -5,6 +5,11 @@
  */
 package esper;
 
+import jdk.nashorn.internal.runtime.regexp.joni.Config;
+import events.ScanFingerPrint;
+import esper.config;
+import model.Wheelchair;
+
 /**
  *
  * @author meriam
@@ -17,6 +22,16 @@ public class SmartWheelChair {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("hello");
+        config.registerEvents();
+        
+        final Wheelchair wheelchair = new Wheelchair();
+        
+         config.createStatement("select fingerPrint from ScanFingerPrint")
+                .setSubscriber(new Object() {
+                    public void update(int fingerPrint) throws InterruptedException {
+                        wheelchair.tempSignal(fingerPrint);
+                    }
+                });
     }
     
 }

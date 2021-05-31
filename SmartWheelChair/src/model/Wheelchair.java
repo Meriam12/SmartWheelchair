@@ -5,6 +5,10 @@
  */
 package model;
 
+import esper.config;
+import events.ScanFingerPrint;
+import view.wheelchairView;
+
 /**
  *
  * @author a_h_s
@@ -20,9 +24,22 @@ public class Wheelchair implements Movement {
     private FingerprintSensor fingerprintSensor;
     private SeatSensor seatSensor;
     private Screen screen;
+    
+    private wheelchairView gui;
+              
+
+    // This acts as our ON/OFF switch
+    private boolean state = false;
 
     public Wheelchair() {
+        gui = new wheelchairView();
+        gui.setLocationRelativeTo(null);
+        gui.setVisible(true);
+        fingerprintSensor = new FingerprintSensor(this);
+        fingerprintSensor.start();
+        
     }
+    
 
 
     public Wheelchair(BeltSensor beltSensor, FingerprintSensor fingerprintSensor, SeatSensor seatSensor, Screen screen) {
@@ -30,10 +47,20 @@ public class Wheelchair implements Movement {
         this.fingerprintSensor = fingerprintSensor;
         this.seatSensor = seatSensor;
         this.screen = screen;
+        
     }
 
 
-
+     public void tempSignal(int fingerPrint) throws InterruptedException {
+        //System.out.println("The temp is now " + temp);
+        //gui.getCurrentTempTxt().setText(temp + "");
+        gui.getcurrentFINGERPRINTTxt().setText(fingerPrint +"");
+        
+        if (fingerPrint <= 100) {
+           // beeper.beep();
+            config.sendEvent(new ScanFingerPrint(0));
+        }
+    }
 
     public BeltSensor getBeltSensor() {
         return beltSensor;
@@ -65,6 +92,10 @@ public class Wheelchair implements Movement {
 
     public void setScreen(Screen screen) {
         this.screen = screen;
+    }
+
+    public wheelchairView getGui() {
+        return gui;
     }
     
 
