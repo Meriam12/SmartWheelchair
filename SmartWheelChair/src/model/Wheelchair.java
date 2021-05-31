@@ -66,7 +66,7 @@ public class Wheelchair implements Movement {
     
     public void startMoving(){
     
-    
+    System.out.print("Ayyy 7aga");
     
     }
     
