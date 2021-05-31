@@ -71,42 +71,43 @@ public class Screen {
         
         public float getSpeed(){
             
+            return 1;
         }
         
         public String readDestnation(){
-            
+            return "m";
         }
         
         public String showDirections(){
-            
+            return "m";
         }
         
         public int showBatteryLevel(){
+            return 1; 
+        }
+        
+        public String selectSpeed(Brake brake){
+            return "m";
+        }
+        
+        public void showHealth(HealthSensor HealthSensor){
             
         }
         
-        public String selectSpeed(brake){
-            
-        }
-        
-        public void showHealth(HealthSensor){
-            
-        }
-        
-        public inr showSpeed(brake){
-            
+        public int showSpeed(Brake brake){
+            return 1;
         }
         
         public String NotifyForBeltSeat(){
             
-        
+            return "m";
         }
         
         public String NotifyForBattaryLow(){
-            
+            return "m";
         }
         
         public String NotifyForBatteryFull(){
-            
+            return "m";
         }
 }
