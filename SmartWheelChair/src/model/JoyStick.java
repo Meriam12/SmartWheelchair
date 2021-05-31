@@ -7,23 +7,41 @@ package model;
 
 /**
  *
- * @author a_h_s
+ * @author Shrouk
  */
-public class JoyStick {
+public class Joystick {
     private String currentSelection;
-    private Brake brake;
-    
-    public String setDirection(String currentSelection){
-    
-    String s ="";
-    
-    
-    return s;
-            }
-    
-    public void startMoving(){
-    
-    
+        private Brake brake;
+
+    public Joystick() {
     }
-    
+
+    public Joystick(String currentSelection, Brake brake) {
+        this.currentSelection = currentSelection;
+        this.brake = brake;
+    }
+
+    public void setCurrentSelection(String currentSelection) {
+        this.currentSelection = currentSelection;
+    }
+
+    public void setBrake(Brake brake) {
+        this.brake = brake;
+    }
+
+    public String getCurrentSelection() {
+        return currentSelection;
+    }
+
+    public Brake getBrake() {
+        return brake;
+    }
+    public String setDirection(String direction) {
+       return direction;
+    }
+    //@Override
+    public void StartMoving(){
+        
+    }
+
 }
