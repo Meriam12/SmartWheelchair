@@ -27,7 +27,7 @@ public class BatteryConsumption {
         this.batteryLevel = batteryLevel;
     }
     
-    public String monitorBatteryLevel (batteryLevel) {
+    public String monitorBatteryLevel (int batteryLevel) {
         
         return "h";
     }
