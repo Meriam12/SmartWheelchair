@@ -10,9 +10,8 @@ package model;
  * @author a_h_s
  */
 public interface Movement {
-<<<<<<< Updated upstream
-=======
+
     public void startMoving();
->>>>>>> Stashed changes
+
     
 }

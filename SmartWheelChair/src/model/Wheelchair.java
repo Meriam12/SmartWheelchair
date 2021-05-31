@@ -9,14 +9,10 @@ package model;
  *
  * @author a_h_s
  */
-<<<<<<< Updated upstream
-public class Wheelchair implements Movement {
-    private BeltSensor beltSensor;
-    private  FingerprintSensor fingerprintSensor;
-    private SeatSensor seatSensor;
-    private Screen screen;
 
-=======
+
+
+
 //----------------------------------------------------CONTROLLER------------------------------------///
 public class Wheelchair implements Movement {
     
@@ -28,7 +24,7 @@ public class Wheelchair implements Movement {
     public Wheelchair() {
     }
 
->>>>>>> Stashed changes
+
     public Wheelchair(BeltSensor beltSensor, FingerprintSensor fingerprintSensor, SeatSensor seatSensor, Screen screen) {
         this.beltSensor = beltSensor;
         this.fingerprintSensor = fingerprintSensor;
@@ -36,12 +32,9 @@ public class Wheelchair implements Movement {
         this.screen = screen;
     }
 
-<<<<<<< Updated upstream
-    public Wheelchair() {
-    }
 
-=======
->>>>>>> Stashed changes
+
+
     public BeltSensor getBeltSensor() {
         return beltSensor;
     }
@@ -74,26 +67,18 @@ public class Wheelchair implements Movement {
         this.screen = screen;
     }
     
-<<<<<<< Updated upstream
+
     
     
-    
-    
-    
-    
-    
+    @Override
     public void startMoving(){
     
     System.out.print("Ayyy 7aga");
     
     }
     
-=======
-    public void startMoving(){
-    
-    
-    
-    }
->>>>>>> Stashed changes
+
+  
+
     
 }
