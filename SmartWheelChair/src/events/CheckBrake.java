@@ -18,6 +18,8 @@ public class CheckBrake {
         this.speed = speed;
     }
 
+   
+
     public boolean isBrakeState() {
         return brakeState;
     }
