@@ -36,7 +36,12 @@ public class Wheelchair implements Movement {
         gui.setLocationRelativeTo(null);
         gui.setVisible(true);
         fingerprintSensor = new FingerprintSensor(this);
+        beltSensor = new BeltSensor(this);
+        seatSensor = new SeatSensor(this);
         fingerprintSensor.start();
+        beltSensor.start();
+        seatSensor.start();
+        
         
     }
     

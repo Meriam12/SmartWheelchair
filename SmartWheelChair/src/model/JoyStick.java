@@ -5,11 +5,17 @@
  */
 package model;
 
+import esper.config;
+import events.ScanJoyStickMovement;
+import events.ScanObject;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Shrouk
  */
-public class Joystick {
+public class Joystick extends Thread {
     private String currentSelection;
         private Brake brake;
 
@@ -43,5 +49,18 @@ public class Joystick {
     public void StartMoving(){
         
     }
-
+ @Override
+    public void run() {
+        while (true) {
+            //wheelchair.getFingerprintSensor().raiseTemp();
+            try {
+                this.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(FingerprintSensor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            //config.sendEvent(new ScanFingerPrint(fingerPrint);
+            config.sendEvent(new ScanJoyStickMovement(currentSelection));
+        }
+    }
 }

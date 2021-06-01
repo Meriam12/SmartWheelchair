@@ -18,9 +18,15 @@ import java.util.logging.Logger;
 public class BeltSensor extends Thread {
     
 private boolean beltState;
+private Wheelchair wheelchair;
 
     public BeltSensor() {
     }
+
+    public BeltSensor(Wheelchair wheelchair) {
+        this.wheelchair = wheelchair;
+    }
+    
 
     public BeltSensor(boolean beltState) {
         this.beltState = beltState;

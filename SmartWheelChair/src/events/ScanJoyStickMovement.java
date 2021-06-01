@@ -11,14 +11,14 @@ package events;
  */
 public class ScanJoyStickMovement {
     
-    private final char joystickpostion;
+    private final String joystickpostion;
     //final because the value cant be modified from outside the class or anywhere else
 
-    public ScanJoyStickMovement(char joystickpostion) {
+    public ScanJoyStickMovement(String joystickpostion) {
         this.joystickpostion = joystickpostion;
     }
 
-    public char getJoystickpostion() {
+    public String getJoystickpostion() {
         return joystickpostion;
     }
     

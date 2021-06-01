@@ -5,11 +5,17 @@
  */
 package model;
 
+import esper.config;
+import events.ScanObject;
+import events.TakeDistination;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author TOUMIE
  */
-public class GPSTracker {
+public class GPSTracker extends Thread {
     
     private String currentLocation;
     private String Destination;
@@ -46,5 +52,20 @@ public class GPSTracker {
     public String changeDirection()
     {
     return ("");
+    }
+    
+     @Override
+    public void run() {
+        while (true) {
+            //wheelchair.getFingerprintSensor().raiseTemp();
+            try {
+                this.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(FingerprintSensor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            //config.sendEvent(new ScanFingerPrint(fingerPrint);
+            config.sendEvent(new TakeDistination(Destination));
+        }
     }
 }

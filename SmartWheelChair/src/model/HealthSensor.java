@@ -11,4 +11,6 @@ package model;
  */
 public class HealthSensor {
     
+    
+    
 }
