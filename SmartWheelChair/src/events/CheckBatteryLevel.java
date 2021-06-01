@@ -9,16 +9,16 @@ package events;
  *
  * @author a_h_s
  */
-public class TakeDistination {
-      private final String scanLocation;
+public class CheckBatteryLevel {
+      private final int batterylevel;
 
-    public TakeDistination(String scanLocation) {
-        this.scanLocation = scanLocation;
+    public CheckBatteryLevel(int batterylevel) {
+        this.batterylevel = batterylevel;
     }
 
-    public String getScanLocation() {
-        return scanLocation;
+    public int getBatterylevel() {
+        return batterylevel;
     }
       
-      
+    
 }
