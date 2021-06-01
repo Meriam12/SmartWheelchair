@@ -69,7 +69,7 @@ public boolean IdentifyFingerprint(int temp)
 {
    return true; 
 }   
-
+//extends Thread
  @Override
     public void run() {
         while (true) {

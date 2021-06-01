@@ -5,13 +5,21 @@
  */
 package model;
 
+import esper.config;
+import events.CheckBrake;
+import events.ScanObject;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author meriam
  */
-public class Camera {
+public class Camera extends Thread{
     
-   public String scannedOject;
+   private String scannedOject;
+   private boolean scannedObject;
+   
 
     public Camera() {
     }
@@ -34,5 +42,18 @@ public class Camera {
     {
     
     }
-   
+   @Override
+    public void run() {
+        while (true) {
+            //wheelchair.getFingerprintSensor().raiseTemp();
+            try {
+                this.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(FingerprintSensor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            //config.sendEvent(new ScanFingerPrint(fingerPrint);
+            config.sendEvent(new ScanObject(scannedObject));
+        }
+    }
 }

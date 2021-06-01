@@ -5,13 +5,20 @@
  */
 package model;
 
+import esper.config;
+import events.CheckBrake;
+import events.ScanBeltSensor;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author meriam
  */
-public class Brake {
+public class Brake extends Thread{
     
-    private double speed;
+    private int speed;
+    private boolean brakeState;
 
     
     
@@ -20,12 +27,12 @@ public class Brake {
     
     }
     
-    public Brake(double speed) {
+    public Brake(int speed) {
         this.speed = speed;
     }
 
 
-    public void setSpeed(double speed) {
+    public void setSpeed(int speed) {
         this.speed = speed;
     }
     
@@ -35,7 +42,7 @@ public class Brake {
     }
     
     
-    public String stop()
+    public String Stop()
     {
         String m = "";
         
@@ -57,5 +64,18 @@ public class Brake {
         
         return m;
     }
-    
+    @Override
+    public void run() {
+        while (true) {
+            //wheelchair.getFingerprintSensor().raiseTemp();
+            try {
+                this.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(FingerprintSensor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            //config.sendEvent(new ScanFingerPrint(fingerPrint);
+            config.sendEvent(new CheckBrake(brakeState,speed));
+        }
+    }
 }

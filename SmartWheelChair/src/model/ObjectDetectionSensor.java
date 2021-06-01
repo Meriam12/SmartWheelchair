@@ -5,11 +5,17 @@
  */
 package model;
 
+import esper.config;
+import events.ObjectDetectionReading;
+import events.ScanJoyStickMovement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author meriam
  */
-public class ObjectDetectionSensor {
+public class ObjectDetectionSensor extends Thread{
     
   private  Camera camera;
   
@@ -55,6 +61,19 @@ public class ObjectDetectionSensor {
     {
     
     }
-    
+    @Override
+    public void run() {
+        while (true) {
+            //wheelchair.getFingerprintSensor().raiseTemp();
+            try {
+                this.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(FingerprintSensor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            //config.sendEvent(new ScanFingerPrint(fingerPrint);
+            config.sendEvent(new ObjectDetectionReading(camera.getScannedOject()));
+        }
+    }
   
 }

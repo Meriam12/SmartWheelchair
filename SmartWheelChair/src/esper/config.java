@@ -9,6 +9,17 @@ import com.espertech.esper.client.EPServiceProvider;
 import com.espertech.esper.client.EPServiceProviderManager;
 import com.espertech.esper.client.EPStatement;
 import events.ScanFingerPrint;
+import events.CheckBatteryLevel;
+import events.CheckBloodPressure;
+import events.CheckBrake;
+import events.CheckHeartRate;
+import events.ObjectDetectionReading;
+import events.ScanJoyStickMovement;
+import events.ScanBeltSensor;
+import events.ScanObject;
+import events.ScanSeatSensor;
+import events.TakeDistination;
+
 
 
 /**
@@ -21,7 +32,19 @@ public class config {
     
     public static void registerEvents() {
         engine.getEPAdministrator().getConfiguration().addEventType(ScanFingerPrint.class);
-        //engine.getEPAdministrator().getConfiguration().addEventType(TempSensorReading.class);
+        engine.getEPAdministrator().getConfiguration().addEventType(CheckBatteryLevel.class);
+        engine.getEPAdministrator().getConfiguration().addEventType(CheckBloodPressure.class);
+        engine.getEPAdministrator().getConfiguration().addEventType(CheckBrake.class);
+        engine.getEPAdministrator().getConfiguration().addEventType(CheckHeartRate.class);
+        engine.getEPAdministrator().getConfiguration().addEventType(ObjectDetectionReading.class);
+        engine.getEPAdministrator().getConfiguration().addEventType(ScanBeltSensor.class);
+        engine.getEPAdministrator().getConfiguration().addEventType(ScanJoyStickMovement.class);
+        engine.getEPAdministrator().getConfiguration().addEventType(ScanObject.class);
+        engine.getEPAdministrator().getConfiguration().addEventType(ScanSeatSensor.class);
+        engine.getEPAdministrator().getConfiguration().addEventType(TakeDistination.class);
+
+
+        
         System.out.println("Events Successfully Registered.");
     }
     

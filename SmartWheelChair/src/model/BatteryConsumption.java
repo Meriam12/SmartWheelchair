@@ -5,11 +5,18 @@
  */
 package model;
 
+import esper.config;
+import events.CheckBatteryLevel;
+import events.ScanFingerPrint;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 /**
  *
  * @author Mariam
  */
-public class BatteryConsumption {
+public class BatteryConsumption extends Thread{
     private int batteryLevel;
 
     public BatteryConsumption() {
@@ -35,4 +42,22 @@ public class BatteryConsumption {
     public void chargeBattery(){
         
     }
+    
+   //extends Thread
+ @Override
+    public void run() {
+        while (true) {
+            //wheelchair.getFingerprintSensor().raiseTemp();
+            try {
+                this.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(FingerprintSensor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            //config.sendEvent(new ScanFingerPrint(fingerPrint);
+            config.sendEvent(new CheckBatteryLevel(batteryLevel));
+        }
+    }
+
+    
 }
