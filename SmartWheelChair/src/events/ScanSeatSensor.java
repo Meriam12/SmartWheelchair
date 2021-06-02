@@ -22,15 +22,6 @@ public class ScanSeatSensor {
         return seatState;
     }
     
-    
-//    public void setSeatStatus(boolean status) {
-//        seatState = status;
-//        if (status) {
-//            Wheelchair.getGuiSeatSensor().getjTextField1().setText("Valid");
-//        } else {
-//            Wheelchair.getGuiSeatSensor().getjTextField1().setText("Invalid");
-//        }
 
-//    }
     
 }
