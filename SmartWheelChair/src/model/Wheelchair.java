@@ -134,7 +134,7 @@ public class Wheelchair implements Movement {
         
         if (weight < 20) {
            // beeper.beep();
-            config.sendEvent(new ScanSeatSensor(false));
+            config.sendEvent(new ScanSeatSensor(weight));
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////

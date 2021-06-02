@@ -12,15 +12,17 @@ import model.Wheelchair;
  * @author a_h_s
  */
 public class ScanSeatSensor {
-    private  boolean seatState;
+    private  int weight;
 
-    public ScanSeatSensor(boolean seatState) {
-        this.seatState = seatState;
+    public ScanSeatSensor(int w) {
+        weight = w;
     }
 
-    public boolean isSeatState() {
-        return seatState;
+    public int getWeight() {
+        return weight;
     }
+
+
     
 
     

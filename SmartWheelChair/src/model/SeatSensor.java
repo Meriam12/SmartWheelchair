@@ -8,6 +8,7 @@ package model;
 import esper.config;
 import events.ObjectDetectionReading;
 import events.ScanSeatSensor;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,15 +17,28 @@ import java.util.logging.Logger;
  * @author Toumie
  */
 public class SeatSensor extends Thread {
+    
+        private int random() {
+        
+//        if (min >= max) {
+//            throw new IllegalArgumentException("max must be greater than min");
+//        }
+//        
+//        Random r = new Random();
+//        return r.nextInt((max - min) + 1) + min;
+            return 50;
+    }
    
 private boolean seatState;
 private Wheelchair wheelchair;
+private int weight;
 
     public SeatSensor() {
     }
 
     public SeatSensor(Wheelchair wheelchair) {
         this.wheelchair = wheelchair;
+        this.weight = 0;
     }
 
     
@@ -46,16 +60,7 @@ public boolean detectBody()
 }
 
     
-    public void checkSeatSensor(int num){ //this num is in killos
-        if (num < 20){   //since babies are not allowed to use this wheelchair
-             setSeatState(false);
-        }
-        else{
-            setSeatState(true);
-        }
-    }
-  
-    
+
     public void setSeatStatusInGUI(boolean status) {
         seatState = status;
         if (status) {
@@ -65,6 +70,21 @@ public boolean detectBody()
         }
 
     }
+    
+
+    public void checkSeatSensor(int num){ //this num is in killos
+        if (num < 20){   //since babies are not allowed to use this wheelchair
+             setSeatState(false);
+             setSeatStatusInGUI(false);
+        }
+        else{
+            setSeatState(true);
+            setSeatStatusInGUI(true);
+        }
+    }
+  
+    
+
 
   @Override
     public void run() {
@@ -77,7 +97,7 @@ public boolean detectBody()
             }
             
             //config.sendEvent(new ScanFingerPrint(fingerPrint);
-            config.sendEvent(new ScanSeatSensor(seatState));
+            config.sendEvent(new ScanSeatSensor(weight));
         }
     }
     
