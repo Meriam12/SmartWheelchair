@@ -10,6 +10,7 @@ import events.ScanFingerPrint;
 import view.SeatSensorView;
 import view.wheelchairView;
 import events.ScanSeatSensor;
+import view.BatteryConsumptionView;
 
 /**
  *
@@ -26,10 +27,12 @@ public class Wheelchair implements Movement {
     private FingerprintSensor fingerprintSensor;
     private SeatSensor seatSensor;
     private Screen screen;
+    private BatteryConsumption batteryCons;
     
     private wheelchairView gui;
     private SeatSensorView seatSensorView;
-              
+    private BatteryConsumptionView batteryConsumptionView;
+    
      private boolean seatStatus = false;
 
     // This acts as our ON/OFF switch
@@ -41,23 +44,31 @@ public class Wheelchair implements Movement {
         gui.setLocationRelativeTo(null);
        // gui.setVisible(true);
        seatSensorView.setVisible(true);
+       batteryConsumptionView.setLocationRelativeTo(null);
+       batteryConsumptionView.setVisible(true);
+       
+       
         fingerprintSensor = new FingerprintSensor(this);
         beltSensor = new BeltSensor(this);
         seatSensor = new SeatSensor(this);
+        batteryCons = new BatteryConsumption(this);
+        
         fingerprintSensor.start();
         beltSensor.start();
         seatSensor.start();
+        batteryCons.start();
         
         
     }
     
 
 
-    public Wheelchair(BeltSensor beltSensor, FingerprintSensor fingerprintSensor, SeatSensor seatSensor, Screen screen) {
+    public Wheelchair(BeltSensor beltSensor, FingerprintSensor fingerprintSensor, SeatSensor seatSensor, Screen screen, BatteryConsumption batteryCons) {
         this.beltSensor = beltSensor;
         this.fingerprintSensor = fingerprintSensor;
         this.seatSensor = seatSensor;
         this.screen = screen;
+        this.batteryCons= batteryCons;
         
     }
 
@@ -138,4 +149,8 @@ public class Wheelchair implements Movement {
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
+     
+     
+   //////////////////////////////////// Battery sensor ////////////////////////////
+     
 }

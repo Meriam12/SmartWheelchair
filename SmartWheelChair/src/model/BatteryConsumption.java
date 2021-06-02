@@ -8,6 +8,7 @@ package model;
 import esper.config;
 import events.CheckBatteryLevel;
 import events.ScanFingerPrint;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,7 +19,8 @@ import java.util.logging.Logger;
  */
 public class BatteryConsumption extends Thread{
     private int batteryLevel;
-
+    private Wheelchair wheelchair;
+    
     public BatteryConsumption() {
     }
 
@@ -26,6 +28,12 @@ public class BatteryConsumption extends Thread{
         this.batteryLevel = batteryLevel;
     }
 
+      public BatteryConsumption(Wheelchair wheelchair) {
+       this.wheelchair = wheelchair;
+       this.batteryLevel = 0;
+    }
+
+        
     public int getBatteryLevel() {
         return batteryLevel;
     }
@@ -39,8 +47,27 @@ public class BatteryConsumption extends Thread{
         return "h";
     }
     
-    public void chargeBattery(){
+       private int random(int min, int max) {
         
+        if (min >= max) {
+         throw new IllegalArgumentException("max must be greater than min");
+        }
+        
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
+    }
+     
+       public void raiseTemp() {
+        batteryLevel += random(5,80);
+    }
+    
+    public void chargeBattery(){
+        if (batteryLevel < 20)
+        {
+           
+            
+        
+        }
     }
     
    //extends Thread

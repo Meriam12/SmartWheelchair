@@ -76,6 +76,7 @@ public boolean detectBody()
         if (weight < 20){   //since babies are not allowed to use this wheelchair
              setSeatState(false);
              setSeatStatusInGUI(false);
+             
         }
         else{
             setSeatState(true);
