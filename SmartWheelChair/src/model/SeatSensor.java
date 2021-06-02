@@ -72,8 +72,8 @@ public boolean detectBody()
     }
     
 
-    public void checkSeatSensor(int num){ //this num is in killos
-        if (num < 20){   //since babies are not allowed to use this wheelchair
+    public void checkSeatSensor(){ //this num is in killos
+        if (weight < 20){   //since babies are not allowed to use this wheelchair
              setSeatState(false);
              setSeatStatusInGUI(false);
         }
