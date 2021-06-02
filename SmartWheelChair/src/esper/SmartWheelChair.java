@@ -33,7 +33,7 @@ public class SmartWheelChair {
                     }
                 });
          
-                  config.createStatement("select seatState from ScanSeatSensor")
+                  config.createStatement("select weight from ScanSeatSensor")
                 .setSubscriber(new Object() {
                     public void update(int seatState) throws InterruptedException {
                         wheelchair.seatSignal(seatState);
