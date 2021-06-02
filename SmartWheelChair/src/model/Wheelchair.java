@@ -9,6 +9,7 @@ import esper.config;
 import events.ScanFingerPrint;
 import view.SeatSensorView;
 import view.wheelchairView;
+import events.ScanSeatSensor;
 
 /**
  *
@@ -126,6 +127,15 @@ public class Wheelchair implements Movement {
             this.seatSensor.setSeatStatusInGUI(status);
         }
   
-
+     public void seatSignal(int weight) throws InterruptedException {
+        //System.out.println("The temp is now " + temp);
+        //gui.getCurrentTempTxt().setText(temp + "");
+        seatSensorView.getjTextField2().setText(weight +"");
+        
+        if (weight < 20) {
+           // beeper.beep();
+            config.sendEvent(new ScanSeatSensor(false));
+        }
+    }
     
 }
