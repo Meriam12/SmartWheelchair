@@ -7,6 +7,7 @@ package model;
 
 import esper.config;
 import events.ScanFingerPrint;
+import view.SeatSensorView;
 import view.wheelchairView;
 
 /**
@@ -26,15 +27,19 @@ public class Wheelchair implements Movement {
     private Screen screen;
     
     private wheelchairView gui;
+    private SeatSensorView seatSensorView;
               
+     private boolean seatStatus = false;
 
     // This acts as our ON/OFF switch
     private boolean state = false;
 
     public Wheelchair() {
         gui = new wheelchairView();
+        seatSensorView = new    SeatSensorView();
         gui.setLocationRelativeTo(null);
-        gui.setVisible(true);
+       // gui.setVisible(true);
+       seatSensorView.setVisible(true);
         fingerprintSensor = new FingerprintSensor(this);
         beltSensor = new BeltSensor(this);
         seatSensor = new SeatSensor(this);
@@ -103,7 +108,9 @@ public class Wheelchair implements Movement {
         return gui;
     }
     
-
+    public SeatSensorView getGuiSeatSensor(){
+        return seatSensorView;
+    }
     
     
     @Override
@@ -112,8 +119,19 @@ public class Wheelchair implements Movement {
     System.out.print("Ayyy 7aga");
     
     }
-    
-
+//    
+//        public void setState(boolean state) {
+//        this.state = state;
+//        this.ledLight.setState(state);
+//        gui.getOnBtn().setEnabled(!state);
+//        gui.getOffBtn().setEnabled(state);
+//    }
+        
+        public void setSeatStatusInGUI(boolean status){
+            seatStatus = status;
+            
+            
+        }
   
 
     

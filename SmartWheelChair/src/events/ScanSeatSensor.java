@@ -5,12 +5,14 @@
  */
 package events;
 
+import model.Wheelchair;
+
 /**
  *
  * @author a_h_s
  */
 public class ScanSeatSensor {
-    private final boolean seatState;
+    private  boolean seatState;
 
     public ScanSeatSensor(boolean seatState) {
         this.seatState = seatState;
@@ -20,5 +22,15 @@ public class ScanSeatSensor {
         return seatState;
     }
     
+    
+//    public void setSeatStatus(boolean status) {
+//        seatState = status;
+//        if (status) {
+//            Wheelchair.getGuiSeatSensor().getjTextField1().setText("Valid");
+//        } else {
+//            Wheelchair.getGuiSeatSensor().getjTextField1().setText("Invalid");
+//        }
+
+//    }
     
 }
