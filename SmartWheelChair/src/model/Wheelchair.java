@@ -121,7 +121,7 @@ public class Wheelchair implements Movement {
     
     }
 
-        
+        ////////////////////////////////////// Seat Sensor /////////////////////////////////////////
         public void setSeatStatusInGUI(boolean status){
             seatStatus = status;
             this.seatSensor.setSeatStatusInGUI(status);
@@ -137,5 +137,5 @@ public class Wheelchair implements Movement {
             config.sendEvent(new ScanSeatSensor(false));
         }
     }
-    
+    ////////////////////////////////////////////////////////////////////////////////////////////////
 }
