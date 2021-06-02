@@ -45,22 +45,6 @@ public boolean detectBody()
     return true;
 }
 
-
-  @Override
-    public void run() {
-        while (true) {
-            //wheelchair.getFingerprintSensor().raiseTemp();
-            try {
-                this.sleep(1000);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(FingerprintSensor.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            //config.sendEvent(new ScanFingerPrint(fingerPrint);
-            config.sendEvent(new ScanSeatSensor(seatState));
-        }
-    }
-    
     
     public void checkSeatSensor(int num){ //this num is in killos
         if (num < 20){   //since babies are not allowed to use this wheelchair
@@ -81,5 +65,22 @@ public boolean detectBody()
         }
 
     }
+
+  @Override
+    public void run() {
+        while (true) {
+            //wheelchair.getFingerprintSensor().raiseTemp();
+            try {
+                this.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(FingerprintSensor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            //config.sendEvent(new ScanFingerPrint(fingerPrint);
+            config.sendEvent(new ScanSeatSensor(seatState));
+        }
+    }
+    
+
 
 }
