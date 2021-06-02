@@ -32,6 +32,14 @@ public class SmartWheelChair {
                         wheelchair.tempSignal(fingerPrint);
                     }
                 });
+         
+                  config.createStatement("select seatState from ScanSeatSensor")
+                .setSubscriber(new Object() {
+                    public void update(int seatState) throws InterruptedException {
+                        wheelchair.seatSignal(seatState);
+                    }
+                });
+                  
     }
     
 }
