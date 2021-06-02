@@ -119,18 +119,11 @@ public class Wheelchair implements Movement {
     System.out.print("Ayyy 7aga");
     
     }
-//    
-//        public void setState(boolean state) {
-//        this.state = state;
-//        this.ledLight.setState(state);
-//        gui.getOnBtn().setEnabled(!state);
-//        gui.getOffBtn().setEnabled(state);
-//    }
+
         
         public void setSeatStatusInGUI(boolean status){
             seatStatus = status;
-            
-            
+            this.seatSensor.setSeatStatusInGUI(status);
         }
   
 

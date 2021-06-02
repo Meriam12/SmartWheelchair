@@ -60,9 +60,19 @@ public boolean detectBody()
             config.sendEvent(new ScanSeatSensor(seatState));
         }
     }
+    
+    
+    public void checkSeatSensor(int num){ //this num is in killos
+        if (num < 20){   //since babies are not allowed to use this wheelchair
+             setSeatState(false);
+        }
+        else{
+            setSeatState(true);
+        }
+    }
   
     
-    public void setSeatStatus(boolean status) {
+    public void setSeatStatusInGUI(boolean status) {
         seatState = status;
         if (status) {
             wheelchair.getGuiSeatSensor().getjTextField1().setText("Valid");
