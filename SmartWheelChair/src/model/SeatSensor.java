@@ -61,6 +61,15 @@ public boolean detectBody()
         }
     }
   
+    
+    public void setSeatStatus(boolean status) {
+        seatState = status;
+        if (status) {
+            wheelchair.getGuiSeatSensor().getjTextField1().setText("Valid");
+        } else {
+            wheelchair.getGuiSeatSensor().getjTextField1().setText("Invalid");
+        }
 
+    }
 
 }
