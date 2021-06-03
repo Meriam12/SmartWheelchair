@@ -11,6 +11,7 @@ import events.ScanFingerPrint;
 import view.wheelchairView;
 import events.ScanSeatSensor;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import view.BatteryConsumptionView;
 import view.GUI;
 
@@ -214,6 +215,8 @@ public class Wheelchair implements Movement {
             
             else if (batteryLevel <= 10 && batteryLevel >= 5 )
             {
+                 JOptionPane.showMessageDialog(null, "You must charge the battery now.",
+                 "Battery Low!", JOptionPane.ERROR_MESSAGE);
             
                 System.err.println("You must charge the battery now.");
             
@@ -222,7 +225,7 @@ public class Wheelchair implements Movement {
             
             else if (batteryLevel < 0)
             {
-                 batteryLevel= batteryCons.chargeBattery();
+              batteryLevel= batteryCons.chargeBattery();
               this.batteryCons.setBatteryLevel(batteryLevel);
               gui1.getBatteryField().setText(batteryLevel + "");
             
@@ -248,7 +251,8 @@ public class Wheelchair implements Movement {
             
             else if (batteryLevel <= 10 && batteryLevel >= 5 )
             {
-            
+                 JOptionPane.showMessageDialog(null, "You must charge the battery now.",
+                 "Battery Low!", JOptionPane.ERROR_MESSAGE);
                 System.err.println("You must charge the battery now.");
             
             }
@@ -282,6 +286,8 @@ public class Wheelchair implements Movement {
             else if (batteryLevel <= 10 && batteryLevel >= 5 )
             {
             
+                JOptionPane.showMessageDialog(null, "You must charge the battery now.",
+                 "Battery Low!", JOptionPane.ERROR_MESSAGE);
                 System.err.println("You must charge the battery now.");
             
             }
@@ -314,8 +320,10 @@ public class Wheelchair implements Movement {
             
             else if (batteryLevel <= 10 && batteryLevel >= 5 )
             {
-            
+                JOptionPane.showMessageDialog(null, "You must charge the battery now.",
+                  "Battery Low!", JOptionPane.ERROR_MESSAGE);
                 System.err.println("You must charge the battery now.");
+               
             
             }
             
