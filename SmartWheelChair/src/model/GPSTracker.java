@@ -53,7 +53,9 @@ public class GPSTracker extends Thread {
     {
     return ("");
     }
-    //[82,82,142]
+
+
+
     
      @Override
     public void run() {

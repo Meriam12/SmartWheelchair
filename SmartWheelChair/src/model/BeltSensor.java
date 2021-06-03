@@ -25,6 +25,7 @@ private Wheelchair wheelchair;
 
     public BeltSensor(Wheelchair wheelchair) {
         this.wheelchair = wheelchair;
+        this.beltState = false;
     }
     
 
@@ -42,18 +43,21 @@ private Wheelchair wheelchair;
 
 public void checkBelt(boolean beltState)
 {
-
+if (beltState == true )
+    this.beltState = true;
+else 
+    this.beltState = false;
 }
     
  //extends Thread
  @Override
     public void run() {
         while (true) {
-            //wheelchair.getFingerprintSensor().raiseTemp();
+            wheelchair.seatBeltsignal();
             try {
                 this.sleep(1000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(FingerprintSensor.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(BeltSensor.class.getName()).log(Level.SEVERE, null, ex);
             }
             
             //config.sendEvent(new ScanFingerPrint(fingerPrint);
