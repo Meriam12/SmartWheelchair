@@ -19,14 +19,40 @@ import java.util.logging.Logger;
 public class SeatSensor extends Thread {
     
         private int random() {
-        
-//        if (min >= max) {
-//            throw new IllegalArgumentException("max must be greater than min");
-//        }
-//        
-//        Random r = new Random();
-//        return r.nextInt((max - min) + 1) + min;
-            return 50;
+                            
+                            int w = 0;
+                            new java.util.Timer().schedule( 
+                                    new java.util.TimerTask() {
+                                        @Override
+                                        public void run() {
+                                            // your code here
+                                        }
+                                    }, 
+                                    10000    // 10 seconds
+                            );
+                            w = 50;
+                            new java.util.Timer().schedule( 
+                                    new java.util.TimerTask() {
+                                        @Override
+                                        public void run() {
+                                            // your code here
+                                        }
+                                    }, 
+                                    10000    // 10 seconds
+                            );
+                            w = 15;
+                             new java.util.Timer().schedule( 
+                                    new java.util.TimerTask() {
+                                        @Override
+                                        public void run() {
+                                            // your code here
+                                        }
+                                    }, 
+                                    5000    // 5 seconds
+                            );
+                             w = 50;
+                            
+            return w;
     }
    
 private boolean seatState;
@@ -38,7 +64,7 @@ private int weight;
 
     public SeatSensor(Wheelchair wheelchair) {
         this.wheelchair = wheelchair;
-        this.weight = 0;
+        this.weight = random(); //////////////////////////////////////////
     }
 
     
