@@ -21,35 +21,36 @@ public class SeatSensor extends Thread {
         private int random() {
                             
                             int w = 0;
-                            new java.util.Timer().schedule( 
-                                    new java.util.TimerTask() {
-                                        @Override
-                                        public void run() {
-                                            // your code here
-                                        }
-                                    }, 
-                                    10000    // 10 seconds
-                            );
-                            w = 50;
-                            new java.util.Timer().schedule( 
-                                    new java.util.TimerTask() {
-                                        @Override
-                                        public void run() {
-                                            // your code here
-                                        }
-                                    }, 
-                                    10000    // 10 seconds
-                            );
-                            w = 15;
-                             new java.util.Timer().schedule( 
-                                    new java.util.TimerTask() {
-                                        @Override
-                                        public void run() {
-                                            // your code here
-                                        }
-                                    }, 
-                                    5000    // 5 seconds
-                            );
+                            
+//                            new java.util.Timer().schedule( 
+//                                    new java.util.TimerTask() {
+//                                        @Override
+//                                        public void run() {
+//                                            // your code here
+//                                        }
+//                                    }, 
+//                                    10000    // 10 seconds
+//                            );
+//                            w = 50;
+//                            new java.util.Timer().schedule( 
+//                                    new java.util.TimerTask() {
+//                                        @Override
+//                                        public void run() {
+//                                            // your code here
+//                                        }
+//                                    }, 
+//                                    10000    // 10 seconds
+//                            );
+//                            w = 15;
+//                             new java.util.Timer().schedule( 
+//                                    new java.util.TimerTask() {
+//                                        @Override
+//                                        public void run() {
+//                                            // your code here
+//                                        }
+//                                    }, 
+//                                    5000    // 5 seconds
+//                            );
                              w = 50;
                             
             return w;
