@@ -30,7 +30,7 @@ public class BatteryConsumption extends Thread{
 
       public BatteryConsumption(Wheelchair wheelchair) {
        this.wheelchair = wheelchair;
-       this.batteryLevel = 0;
+       this.batteryLevel = 100;
     }
 
         
@@ -47,27 +47,12 @@ public class BatteryConsumption extends Thread{
         return "h";
     }
     
-       private int random(int min, int max) {
+
+    public  int chargeBattery()
+    {
+        batteryLevel =100;
         
-        if (min >= max) {
-         throw new IllegalArgumentException("max must be greater than min");
-        }
-        
-        Random r = new Random();
-        return r.nextInt((max - min) + 1) + min;
-    }
-     
-       public void raiseTemp() {
-        batteryLevel += random(5,80);
-    }
-    
-    public void chargeBattery(){
-        if (batteryLevel < 20)
-        {
-           
-            
-        
-        }
+        return batteryLevel;
     }
     
    //extends Thread

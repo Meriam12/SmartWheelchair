@@ -52,12 +52,7 @@ public class GPSTracker extends Thread {
     public String changeDirection()
     {
     return ("");
-<<<<<<< HEAD
     }//[82,82,142]
-=======
-    }
-    //[82,82,142]
->>>>>>> parent of cfeeecf (SeatBeltGUI)
     
      @Override
     public void run() {
