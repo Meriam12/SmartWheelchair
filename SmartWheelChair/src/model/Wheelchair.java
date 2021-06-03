@@ -149,9 +149,11 @@ public class Wheelchair implements Movement {
            // beeper.beep();
             config.sendEvent(new ScanSeatSensor(weight));
             gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
+            System.out.println("invalid");
         }
         else{
              gui1.getjSeat_validatonFromGUI().setBackground(Color.green);
+             System.out.println("valid ");
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
