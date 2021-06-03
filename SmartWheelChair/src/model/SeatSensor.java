@@ -65,8 +65,16 @@ private int weight;
 
     public SeatSensor(Wheelchair wheelchair) {
         this.wheelchair = wheelchair;
-        this.weight = random(); //////////////////////////////////////////
+       // this.weight = random(); //////////////////////////////////////////
+       this.weight = 0;
     }
+
+
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+    
 
     
     public SeatSensor(boolean seatState) {
@@ -79,6 +87,18 @@ private int weight;
 
     public boolean isSeatState() {
         return seatState;
+    }
+    
+    public int SeatWeight()
+    {
+        weight = 50;
+    return weight;
+    }
+    
+        public int SeatNoWeight()
+    {
+        weight = 10;
+    return weight;
     }
 
 public boolean detectBody()
