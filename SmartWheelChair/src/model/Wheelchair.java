@@ -11,6 +11,7 @@ import view.SeatSensorView;
 import view.wheelchairView;
 import events.ScanSeatSensor;
 import view.BatteryConsumptionView;
+import view.GUI;
 
 /**
  *
@@ -31,7 +32,7 @@ public class Wheelchair implements Movement {
     
     private wheelchairView gui;
     private SeatSensorView seatSensorView;
-    private BatteryConsumptionView batteryConsumptionView;
+    private GUI gui1;
     
      private boolean seatStatus = false;
 
@@ -39,13 +40,14 @@ public class Wheelchair implements Movement {
     private boolean state = false;
 
     public Wheelchair() {
-        gui = new wheelchairView();
-        seatSensorView = new    SeatSensorView();
-        gui.setLocationRelativeTo(null);
+       // gui = new wheelchairView();
+       // seatSensorView = new    SeatSensorView();
+        gui1 = new GUI();
+      //  gui.setLocationRelativeTo(null);
        // gui.setVisible(true);
-       seatSensorView.setVisible(true);
-       batteryConsumptionView.setLocationRelativeTo(null);
-       batteryConsumptionView.setVisible(true);
+      // seatSensorView.setVisible(true);
+      gui1.setLocationRelativeTo(null);
+       gui1.setVisible(true);
        
        
         fingerprintSensor = new FingerprintSensor(this);
@@ -152,5 +154,44 @@ public class Wheelchair implements Movement {
      
      
    //////////////////////////////////// Battery sensor ////////////////////////////
-     
+     public void BatteruConsumption(int batteryLevel)
+             
+     {
+
+            gui1.getBatteryField().setText(batteryLevel + "");
+            this.batteryCons.setBatteryLevel(batteryLevel);
+
+           boolean b=  gui1.getForwardButton().isEnabled();
+           
+           if (b == true)
+           {
+              batteryLevel -= 10;
+              this.batteryCons.setBatteryLevel(batteryLevel);
+              gui1.getBatteryField().setText(batteryLevel + "");
+                       if (batteryLevel > 20)
+            {
+                System.out.println("The battery don't want to be charged.");
+            }
+            
+            else if (batteryLevel <= 10 && batteryLevel >= 5 )
+            {
+            
+                System.err.println("You must charge the battery now.");
+            
+            }
+            
+            
+            else if (batteryLevel < 5)
+            {
+                 batteryLevel= batteryCons.chargeBattery();
+              this.batteryCons.setBatteryLevel(batteryLevel);
+              gui1.getBatteryField().setText(batteryLevel + "");
+            
+            }
+             
+      
+            
+           }
+           
+     }
 }
