@@ -145,20 +145,11 @@ public class Wheelchair implements Movement {
        
          
          
-        System.out.println("The weight is now " + weight);
+         System.out.println("The weight is now " + weight);
         gui1.getWeightFromGUI().setText(weight +"");
         
         if(gui1.getjRadioButton1().isSelected()){
-        //config.sendEvent(new ScanSeatSensor(weight));
-              Thread.sleep(4000);
-              weight = seatSensor.SeatWeight();
-              this.seatSensor.setWeight(weight);
-              gui1.getWeightFromGUI().setText(weight + "");
-//              Thread.sleep(5000);
-//              weight = seatSensor.SeatNoWeight();
-//              this.seatSensor.setWeight(weight);
-//              gui1.getWeightFromGUI().setText(weight + "");
-              
+        config.sendEvent(new ScanSeatSensor(weight));
                         if (weight < 20) {
                            // beeper.beep();
                             gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
