@@ -7,9 +7,9 @@ package model;
 
 import esper.config;
 import events.ScanFingerPrint;
-import view.SeatSensorView;
 import view.wheelchairView;
 import events.ScanSeatSensor;
+import java.awt.Color;
 import view.BatteryConsumptionView;
 import view.GUI;
 
@@ -31,7 +31,6 @@ public class Wheelchair implements Movement {
     private BatteryConsumption batteryCons;
     
     private wheelchairView gui;
-    private SeatSensorView seatSensorView;
     private GUI gui1;
     
      private boolean seatStatus = false;
@@ -121,10 +120,7 @@ public class Wheelchair implements Movement {
     public wheelchairView getGui() {
         return gui;
     }
-    
-    public SeatSensorView getGuiSeatSensor(){
-        return seatSensorView;
-    }
+
     
     
     @Override
@@ -135,19 +131,29 @@ public class Wheelchair implements Movement {
     }
 
         ////////////////////////////////////// Seat Sensor /////////////////////////////////////////
-        public void setSeatStatusInGUI(boolean status){
-            seatStatus = status;
-            this.seatSensor.setSeatStatusInGUI(status);
-        }
+        
+//    public SeatSensorView getGuiSeatSensor(){
+//        return seatSensorView;
+//    }
+//        public void setSeatStatusInGUI(boolean status){
+//            seatStatus = status;
+//            this.seatSensor.setSeatStatusInGUI(status);
+//        }
   
      public void seatSignal(int weight) throws InterruptedException {
-        //System.out.println("The temp is now " + temp);
-        //gui.getCurrentTempTxt().setText(temp + "");
-        seatSensorView.getjTextField2().setText(weight +"");
+       
+         System.out.println("The weight is now " + weight);
+        gui1.getWeightFromGUI().setText(weight +"");
         
         if (weight < 20) {
            // beeper.beep();
             config.sendEvent(new ScanSeatSensor(weight));
+            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
+            System.out.println("invalid");
+        }
+        else{
+             gui1.getjSeat_validatonFromGUI().setBackground(Color.green);
+             System.out.println("valid ");
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////

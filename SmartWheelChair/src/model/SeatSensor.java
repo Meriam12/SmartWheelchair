@@ -61,29 +61,29 @@ public boolean detectBody()
 
     
 
-    public void setSeatStatusInGUI(boolean status) {
-        seatState = status;
-        if (status) {
-            wheelchair.getGuiSeatSensor().getjTextField1().setText("Valid");
-        } else {
-            wheelchair.getGuiSeatSensor().getjTextField1().setText("Invalid");
-        }
-
-    }
+//    public void setSeatStatusInGUI(boolean status) {
+//        seatState = status;
+//        if (status) {
+//            wheelchair.getGuiSeatSensor().getjTextField1().setText("Valid");
+//        } else {
+//            wheelchair.getGuiSeatSensor().getjTextField1().setText("Invalid");
+//        }
+//
+//    }
     
-
-    public void checkSeatSensor(){ //this num is in killos
-        if (weight < 20){   //since babies are not allowed to use this wheelchair
-             setSeatState(false);
-             setSeatStatusInGUI(false);
-             
-        }
-        else{
-            setSeatState(true);
-            setSeatStatusInGUI(true);
-        }
-    }
-  
+//
+//    public void checkSeatSensor(){ //this num is in killos
+//        if (weight < 20){   //since babies are not allowed to use this wheelchair
+//             setSeatState(false);
+//             setSeatStatusInGUI(false);
+//             
+//        }
+//        else{
+//            setSeatState(true);
+//            setSeatStatusInGUI(true);
+//        }
+//    }
+//  
     
 
 
