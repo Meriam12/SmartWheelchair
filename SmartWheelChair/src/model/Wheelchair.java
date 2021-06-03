@@ -142,18 +142,25 @@ public class Wheelchair implements Movement {
   
      public void seatSignal(int weight) throws InterruptedException {
        
+         
+         
          System.out.println("The weight is now " + weight);
         gui1.getWeightFromGUI().setText(weight +"");
         
+        if(gui1.getjButton5().getModel().isPressed()){
+        config.sendEvent(new ScanSeatSensor(weight));
         if (weight < 20) {
            // beeper.beep();
-            config.sendEvent(new ScanSeatSensor(weight));
             gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
             System.out.println("invalid");
         }
         else{
              gui1.getjSeat_validatonFromGUI().setBackground(Color.green);
              System.out.println("valid ");
+        }
+        }
+        else{
+            
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////

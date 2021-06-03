@@ -714,6 +714,10 @@ public class GUI extends javax.swing.JFrame {
     public JPanel getjSeat_validatonFromGUI() {
         return seat_validaton;
     }
+
+    public JButton getjButton5() {
+        return jButton5;
+    }
         
             
         public JRadioButton getForwardRadio() {
