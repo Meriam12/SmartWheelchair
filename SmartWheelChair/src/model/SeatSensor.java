@@ -19,41 +19,14 @@ import java.util.logging.Logger;
 public class SeatSensor extends Thread {
     
         private int random() {
-                            
-                            int w = 0;
-                            
-//                            new java.util.Timer().schedule( 
-//                                    new java.util.TimerTask() {
-//                                        @Override
-//                                        public void run() {
-//                                            // your code here
-//                                        }
-//                                    }, 
-//                                    10000    // 10 seconds
-//                            );
-//                            w = 50;
-//                            new java.util.Timer().schedule( 
-//                                    new java.util.TimerTask() {
-//                                        @Override
-//                                        public void run() {
-//                                            // your code here
-//                                        }
-//                                    }, 
-//                                    10000    // 10 seconds
-//                            );
-//                            w = 15;
-//                             new java.util.Timer().schedule( 
-//                                    new java.util.TimerTask() {
-//                                        @Override
-//                                        public void run() {
-//                                            // your code here
-//                                        }
-//                                    }, 
-//                                    5000    // 5 seconds
-//                            );
-                             w = 50;
-                            
-            return w;
+        
+//        if (min >= max) {
+//            throw new IllegalArgumentException("max must be greater than min");
+//        }
+//        
+//        Random r = new Random();
+//        return r.nextInt((max - min) + 1) + min;
+            return 50;
     }
    
 private boolean seatState;
@@ -65,7 +38,7 @@ private int weight;
 
     public SeatSensor(Wheelchair wheelchair) {
         this.wheelchair = wheelchair;
-        this.weight = random(); //////////////////////////////////////////
+        this.weight = 0;
     }
 
     
@@ -88,29 +61,29 @@ public boolean detectBody()
 
     
 
-//    public void setSeatStatusInGUI(boolean status) {
-//        seatState = status;
-//        if (status) {
-//            wheelchair.getGuiSeatSensor().getjTextField1().setText("Valid");
-//        } else {
-//            wheelchair.getGuiSeatSensor().getjTextField1().setText("Invalid");
-//        }
-//
-//    }
+    public void setSeatStatusInGUI(boolean status) {
+        seatState = status;
+        if (status) {
+            wheelchair.getGuiSeatSensor().getjTextField1().setText("Valid");
+        } else {
+            wheelchair.getGuiSeatSensor().getjTextField1().setText("Invalid");
+        }
+
+    }
     
-//
-//    public void checkSeatSensor(){ //this num is in killos
-//        if (weight < 20){   //since babies are not allowed to use this wheelchair
-//             setSeatState(false);
-//             setSeatStatusInGUI(false);
-//             
-//        }
-//        else{
-//            setSeatState(true);
-//            setSeatStatusInGUI(true);
-//        }
-//    }
-//  
+
+    public void checkSeatSensor(){ //this num is in killos
+        if (weight < 20){   //since babies are not allowed to use this wheelchair
+             setSeatState(false);
+             setSeatStatusInGUI(false);
+             
+        }
+        else{
+            setSeatState(true);
+            setSeatStatusInGUI(true);
+        }
+    }
+  
     
 
 
