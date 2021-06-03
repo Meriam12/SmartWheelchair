@@ -3,18 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/a_h_s/Desktop/SmartWheelchair/SmartWheelChair/src/esper/SmartWheelChair.java</file>
-            <file>file:/C:/Users/a_h_s/Desktop/SmartWheelchair/SmartWheelChair/src/esper/config.java</file>
-            <file>file:/C:/Users/a_h_s/Desktop/SmartWheelchair/SmartWheelChair/src/model/BeltSensor.java</file>
-            <file>file:/C:/Users/a_h_s/Desktop/SmartWheelchair/SmartWheelChair/src/events/ScanBeltSensor.java</file>
-            <file>file:/C:/Users/a_h_s/Desktop/SmartWheelchair/SmartWheelChair/src/model/Wheelchair.java</file>
-=======
             <file>file:/C:/Users/meriam/Desktop/SmartWheelchair/SmartWheelChair/src/esper/SmartWheelChair.java</file>
             <file>file:/C:/Users/meriam/Desktop/SmartWheelchair/SmartWheelChair/src/view/GUI.java</file>
             <file>file:/C:/Users/meriam/Desktop/SmartWheelchair/SmartWheelChair/src/model/Wheelchair.java</file>
             <file>file:/C:/Users/meriam/Desktop/SmartWheelchair/SmartWheelChair/src/model/BatteryConsumption.java</file>
->>>>>>> eb9b6aac44f580d2f57ebc28df10e7d22a50040b
         </group>
     </open-files>
 </project-private>
