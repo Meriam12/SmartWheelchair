@@ -163,7 +163,7 @@ public class Wheelchair implements Movement {
 
            boolean b=  gui1.getForwardButton().isEnabled();
            
-           if (b == true)
+                   if(b == true)
            {
               batteryLevel -= 10;
               this.batteryCons.setBatteryLevel(batteryLevel);
