@@ -154,6 +154,7 @@ public class Wheelchair implements Movement {
      
      
    //////////////////////////////////// Battery sensor ////////////////////////////
+     
      public void BatteruConsumption(int batteryLevel)
              
      {
@@ -161,7 +162,43 @@ public class Wheelchair implements Movement {
             gui1.getBatteryField().setText(batteryLevel + "");
             this.batteryCons.setBatteryLevel(batteryLevel);
 
-           boolean b=  gui1.getForwardButton().isEnabled();
+            
+            // Forward Button
+           boolean f=  gui1.getForwardRadio().isSelected();
+           
+                   if(f == true)
+           {
+              batteryLevel -= 10;
+              this.batteryCons.setBatteryLevel(batteryLevel);
+              gui1.getBatteryField().setText(batteryLevel + "");
+                       if (batteryLevel > 20)
+            {
+                System.out.println("The battery don't want to be charged.");
+            }
+            
+            else if (batteryLevel <= 10 && batteryLevel >= 5 )
+            {
+            
+                System.err.println("You must charge the battery now.");
+            
+            }
+            
+            
+            else if (batteryLevel < 0)
+            {
+                 batteryLevel= batteryCons.chargeBattery();
+              this.batteryCons.setBatteryLevel(batteryLevel);
+              gui1.getBatteryField().setText(batteryLevel + "");
+            
+            }
+             
+      
+            
+           }
+           
+                   
+              // Back button      
+              boolean b=  gui1.getBackRadio().isSelected();
            
                    if(b == true)
            {
@@ -181,7 +218,73 @@ public class Wheelchair implements Movement {
             }
             
             
-            else if (batteryLevel < 5)
+            else if (batteryLevel < 0)
+            {
+                 batteryLevel= batteryCons.chargeBattery();
+              this.batteryCons.setBatteryLevel(batteryLevel);
+              gui1.getBatteryField().setText(batteryLevel + "");
+            
+            }
+            
+           }
+               
+                   
+             // Left button      
+                  
+                boolean l=  gui1.getLeftRadio().isSelected();
+           
+                   if(l == true)
+           {
+              batteryLevel -= 5;
+              this.batteryCons.setBatteryLevel(batteryLevel);
+              gui1.getBatteryField().setText(batteryLevel + "");
+                       if (batteryLevel > 20)
+            {
+                System.out.println("The battery don't want to be charged.");
+            }
+            
+            else if (batteryLevel <= 10 && batteryLevel >= 5 )
+            {
+            
+                System.err.println("You must charge the battery now.");
+            
+            }
+            
+            
+            else if (batteryLevel < 0)
+            {
+                 batteryLevel= batteryCons.chargeBattery();
+              this.batteryCons.setBatteryLevel(batteryLevel);
+              gui1.getBatteryField().setText(batteryLevel + "");
+            
+            }
+
+            
+           }
+                   
+                   
+                // Right button   
+                boolean r=  gui1.getRightRadio().isSelected();
+           
+                   if(r == true)
+           {
+              batteryLevel -= 5;
+              this.batteryCons.setBatteryLevel(batteryLevel);
+              gui1.getBatteryField().setText(batteryLevel + "");
+                       if (batteryLevel > 20)
+            {
+                System.out.println("The battery don't want to be charged.");
+            }
+            
+            else if (batteryLevel <= 10 && batteryLevel >= 5 )
+            {
+            
+                System.err.println("You must charge the battery now.");
+            
+            }
+            
+            
+            else if (batteryLevel < 0)
             {
                  batteryLevel= batteryCons.chargeBattery();
               this.batteryCons.setBatteryLevel(batteryLevel);
@@ -192,6 +295,7 @@ public class Wheelchair implements Movement {
       
             
            }
+           
            
      }
 }
