@@ -52,7 +52,7 @@ public class GPSTracker extends Thread {
     public String changeDirection()
     {
     return ("");
-    }
+    }[82,82,142]
     
      @Override
     public void run() {
