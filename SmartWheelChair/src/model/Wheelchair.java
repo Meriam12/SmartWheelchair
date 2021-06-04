@@ -179,11 +179,15 @@ public class Wheelchair implements Movement {
      /*------------------------------------------------Seat Belt -----------------------------------------*/
      public void seatBeltsignal() {
      boolean check = gui1.getjRadioButton2().isSelected();
+     
+     if(gui1.getjRadioButton4().isSelected() == true){
+          gui1.getjRadioButton2().setEnabled(true);
      if( check == true){
           config.sendEvent(new ScanBeltSensor(check));
          this.beltSensor.checkBelt(check);
          System.out.println("the seat is fasten");
          gui1.getjLabel25().setVisible(true);
+         
          //set the icon to true
      } else {
          config.sendEvent(new ScanBeltSensor(check));
@@ -191,6 +195,11 @@ public class Wheelchair implements Movement {
          System.out.println("the seat is unfasten");
          gui1.getjLabel25().setVisible(false);
          //set the icon to false
+     
+     }
+     } else {
+     
+     gui1.getjRadioButton2().setEnabled(false);
      
      }
      
