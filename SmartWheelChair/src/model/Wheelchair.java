@@ -582,10 +582,10 @@ gui1.getjTabbedPane1().setVisible(true);
         gui1.getdisTXT().setText("0");
           }
      
-     }}
+     }
          
-    }
-    }
+    
+    
             
      /////////////////////////////////////////////// Joystick ///////////////////////////////////////////////////
      
@@ -652,8 +652,9 @@ gui1.getjTabbedPane1().setVisible(true);
               System.out.println("ALERT! YOU 'RE TURNING RIGHT.");
              }
     
-    }
+  }
+}
      
 
-}
+
 

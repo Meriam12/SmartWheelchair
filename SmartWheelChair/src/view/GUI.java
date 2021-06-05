@@ -19,6 +19,8 @@ import javax.swing.JTabbedPane;
  */
 public class GUI extends javax.swing.JFrame {
 
+    
+
     /**
      * Creates new form GUI
      */
@@ -95,7 +97,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
+       
         ForwardRadio = new javax.swing.JRadioButton();
         RightRadio = new javax.swing.JRadioButton();
         LeftRadio = new javax.swing.JRadioButton();
@@ -949,9 +951,9 @@ public JRadioButton getchangelocation() {
 //         return jButton10;
 //     }
 
-    public JButton getjButton11() {
-        return jButton11;
-    }
+//    public JButton getjButton11() {
+//        return jButton11;
+//    }
 
     public JButton getjButton2() {
         return jButton2;
@@ -1013,9 +1015,9 @@ public JRadioButton getchangelocation() {
         return jLabel23;
     }
 
-//    public JLabel getjLabel24() {
-//        return Handbrake;
-//    }
+    public JRadioButton getjLabel24() {
+        return HandBrake;
+    }
 
     public JLabel getjLabel3() {
         return jLabel3;
@@ -1055,9 +1057,9 @@ public JRadioButton getchangelocation() {
         return jPanel1;
     }
 
-    public JPanel getjPanel10() {
-        return jPanel10;
-    }
+//    public JPanel getjPanel10() {
+//        return jPanel10;
+//    }
 
     public JPanel getjPanel2() {
         return jPanel2;
