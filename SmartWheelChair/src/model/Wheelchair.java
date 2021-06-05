@@ -61,6 +61,11 @@ public class Wheelchair implements Movement {
         batteryCons.start();
         
         
+        gui1.getjRadioButton3().setEnabled(false);
+        gui1.getjRadioButton1().setEnabled(false);
+        gui1.getjRadioButton2().setEnabled(false);
+        
+        
     }
     
 
@@ -134,19 +139,20 @@ public class Wheelchair implements Movement {
     
      public void fingerprintScan() throws InterruptedException {
        
-         if(gui1.getjRadioButton4().isSelected() == true){
+         if(gui1.getjRadioButton4().isSelected() == true){ //power
         
-                gui1.getjRadioButton3().setEnabled(true);
-                gui1.getjRadioButton1().setEnabled(false);
-                gui1.getjRadioButton2().setEnabled(false);
+                gui1.getjRadioButton3().setEnabled(true); //fingerprint
+//                gui1.getjRadioButton1().setEnabled(false);//seat 
+//                gui1.getjRadioButton2().setEnabled(false); //seat belt
 
-                                if(gui1.getjRadioButton3().isSelected()){    
+                                if(gui1.getjRadioButton3().isSelected()){     //fingerprint
                                     
                                     int f = Integer.parseInt(gui1.getFingerprintField().getText());
-                                                if (f == fingerprintSensor.getFingerPrint()) {
+                                                if (f == fingerprintSensor.getUserFingerprint()) {
                                                     gui1.getFingerprint_status().setText("Status: Valid fingerprint");
                                                     System.out.println("Status: Valid fingerprint");
-                                                     gui1.getjRadioButton1().setEnabled(true);
+                                                     gui1.getjRadioButton1().setEnabled(true); //seat
+                                                     
                                                 }
                                                 else{
                                                     gui1.getFingerprint_status().setText("Status: Invalid fingerprint");
@@ -158,7 +164,7 @@ public class Wheelchair implements Movement {
                                     
                                 }
             }
-                 else{
+                 else{ //// else bta3t el power button
                      gui1.getjRadioButton3().setEnabled(false);
                      gui1.getjRadioButton1().setEnabled(false);
                      gui1.getjRadioButton2().setEnabled(false);
@@ -191,12 +197,15 @@ public class Wheelchair implements Movement {
                                         }
                                         else{
                                              gui1.getjSeat_validatonFromGUI().setBackground(Color.green);
+                                            gui1.getjRadioButton2().setEnabled(true);
                                              System.out.println("valid seat");
-                                             gui1.getjRadioButton2().setEnabled(true);
+                                         
                                         }
                         }
                         else{
-                            //gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
+                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
+                            gui1.getjRadioButton2().setEnabled(false);
+                            
                         }
     }
 
@@ -209,10 +218,10 @@ public class Wheelchair implements Movement {
      boolean check = gui1.getjRadioButton2().isSelected();
      
             if( check == true){
-                        config.sendEvent(new ScanBeltSensor(check));
+                       config.sendEvent(new ScanBeltSensor(check));
                        this.beltSensor.checkBelt(check);
                        System.out.println("the seat is fasten");
-                       gui1.getjLabel25().setVisible(true);
+                       gui1.getjLabel25().setVisible(true); 
 
                 //set the icon to true
             } else {

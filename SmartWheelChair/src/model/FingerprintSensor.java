@@ -70,6 +70,7 @@ private int userFingerprint;
     public int getFingerPrint() {
         return fingerPrint;
     }
+    
 
     
 public boolean IdentifyFingerprint(int temp)

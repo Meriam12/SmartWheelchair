@@ -49,6 +49,15 @@ public class SmartWheelChair {
                     
                 });
                     
+                    
+//                      config.createStatement("select  beltState from ScanBeltSensor")
+//                .setSubscriber(new Object() {
+//                    public void update( boolean beltState) throws InterruptedException {
+//                        wheelchair.seatBeltsignal();
+//                    }
+//                    
+//                });
+                    
 
                   
     }
