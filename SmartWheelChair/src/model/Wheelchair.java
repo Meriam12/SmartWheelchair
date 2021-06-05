@@ -130,7 +130,43 @@ public class Wheelchair implements Movement {
     System.out.print("Ayyy 7aga");
     
     }
+    ///////////////////////////////////////////Fingerprint Sensor/////////////////////////////////////
+    
+     public void fingerprintScan() throws InterruptedException {
+       
+         if(gui1.getjRadioButton4().isSelected() == true){
+         
+        //System.out.println("The weight is now " + weight);
+        //gui1.getWeightFromGUI().setText(weight +"");
+        gui1.getjRadioButton3().setEnabled(true);
 
+                        if(gui1.getjRadioButton3().isSelected()){                         
+                              int f = Integer.parseInt(gui1.getWeightFromGUI().getText());
+                              
+                                        if (f ==fingerprintSensor.getUserFingerprint() ) {
+                                            gui1.getFingerprint_status().setText("Valid");
+                                            System.out.println("Status: Valid fingerprint");
+                                             gui1.getjRadioButton1().setEnabled(false);
+                                        }
+                                        else{
+                                            gui1.getFingerprint_status().setText("Invalid");
+                                             System.out.println("Status: Invalid fingerprint");
+                                        }
+                        }
+                        else{
+                                             System.out.println("Status: ");
+                        }
+    }
+         else{
+             gui1.getjRadioButton3().setEnabled(false);
+         }
+ }
+    
+    
+    
+    
+    
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////// Seat Sensor /////////////////////////////////////////
         
 //    public SeatSensorView getGuiSeatSensor(){
@@ -142,35 +178,32 @@ public class Wheelchair implements Movement {
 //        }
  public void seatSignal(int weight) throws InterruptedException {
        
-         if(gui1.getjRadioButton4().isSelected() == true){
          
         System.out.println("The weight is now " + weight);
         gui1.getWeightFromGUI().setText(weight +"");
-        gui1.getjRadioButton1().setEnabled(false);
+
 
                         if(gui1.getjRadioButton1().isSelected()){
-                              Thread.sleep(4000);
+                             
                               weight = seatSensor.SeatWeight();
                               this.seatSensor.setWeight(weight);
                               gui1.getWeightFromGUI().setText(weight + "");
                               
                                         if (weight < 20) {
-                                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
-                                            System.out.println("invalid");
+                                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);  ///a2ol please take a seat
+                                            System.out.println("invalid seat");
                                         }
                                         else{
                                              gui1.getjSeat_validatonFromGUI().setBackground(Color.green);
-                                             System.out.println("valid ");
+                                             System.out.println("valid seat");
                                         }
                         }
                         else{
                             gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
                         }
     }
-         else{
-             gui1.getjRadioButton1().setEnabled(false);
-         }
- }
+
+ 
     ////////////////////////////////////////////////////////////////////////////////////////////////
      
           //inclasswheelchair

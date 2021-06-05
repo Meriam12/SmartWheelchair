@@ -29,7 +29,7 @@ public class SmartWheelChair {
          config.createStatement("select fingerPrint from ScanFingerPrint")
                 .setSubscriber(new Object() {
                     public void update(int fingerPrint) throws InterruptedException {
-                        wheelchair.tempSignal(fingerPrint);
+                        wheelchair.fingerprintScan();
                     }
                 });
          
@@ -48,6 +48,8 @@ public class SmartWheelChair {
                     }
                     
                 });
+                    
+
                   
     }
     
