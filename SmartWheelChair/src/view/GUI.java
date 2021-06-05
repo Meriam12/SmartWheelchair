@@ -1195,14 +1195,16 @@ public class GUI extends javax.swing.JFrame {
     public JRadioButton getjRadioButton4() {
         return jRadioButton4;
     }
-       public JTextField getdisTXT() {
-        return jTextField1;
-    }
+
     public JComboBox distenation() {
         return dist11;
     }
     public JComboBox currentloc() {
         return Currentloc1;
+    }
+    
+           public JTextField getdisTXT() {
+        return disTXT;
     }
 
 //           public JLabel getgps1() {

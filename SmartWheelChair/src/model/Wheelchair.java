@@ -527,12 +527,13 @@ public class Wheelchair implements Movement {
         
              String cl = gui1.currentloc().getSelectedItem().toString();
          String dest = gui1.distenation().getSelectedItem().toString();
-         // System.out.println(cl);
+          //  System.out.println(cl);
 //          int cl = Integer.parseInt(gui1.getlocbtn().getText());
 //           int dest = Integer.parseInt(gui1.getdistbtn().getText());
          if (cl.equals("Room") && dest.equals("Kitchen")){
 //         if (cl== 1 && dest== 2){
-          gui1.getjTabbedPane1().setVisible(true);
+           
+        gui1.getjTabbedPane1().setVisible(true);
           gui1.getjTabbedPane1().setSelectedIndex(0);
          gui1.getdisTXT().setText("2 meters");
           //  gui1.getgps().setVisible(true); 
@@ -541,7 +542,7 @@ public class Wheelchair implements Movement {
             else if (cl=="Kitchen" && dest=="Room"){
                 gui1.getjTabbedPane1().setVisible(true);
                 gui1.getjTabbedPane1().setSelectedIndex(5);
-     gui1.getdisTXT().setText("2 meters");
+                gui1.getdisTXT().setText("2 meters");
      }
          else if (cl=="Kitchen" && dest=="Bathroom"){
                  gui1.getjTabbedPane1().setVisible(true);
@@ -565,25 +566,28 @@ public class Wheelchair implements Movement {
      gui1.getdisTXT().setText("3 meter");
     }
             System.out.println("Distance is calculated");
-    }else
+    }
+    else
     {
            System.out.println("Distance is not calculated");
-         }
+    }
+    
      gui1.getjTabbedPane1().setVisible(false);
+     
     }
      
-     
-     public void changeDirection(){
-          if(gui1.getchangelocation().isSelected()) {
-         gui1.getjTabbedPane1().setVisible(false);
-
-        //gui1.currentloc().setSelectedIndex(0);
-         gui1.distenation().setSelectedItem("choose..");
-        gui1.getdisTXT().setText("0");
-          }
-     
-     }
-         
+//     
+//     public void changeDirection(){
+//          if(gui1.getchangelocation().isSelected()) {
+//         gui1.getjTabbedPane1().setVisible(false);
+//
+//        //gui1.currentloc().setSelectedIndex(0);
+//         gui1.distenation().setSelectedItem("choose..");
+//        gui1.getdisTXT().setText("0");
+//          }
+//     
+//     }
+//         
     
     
             
