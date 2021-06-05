@@ -135,31 +135,30 @@ public class Wheelchair implements Movement {
      public void fingerprintScan() throws InterruptedException {
        
          if(gui1.getjRadioButton4().isSelected() == true){
-         
-        //System.out.println("The weight is now " + weight);
-        //gui1.getWeightFromGUI().setText(weight +"");
-        gui1.getjRadioButton3().setEnabled(true);
+        
+                gui1.getjRadioButton3().setEnabled(true);
+                gui1.getjRadioButton1().setEnabled(false);
+                gui1.getjRadioButton2().setEnabled(false);
 
-                        if(gui1.getjRadioButton3().isSelected()){                         
-                              int f = Integer.parseInt(gui1.getWeightFromGUI().getText());
-                              
-                                        if (f ==fingerprintSensor.getUserFingerprint() ) {
-                                            gui1.getFingerprint_status().setText("Valid");
-                                            System.out.println("Status: Valid fingerprint");
-                                             gui1.getjRadioButton1().setEnabled(false);
-                                        }
-                                        else{
-                                            gui1.getFingerprint_status().setText("Invalid");
-                                             System.out.println("Status: Invalid fingerprint");
-                                        }
-                        }
-                        else{
-                                             System.out.println("Status: ");
-                        }
-    }
-         else{
-             gui1.getjRadioButton3().setEnabled(false);
-         }
+                                if(gui1.getjRadioButton3().isSelected()){    
+                                      int f = Integer.parseInt(gui1.getFingerprintField().getText());
+                                                if (f ==  Integer.parseInt(gui1.getFingerprintField().getText())) {
+                                                    gui1.getFingerprint_status().setText("Valid");
+                                                    System.out.println("Status: Valid fingerprint");
+                                                     gui1.getjRadioButton1().setEnabled(true);
+                                                }
+                                                else{
+                                                    gui1.getFingerprint_status().setText("Invalid");
+                                                     System.out.println("Status: Invalid fingerprint");
+                                                }
+                                }
+                                else{
+                                                     System.out.println("Status: ");
+                                }
+            }
+                 else{
+                     gui1.getjRadioButton3().setEnabled(false);
+                 }
  }
     
     
@@ -169,13 +168,6 @@ public class Wheelchair implements Movement {
     //////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////// Seat Sensor /////////////////////////////////////////
         
-//    public SeatSensorView getGuiSeatSensor(){
-//        return seatSensorView;
-//    }
-//        public void setSeatStatusInGUI(boolean status){
-//            seatStatus = status;
-//            this.seatSensor.setSeatStatusInGUI(status);
-//        }
  public void seatSignal(int weight) throws InterruptedException {
        
          
@@ -211,7 +203,7 @@ public class Wheelchair implements Movement {
      public void seatBeltsignal() {
      boolean check = gui1.getjRadioButton2().isSelected();
      
-     if(gui1.getjRadioButton4().isSelected() == true){
+
           gui1.getjRadioButton2().setEnabled(true);
      if( check == true){
           config.sendEvent(new ScanBeltSensor(check));
@@ -228,11 +220,7 @@ public class Wheelchair implements Movement {
          //set the icon to false
      
      }
-     } else {
      
-     gui1.getjRadioButton2().setEnabled(false);
-     
-     }
      
      }
      
