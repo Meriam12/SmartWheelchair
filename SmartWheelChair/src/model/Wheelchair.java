@@ -383,8 +383,6 @@ public class Wheelchair implements Movement {
            
            
      }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
      public void calculateDistance(){
 
@@ -431,8 +429,5 @@ public class Wheelchair implements Movement {
      /////////////////////////////////////////////// Joystick ///////////////////////////////////////////////////
      
 
-     
-
-=======
->>>>>>> parent of 623f94a (gpppps w gui)
+ 
 }
