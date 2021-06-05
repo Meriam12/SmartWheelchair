@@ -385,13 +385,12 @@ public class GUI extends javax.swing.JFrame {
                         .addGap(47, 47, 47)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-<<<<<<< Updated upstream
-=======
+
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(201, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
->>>>>>> Stashed changes
+
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -840,17 +839,17 @@ public class GUI extends javax.swing.JFrame {
         return objectLable;
     }
 
-    public JTextField getDistbtn() {
-        return distbtn;
-    }
+//     public JTextField getDistbtn() {
+//         return distbtn;
+//     }
 
     public JButton getjButton1() {
         return jButton1;
     }
 
-    public JButton getjButton10() {
-        return jButton10;
-    }
+//     public JButton getjButton10() {
+//         return jButton10;
+//     }
 
     public JButton getjButton11() {
         return jButton11;
@@ -944,9 +943,9 @@ public class GUI extends javax.swing.JFrame {
         return jLabel8;
     }
 
-    public JLabel getjLabel9() {
-        return jLabel9;
-    }
+//     public JLabel getjLabel9() {
+//         return jLabel9;
+//     }
 
     public JPanel getjPanel1() {
         return jPanel1;
@@ -984,9 +983,9 @@ public class GUI extends javax.swing.JFrame {
         return jPanel8;
     }
 
-    public JPanel getjPanel9() {
-        return jPanel9;
-    }
+//     public JPanel getjPanel9() {
+//         return jPanel9;
+//     }
 
     public JTextField getLocbtn() {
         return locbtn;
@@ -1174,13 +1173,13 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
-<<<<<<< Updated upstream
+
     private javax.swing.JTextField jTextField1;
-=======
+
     private javax.swing.JTextField locbtn;
     private javax.swing.JLabel objectLable;
     private javax.swing.JLabel photo;
->>>>>>> Stashed changes
+
     private javax.swing.JPanel seat_validaton;
     private javax.swing.JLabel speed;
     private javax.swing.JLabel speed_status;
