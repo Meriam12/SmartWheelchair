@@ -91,13 +91,7 @@ public class Wheelchair implements Movement {
 
         joyStick.start();
 
-        gui1.getjTabbedPane1().setVisible(false);
-        gui1.getjLabel9().setVisible(false);
-        gui1.getjLabel10().setVisible(false);
-        gui1.getjLabel26().setVisible(false);
-        gui1.getjLabel27().setVisible(false);
-        gui1.getjLabel28().setVisible(false);
-        gui1.getjLabel29().setVisible(false);
+
         
 
         gui1.getjRadioButton3().setEnabled(false);
@@ -107,7 +101,13 @@ public class Wheelchair implements Movement {
         // gui1.getgps().setVisible(false);
 //      gui1.getgps1().setVisible(false);
 
-
+        gui1.getjTabbedPane1().setVisible(false);
+        gui1.getjLabel9().setVisible(false);
+        gui1.getjLabel10().setVisible(false);
+        gui1.getjLabel26().setVisible(false);
+        gui1.getjLabel27().setVisible(false);
+        gui1.getjLabel28().setVisible(false);
+        gui1.getjLabel29().setVisible(false);
 //      
 
        
@@ -119,6 +119,8 @@ public class Wheelchair implements Movement {
         gui1.getDoorPhoto().setVisible(false);
         gui1.getSmokePhoto().setVisible(false);
         gui1.getTreePhoto().setVisible(false);
+        
+
 
     }
 //     
@@ -523,19 +525,23 @@ public class Wheelchair implements Movement {
     public void calculateDistance(){
 
        
-    if(gui1.getjRadioButton50().isSelected()) {
+    if(gui1.getjRadioButton50().isSelected() == true) {
         
-             String cl = gui1.currentloc().getSelectedItem().toString();
+   
+        
+         String cl = gui1.currentloc().getSelectedItem().toString();
          String dest = gui1.distenation().getSelectedItem().toString();
           //  System.out.println(cl);
 //          int cl = Integer.parseInt(gui1.getlocbtn().getText());
 //           int dest = Integer.parseInt(gui1.getdistbtn().getText());
-         if (cl.equals("Room") && dest.equals("Kitchen")){
+         if (cl == "Room" && dest =="Kitchen"){
 //         if (cl== 1 && dest== 2){
-           
-        gui1.getjTabbedPane1().setVisible(true);
+          
+         gui1.getjTabbedPane1().setVisible(true);
           gui1.getjTabbedPane1().setSelectedIndex(0);
-         gui1.getdisTXT().setText("2 meters");
+         
+         
+           gui1.getdisTXT().setText("2 meters");
           //  gui1.getgps().setVisible(true); 
 //        gui1.getgps1().setVisible(false); 
         }
@@ -570,24 +576,26 @@ public class Wheelchair implements Movement {
     else
     {
            System.out.println("Distance is not calculated");
+           gui1.getjTabbedPane1().setVisible(false);
     }
     
-     gui1.getjTabbedPane1().setVisible(false);
+   
      
     }
      
-//     
-//     public void changeDirection(){
-//          if(gui1.getchangelocation().isSelected()) {
-//         gui1.getjTabbedPane1().setVisible(false);
-//
-//        //gui1.currentloc().setSelectedIndex(0);
-//         gui1.distenation().setSelectedItem("choose..");
-//        gui1.getdisTXT().setText("0");
-//          }
-//     
-//     }
-//         
+     
+     public void changeDirection(){
+          if(gui1.getchangelocation().isSelected() == true) {
+         
+             // gui1.getjTabbedPane1().setVisible(false);
+         gui1.getdisTXT().setText("0");
+        //gui1.currentloc().setSelectedIndex(0);
+         gui1.distenation().setSelectedItem("choose..");
+        
+          }
+     
+     }
+         
     
     
             

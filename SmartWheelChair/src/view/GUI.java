@@ -685,8 +685,9 @@ public class GUI extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BackRadio)
                             .addComponent(ForwardRadio))
-                        .addGap(33, 33, 33)
-                        .addComponent(RightRadio))
+                        .addGap(18, 18, 18)
+                        .addComponent(RightRadio)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -724,10 +725,10 @@ public class GUI extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jRadioButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(HandBrake, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap(91, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(ForwardRadio)
@@ -736,10 +737,10 @@ public class GUI extends javax.swing.JFrame {
                                 .addContainerGap())
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(LeftRadio)
-                                .addGap(53, 53, 53))
+                                .addGap(56, 56, 56))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(RightRadio)
-                                .addGap(53, 53, 53))))))
+                                .addGap(58, 58, 58))))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -797,6 +798,8 @@ public class GUI extends javax.swing.JFrame {
     private void fingerprintFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fingerprintFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fingerprintFieldActionPerformed
+
+                                   
 
     public JTextField getFingerprintField() {
         return fingerprintField;
@@ -921,14 +924,10 @@ public class GUI extends javax.swing.JFrame {
         return wallPhoto;
     }
 
-    /**
-     *
-     * @return
-     */
-    public JTabbedPane getjTabbedPane1()
-            {
-            return jTabbedPane1;
-            }
+   
+    public JTabbedPane getjTabbedPane1() {
+        return jTabbedPane1;
+    }
 
     public JLabel getObjectLable() {
         return objectLable;
@@ -1245,7 +1244,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel fingerprint_status;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
