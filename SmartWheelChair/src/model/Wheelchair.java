@@ -16,7 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import view.BatteryConsumptionView;
 import view.GUI;
-
+import events.PowerON;
 /**
  *
  * @author a_h_s
@@ -38,6 +38,7 @@ public class Wheelchair implements Movement {
 
     private Camera c;
     private Brake brake;
+    private PowerOffOn p;
 
     private Joystick joyStick;
 
@@ -64,7 +65,7 @@ public class Wheelchair implements Movement {
       gui1.setLocationRelativeTo(null);
        gui1.setVisible(true);
        
-       
+       p = new PowerOffOn(this);
         fingerprintSensor = new FingerprintSensor(this);
         beltSensor = new BeltSensor(this);
         seatSensor = new SeatSensor(this);
@@ -91,9 +92,13 @@ public class Wheelchair implements Movement {
         //gui1.getObjectImage().setVisible(true);
 
         joyStick.start();
+<<<<<<< Updated upstream
 
 
         
+=======
+        p.start();
+>>>>>>> Stashed changes
 
         gui1.getjRadioButton3().setEnabled(false);
         gui1.getjRadioButton1().setEnabled(false);
@@ -185,6 +190,53 @@ public class Wheelchair implements Movement {
         return gui;
     }
 
+    
+    public void Power(){
+    
+    if (gui1.getjRadioButton4().isSelected() == false){
+    
+    
+    System.out.println("henaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        gui1.getjRadioButton3().setEnabled(false);
+        gui1.getjRadioButton1().setEnabled(false);
+        gui1.getjRadioButton2().setEnabled(false);
+       
+        gui1.getEmptySeat().setVisible(false);
+        gui1.getSeated().setVisible(false);
+        
+        
+        gui1.getWallPhoto().setVisible(false);
+        gui1.getDoorPhoto().setVisible(false);
+        gui1.getSmokePhoto().setVisible(false);
+        gui1.getTreePhoto().setVisible(false);
+    
+    
+         gui1.getBackRadio().setEnabled(false);
+         gui1.getForwardRadio().setEnabled(false);
+         gui1.getRightRadio().setEnabled(false);
+         gui1.getLeftRadio().setEnabled(false);
+         gui1.getjButton11().setEnabled(false);
+         gui1.getjRadioButton50().setEnabled(false);
+         gui1.getSpeed().setVisible(false);
+    
+         //config.sendEvent(new PowerON(false));
+    }  
+    else {
+              gui1.getBackRadio().setEnabled(true);
+         gui1.getForwardRadio().setEnabled(true);
+         gui1.getRightRadio().setEnabled(true);
+         gui1.getLeftRadio().setEnabled(true);
+         gui1.getjButton11().setEnabled(true);
+         gui1.getjRadioButton50().setEnabled(true);
+         gui1.getSpeed().setVisible(true);
+         
+         
+     
+    }
+    
+    
+    }
+    
     public void DetectObject(String c){ //DetectObject
     
     

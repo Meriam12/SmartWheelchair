@@ -66,7 +66,7 @@ public class Camera extends Thread{
             recognizeObject();
             wheelchair.identifyObject(getScannedOject());
             try {
-                this.sleep(1000);
+                this.sleep(3500);
             } catch (InterruptedException ex) {
                 Logger.getLogger(FingerprintSensor.class.getName()).log(Level.SEVERE, null, ex);
             }

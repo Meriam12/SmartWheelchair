@@ -14,6 +14,7 @@ import events.CheckBloodPressure;
 import events.CheckBrake;
 import events.CheckHeartRate;
 import events.ObjectDetectionReading;
+import events.PowerON;
 import events.ScanJoyStickMovement;
 import events.ScanBeltSensor;
 import events.ScanObject;
@@ -42,6 +43,7 @@ public class config {
         engine.getEPAdministrator().getConfiguration().addEventType(ScanObject.class);
         engine.getEPAdministrator().getConfiguration().addEventType(ScanSeatSensor.class);
         engine.getEPAdministrator().getConfiguration().addEventType(TakeDistination.class);
+        engine.getEPAdministrator().getConfiguration().addEventType(PowerON.class);
 
 
         

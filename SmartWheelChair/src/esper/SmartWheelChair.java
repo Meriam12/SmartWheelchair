@@ -84,6 +84,14 @@ public class SmartWheelChair {
                     }
                     
                 });
+                    
+                       config.createStatement("select state from PowerON")
+                .setSubscriber(new Object() {
+                    public void update(boolean state) throws InterruptedException {
+                        wheelchair.Power();
+                    }
+                    
+                });
                   
 
     }

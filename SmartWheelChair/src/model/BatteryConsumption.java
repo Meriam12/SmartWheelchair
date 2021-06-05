@@ -61,7 +61,7 @@ public class BatteryConsumption extends Thread{
         while (true) {
             //wheelchair.getFingerprintSensor().raiseTemp();
             try {
-                this.sleep(1000);
+                this.sleep(2000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(FingerprintSensor.class.getName()).log(Level.SEVERE, null, ex);
             }
