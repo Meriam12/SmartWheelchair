@@ -414,40 +414,39 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/camera.png"))); // NOI18N
 
-<<<<<<< Updated upstream
         photo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/update.png"))); // NOI18N
-=======
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/SEAAAAT.png"))); // NOI18N
         jLabel1.setText("jLabel1");
->>>>>>> Stashed changes
+
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-<<<<<<< Updated upstream
+
                 .addGap(223, 223, 223)
                 .addComponent(photo)
-=======
+
                 .addGap(141, 141, 141)
                 .addComponent(jLabel1)
->>>>>>> Stashed changes
+
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< Updated upstream
+
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(71, 71, 71)
                 .addComponent(photo)
                 .addContainerGap(116, Short.MAX_VALUE))
-=======
+
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap(116, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(115, 115, 115))
->>>>>>> Stashed changes
+
         );
 
         objectLable.setText("jLabel1");
