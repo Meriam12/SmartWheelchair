@@ -13,6 +13,7 @@ import events.ScanSeatSensor;
 import java.awt.Color;
 import java.util.Random;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import view.BatteryConsumptionView;
 import view.GUI;
 
@@ -402,7 +403,9 @@ public class Wheelchair implements Movement {
             else if (batteryLevel <= 10 && batteryLevel >= 5 )
             {
             
-                System.err.println("You must charge the battery now.");
+                JOptionPane.showMessageDialog(null, "You must charge the battery now.",
+                 "Battery Low !!", JOptionPane.ERROR_MESSAGE);
+               // System.err.println("You must charge the battery now.");
             
             }
             
@@ -435,8 +438,11 @@ public class Wheelchair implements Movement {
             
             else if (batteryLevel <= 10 && batteryLevel >= 5 )
             {
+                         JOptionPane.showMessageDialog(null, "You must charge the battery now.",
+                 "Battery Low !!", JOptionPane.ERROR_MESSAGE);
+               // System.err.println("You must charge the battery now.");
             
-                System.err.println("You must charge the battery now.");
+               
             
             }
             
@@ -469,8 +475,9 @@ public class Wheelchair implements Movement {
             else if (batteryLevel <= 10 && batteryLevel >= 5 )
             {
             
-                System.err.println("You must charge the battery now.");
-            
+                 JOptionPane.showMessageDialog(null, "You must charge the battery now.",
+                 "Battery Low !!", JOptionPane.ERROR_MESSAGE);
+               // System.err.println("You must charge the battery now.");            
             }
             
             
@@ -502,7 +509,9 @@ public class Wheelchair implements Movement {
             else if (batteryLevel <= 10 && batteryLevel >= 5 )
             {
             
-                System.err.println("You must charge the battery now.");
+                 JOptionPane.showMessageDialog(null, "You must charge the battery now.",
+                 "Battery Low !!", JOptionPane.ERROR_MESSAGE);
+               // System.err.println("You must charge the battery now.");
             
             }
             
@@ -573,29 +582,29 @@ public class Wheelchair implements Movement {
     }
             System.out.println("Distance is calculated");
     }
+    
+    
+
+
     else
     {
            System.out.println("Distance is not calculated");
            gui1.getjTabbedPane1().setVisible(false);
     }
     
-   
+    
+      if(gui1.getChangeLoction().isSelected() == true) {
+        
+        gui1.getjTabbedPane1().setVisible(false);
+        gui1.getdisTXT().setText("0");
+         gui1.distenation().setSelectedItem("choose..");
+          gui1.currentloc().setSelectedItem("choose..");
+    
+      }
+      
+  
      
     }
-     
-     
-     public void changeDirection(){
-          if(gui1.getchangelocation().isSelected() == true) {
-         
-             // gui1.getjTabbedPane1().setVisible(false);
-         gui1.getdisTXT().setText("0");
-        //gui1.currentloc().setSelectedIndex(0);
-         gui1.distenation().setSelectedItem("choose..");
-        
-          }
-     
-     }
-         
     
     
             
@@ -665,6 +674,10 @@ public class Wheelchair implements Movement {
              }
     
   }
+  
+  
+ 
+     
 }
      
 

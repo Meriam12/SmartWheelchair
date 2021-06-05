@@ -17,7 +17,7 @@ import view.GUI;
  * @author TOUMIE
  */
 public class GPSTracker extends Thread {
-     private GUI gui;
+    
     private String currentLocation;
     private String Destination;
 private Wheelchair wheelchair;
@@ -28,7 +28,7 @@ private Wheelchair wheelchair;
     }
     
     public GPSTracker(String currentLocation, String Destination) {
-        gui = new GUI();
+       
         this.currentLocation = currentLocation;
         this.Destination = Destination;
     }

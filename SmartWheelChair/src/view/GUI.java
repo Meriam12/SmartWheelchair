@@ -89,7 +89,6 @@ public class GUI extends javax.swing.JFrame {
         Currentloc1 = new javax.swing.JComboBox<>();
         disTXT = new javax.swing.JTextField();
         RadioButton50 = new javax.swing.JRadioButton();
-        Change = new javax.swing.JRadioButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -97,6 +96,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
+        ChangeLoction = new javax.swing.JRadioButton();
         ForwardRadio = new javax.swing.JRadioButton();
         RightRadio = new javax.swing.JRadioButton();
         LeftRadio = new javax.swing.JRadioButton();
@@ -509,13 +509,6 @@ public class GUI extends javax.swing.JFrame {
 
         RadioButton50.setText("Start");
 
-        Change.setText("Change Location");
-        Change.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ChangeActionPerformed(evt);
-            }
-        });
-
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/r_k.jpg"))); // NOI18N
         jLabel9.setText("jLabel9");
         jTabbedPane1.addTab("tab1", jLabel9);
@@ -538,6 +531,8 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/k_r.jpg"))); // NOI18N
         jTabbedPane1.addTab("tab6", jLabel29);
+
+        ChangeLoction.setText("Change Location");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -578,14 +573,15 @@ public class GUI extends javax.swing.JFrame {
                                         .addGap(75, 75, 75)
                                         .addComponent(jLabel21))
                                     .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(jPanel7Layout.createSequentialGroup()
                                                 .addGap(75, 75, 75)
-                                                .addComponent(RadioButton50))
-                                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(Change)))
-                                        .addGap(18, 18, 18)
+                                                .addComponent(RadioButton50)
+                                                .addGap(70, 70, 70))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(ChangeLoction)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                         .addComponent(disTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(31, 31, 31)))
                 .addGap(33, 33, 33))
@@ -624,7 +620,7 @@ public class GUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(disTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Change))
+                            .addComponent(ChangeLoction))
                         .addGap(24, 24, 24))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel22)
@@ -759,9 +755,6 @@ public class GUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-  private void ChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ChangeActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -805,8 +798,9 @@ public class GUI extends javax.swing.JFrame {
         return fingerprintField;
     }
 
-    public JRadioButton getchangelocation() {
-        return Change;
+    public JRadioButton getChangeLoction()
+    {
+    return ChangeLoction;
     }
 
     public JRadioButton getjRadioButton3() {
@@ -1228,7 +1222,7 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton BackRadio;
     private javax.swing.JLabel BatteryField;
-    private javax.swing.JRadioButton Change;
+    private javax.swing.JRadioButton ChangeLoction;
     private javax.swing.JComboBox<String> Currentloc1;
     private javax.swing.JRadioButton ForwardRadio;
     private javax.swing.JRadioButton HandBrake;

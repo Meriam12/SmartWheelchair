@@ -845,17 +845,18 @@
                                               <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
                                                   <Group type="102" attributes="0">
                                                       <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                                                       <Component id="RadioButton50" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="Change" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="ChangeLoction" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="disTXT" min="-2" pref="114" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -911,7 +912,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="disTXT" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                  <Component id="Change" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ChangeLoction" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           </Group>
@@ -1005,14 +1006,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Start"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="Change">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Change Location"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ChangeActionPerformed"/>
-              </Events>
             </Component>
             <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
 
@@ -1109,6 +1102,11 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JRadioButton" name="ChangeLoction">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Change Location"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JRadioButton" name="ForwardRadio">
