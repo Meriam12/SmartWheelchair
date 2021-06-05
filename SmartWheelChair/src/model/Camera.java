@@ -8,6 +8,7 @@ package model;
 import esper.config;
 import events.CheckBrake;
 import events.ScanObject;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,16 +19,25 @@ import java.util.logging.Logger;
 public class Camera extends Thread{
     
    private String scannedOject;
-   private boolean scannedObject;
+   //private boolean scannedObject;
+   private String[] listOfObject = {"tree","wall", "door", "smoke"} ;
+   private Wheelchair wheelchair;
    
 
     public Camera() {
+        
+    // listOfObject = {"tree","wall", "door", "smoke"};
     }
 
     public Camera(String scannedOject) {
         this.scannedOject = scannedOject;
     }
 
+    public Camera(Wheelchair wheelchair) {
+        this.wheelchair = wheelchair;
+    }
+
+    
         public void setScannedOject(String scannedOject) {
         this.scannedOject = scannedOject;
     }
@@ -36,16 +46,25 @@ public class Camera extends Thread{
         return scannedOject;
     }
 
+    public String[] getListOfObject() {
+        return listOfObject;
+    }
 
-    public void recognizeObject()
+
+    public String recognizeObject()
    
     {
-    
+    int idx = new Random().nextInt(getListOfObject().length);
+        String random = (getListOfObject() [idx]);
+        System.out.println(random);
+        setScannedOject(random);
+        return random;
     }
    @Override
     public void run() {
         while (true) {
-            //wheelchair.getFingerprintSensor().raiseTemp();
+            recognizeObject();
+            wheelchair.identifyObject(getScannedOject());
             try {
                 this.sleep(1000);
             } catch (InterruptedException ex) {
@@ -53,7 +72,7 @@ public class Camera extends Thread{
             }
             
             //config.sendEvent(new ScanFingerPrint(fingerPrint);
-            config.sendEvent(new ScanObject(scannedObject));
+            config.sendEvent(new ScanObject(scannedOject));
         }
     }
 }

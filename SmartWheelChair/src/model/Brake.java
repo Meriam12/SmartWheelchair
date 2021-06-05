@@ -19,6 +19,11 @@ public class Brake extends Thread{
     
     private int speed;
     private boolean brakeState;
+    private Wheelchair wheelchair;
+
+    public Brake(Wheelchair wheelchair) {
+        this.wheelchair = wheelchair;
+    }
 
     
     
@@ -37,7 +42,7 @@ public class Brake extends Thread{
     }
     
    
-    public double getSpeed() {
+    public int getSpeed() {
         return speed;
     }
     
@@ -47,6 +52,7 @@ public class Brake extends Thread{
         String m = "";
         
         return m;
+       
     }
     
     

@@ -58,8 +58,14 @@ public class SmartWheelChair {
 //                    
 //                });
                     
-
-                  
+                    config.createStatement("select scannedObject from ScanObject")
+                .setSubscriber(new Object() {
+                    public void update(String scannedObject) throws InterruptedException {
+                        wheelchair.DetectObject(scannedObject);
+                    }
+                    
+                });
+         
     }
     
 }

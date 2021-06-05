@@ -11,6 +11,8 @@ import events.ScanFingerPrint;
 import view.wheelchairView;
 import events.ScanSeatSensor;
 import java.awt.Color;
+import java.util.Random;
+import javax.swing.ImageIcon;
 import view.BatteryConsumptionView;
 import view.GUI;
 
@@ -30,6 +32,8 @@ public class Wheelchair implements Movement {
     private SeatSensor seatSensor;
     private Screen screen;
     private BatteryConsumption batteryCons;
+    private Camera c;
+    private Brake brake;
     
     private wheelchairView gui;
     private GUI gui1;
@@ -54,16 +58,21 @@ public class Wheelchair implements Movement {
         beltSensor = new BeltSensor(this);
         seatSensor = new SeatSensor(this);
         batteryCons = new BatteryConsumption(this);
+        c = new Camera(this);
+        brake = new Brake(this);
         
         fingerprintSensor.start();
         beltSensor.start();
         seatSensor.start();
         batteryCons.start();
+        c.start();
+        brake.start();
         
-        
+        //gui1.getObjectImage().setVisible(true);
         gui1.getjRadioButton3().setEnabled(false);
         gui1.getjRadioButton1().setEnabled(false);
         gui1.getjRadioButton2().setEnabled(false);
+       
         
         
     }
@@ -127,7 +136,65 @@ public class Wheelchair implements Movement {
         return gui;
     }
 
+    public void DetectObject(String c){ //DetectObject
     
+    
+      //String s= c.recognizeObject();
+    
+    
+    if (c.equals("wall") || c.equals("door") || c.equals("tree"))
+    {
+         gui1.getObjectLable().setText(c);
+         brake.Stop();
+         gui1.getjLabel9().setText("0 Km/H");
+
+    } else if(c.equals("smoke")) {
+        System.err.println("keep moving");
+        gui1.getjLabel9().setText(Integer.toString((int) brake.getSpeed()));
+    }
+    }
+    
+    public void identifyObject(String s){
+    
+     s= c.recognizeObject();
+     if(s.equals("wall"))
+     {
+//         ImageIcon icon = new ImageIcon("wall.jpg");
+//         gui1.getPhoto().setIcon(icon);
+         //gui1.getObjectImage().setVisible(true);
+         System.out.println("walaaaaaaaaaaaaaaaaaaaal");
+         
+         
+         
+     }
+     else if (s.equals("tree"))
+    
+     {
+//         ImageIcon icon = new ImageIcon("tree.jpg");
+//         gui1.getPhoto().setIcon(icon);
+          // gui1.getObjectImage().setVisible(true);
+          System.out.println("treeeeeeeeeeeeeeeeeeee");
+         
+     }
+     else if (s.equals("smoke"))
+    
+     {
+//         ImageIcon icon = new ImageIcon("smoke.jpg");
+//         gui1.getPhoto().setIcon(icon);
+          // gui1.getObjectImage().setVisible(true);
+         System.out.println("SMOOOOKE");
+     }
+     else if (s.equals("door"))
+    
+     {
+//         ImageIcon icon = new ImageIcon("door.jpg");
+//         gui1.getPhoto().setIcon(icon);
+       //    gui1.getObjectImage().setVisible(true);
+         System.out.println("DOOOOOOOOOOOOOOOOOOOOOOR");
+     }
+    
+    }
+ 
     
     @Override
     public void startMoving(){
