@@ -10,6 +10,9 @@ import events.ScanJoyStickMovement;
 import events.ScanObject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import view.GUI;
+
+    
 
 /**
  *
@@ -18,13 +21,20 @@ import java.util.logging.Logger;
 public class Joystick extends Thread {
     private String currentSelection;
         private Brake brake;
-
+        private GUI gui1;
+        private Wheelchair wheelchair;
+        
     public Joystick() {
     }
 
     public Joystick(String currentSelection, Brake brake) {
         this.currentSelection = currentSelection;
         this.brake = brake;
+    }
+
+    public Joystick(Wheelchair wheelchair) {
+        this.wheelchair = wheelchair;
+     //   brake.setSpeed(0);
     }
 
     public void setCurrentSelection(String currentSelection) {
@@ -45,14 +55,17 @@ public class Joystick extends Thread {
     public String setDirection(String direction) {
        return direction;
     }
-    //@Override
-    public void StartMoving(){
-        
+    
+    public int getBrakeSpeed(){
+      int s = brake.getSpeed();
+      return s;
     }
+    
  @Override
     public void run() {
         while (true) {
             //wheelchair.getFingerprintSensor().raiseTemp();
+        // wheelchair.StartMoving(brake.getSpeed());
             try {
                 this.sleep(1000);
             } catch (InterruptedException ex) {
@@ -60,7 +73,7 @@ public class Joystick extends Thread {
             }
             
             //config.sendEvent(new ScanFingerPrint(fingerPrint);
-            config.sendEvent(new ScanJoyStickMovement(currentSelection));
+            config.sendEvent(new ScanJoyStickMovement());
         }
     }
 }

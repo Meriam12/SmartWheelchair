@@ -11,6 +11,8 @@ import events.ScanFingerPrint;
 import view.wheelchairView;
 import events.ScanSeatSensor;
 import java.awt.Color;
+import java.util.Random;
+import javax.swing.ImageIcon;
 import view.BatteryConsumptionView;
 import view.GUI;
 
@@ -30,7 +32,16 @@ public class Wheelchair implements Movement {
     private SeatSensor seatSensor;
     private Screen screen;
     private BatteryConsumption batteryCons;
+
     private GPSTracker gps;
+
+    private Camera c;
+    private Brake brake;
+
+    private Joystick joyStick;
+
+    
+
     private wheelchairView gui;
     private GUI gui1;
     
@@ -57,16 +68,35 @@ public class Wheelchair implements Movement {
         beltSensor = new BeltSensor(this);
         seatSensor = new SeatSensor(this);
         batteryCons = new BatteryConsumption(this);
+
         gps = new GPSTracker(this);
+
+
+        c = new Camera(this);
+        brake = new Brake(this);
+
+        joyStick =  new Joystick(this);
+
+
         fingerprintSensor.start();
         beltSensor.start();
         seatSensor.start();
         batteryCons.start();
         gps.start();
+
+        c.start();
+        brake.start();
         
+        //gui1.getObjectImage().setVisible(true);
+
+        joyStick.start();
+
+        
+
         gui1.getjRadioButton3().setEnabled(false);
         gui1.getjRadioButton1().setEnabled(false);
         gui1.getjRadioButton2().setEnabled(false);
+
         // gui1.getgps().setVisible(false);
 //      gui1.getgps1().setVisible(false);
 
@@ -78,6 +108,17 @@ public class Wheelchair implements Movement {
         gui1.getjLabel28().setVisible(false);
         gui1.getjLabel29().setVisible(false);
 //      
+
+       
+        gui1.getEmptySeat().setVisible(false);
+        gui1.getSeated().setVisible(false);
+        
+        
+        gui1.getWallPhoto().setVisible(false);
+        gui1.getDoorPhoto().setVisible(false);
+        gui1.getSmokePhoto().setVisible(false);
+        gui1.getTreePhoto().setVisible(false);
+
     }
 //     
 //    
@@ -140,7 +181,88 @@ public class Wheelchair implements Movement {
         return gui;
     }
 
+    public void DetectObject(String c){ //DetectObject
     
+    
+      //String s= c.recognizeObject();
+    
+    
+    if (c.equals("wall") || c.equals("door") || c.equals("tree"))
+    {
+         
+         brake.Stop();
+         gui1.getSpeed().setText("0 Km/H");
+
+    } else if(c.equals("smoke")) {
+        System.err.println("keep moving");
+        gui1.getSpeed().setText(Integer.toString((int) brake.getSpeed())+ " Km/H");
+    }
+    }
+    
+    
+            
+//        gui1.getWallPhoto().setVisible(false);
+//        gui1.getDoorPhoto().setVisible(false);
+//        gui1.getSmokePhoto().setVisible(false);
+//        gui1.getTreePhoto().setVisible(false);
+    
+    public void identifyObject(String s){
+    
+     s= c.recognizeObject();
+     gui1.getObjectLable().setText(s);
+     if(s.equals("wall"))
+     {
+//         ImageIcon icon = new ImageIcon("wall.jpg");
+//         gui1.getPhoto().setIcon(icon);
+         //gui1.getObjectImage().setVisible(true);
+         gui1.getWallPhoto().setVisible(true);
+         System.out.println("walaaaaaaaaaaaaaaaaaaaal");
+         
+        gui1.getDoorPhoto().setVisible(false);
+        gui1.getSmokePhoto().setVisible(false);
+        gui1.getTreePhoto().setVisible(false);
+         
+     }
+     else if (s.equals("tree"))
+    
+     {
+//         ImageIcon icon = new ImageIcon("tree.jpg");
+//         gui1.getPhoto().setIcon(icon);
+          // gui1.getObjectImage().setVisible(true);
+         gui1.getTreePhoto().setVisible(true);
+          System.out.println("treeeeeeeeeeeeeeeeeeee");
+                  gui1.getWallPhoto().setVisible(false);
+        gui1.getDoorPhoto().setVisible(false);
+        gui1.getSmokePhoto().setVisible(false);
+         
+     }
+     else if (s.equals("smoke"))
+    
+     {
+//         ImageIcon icon = new ImageIcon("smoke.jpg");
+//         gui1.getPhoto().setIcon(icon);
+          // gui1.getObjectImage().setVisible(true);
+         gui1.getSmokePhoto().setVisible(true);
+         System.out.println("SMOOOOKE");
+                 gui1.getWallPhoto().setVisible(false);
+        gui1.getDoorPhoto().setVisible(false);
+        gui1.getTreePhoto().setVisible(false);
+     }
+     else if (s.equals("door"))
+    
+     {
+//         ImageIcon icon = new ImageIcon("door.jpg");
+//         gui1.getPhoto().setIcon(icon);
+       //    gui1.getObjectImage().setVisible(true);
+          gui1.getDoorPhoto().setVisible(true);
+         System.out.println("DOOOOOOOOOOOOOOOOOOOOOOR");
+                 gui1.getWallPhoto().setVisible(false);
+        gui1.getSmokePhoto().setVisible(false);
+        gui1.getTreePhoto().setVisible(false);
+     }
+    
+    }
+ 
     
     @Override
     public void startMoving(){
@@ -205,18 +327,18 @@ public class Wheelchair implements Movement {
                               gui1.getWeightFromGUI().setText(weight + "");
                               
                                         if (weight < 20) {
-                                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);  
+                                            gui1.getEmptySeat().setVisible(true);
                                             System.out.println("invalid seat");
                                         }
                                         else{
-                                             gui1.getjSeat_validatonFromGUI().setBackground(Color.green);
+                                             gui1.getSeated().setVisible(true);
                                             gui1.getjRadioButton2().setEnabled(true);
                                              System.out.println("valid seat");
                                          
                                         }
                         }
                         else{
-                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
+                           
                             gui1.getjRadioButton2().setEnabled(false);
                             
                         }
@@ -461,9 +583,77 @@ gui1.getjTabbedPane1().setVisible(true);
           }
      
      }}
+         
+    }
+    }
             
      /////////////////////////////////////////////// Joystick ///////////////////////////////////////////////////
      
 
+
  
+
+  public void StartMoving(){
+            
+       
+        if(gui1.getHandBrake().isSelected()== true) {
+         gui1.getSpeed().setText("0 Km/H");
+            System.err.println("handBrake IS PRESSED");
+        }
+        //    gui1.getSpeed().setText(SpeedNumber + "");
+          //  this.brake.setSpeed(SpeedNumber);
+          
+          int gettingSpeed = brake.getSpeed();
+            //Moving Forward "UpperButton"
+            boolean UpperArrow=  gui1.getForwardRadio().isSelected();
+             // Moving Backward "Down Button"      
+            boolean DownArrow=  gui1.getBackRadio().isSelected();
+              // Turning Left 
+              boolean LeftArrow=  gui1.getLeftRadio().isSelected();
+               // Turning Right   
+              boolean RightArrow=  gui1.getRightRadio().isSelected();
+              
+            if(UpperArrow == true)
+                {
+                    
+                    gettingSpeed += 2;
+                    this.brake.setSpeed(gettingSpeed);
+                    gui1.getSpeed().setText(gettingSpeed + " Km/H");
+                     System.out.println( gui1.getSpeed().getText());
+                    System.out.println("YOU 'RE MOVING FORWARD.");
+                
+                }
+           
+             
+             else if(DownArrow == true)
+           {
+              gettingSpeed -= 2;
+              this.brake.setSpeed(gettingSpeed);
+              gui1.getSpeed().setText(gettingSpeed + " Km/H");
+              System.out.println("ALERT! YOU 'RE MOVING BACKWARD.");
+           }
+              
+               
+          
+               else if(LeftArrow == true)
+                {
+                    gettingSpeed -= 1;
+                    this.brake.setSpeed(gettingSpeed);
+                    gui1.getSpeed().setText(gettingSpeed + " Km/H");
+                    System.out.println("ALERT! YOU 'RE TURNING LEFT.");
+                 }
+                
+
+           else if(RightArrow == true)
+             {
+              gettingSpeed -= 1;
+              this.brake.setSpeed(gettingSpeed);
+              gui1.getSpeed().setText(gettingSpeed + " Km/H");
+              System.out.println("ALERT! YOU 'RE TURNING RIGHT.");
+             }
+    
+    }
+     
+
+}
 

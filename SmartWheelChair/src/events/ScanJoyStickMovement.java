@@ -11,16 +11,31 @@ package events;
  */
 public class ScanJoyStickMovement {
     
-    private final String joystickpostion;
-    //final because the value cant be modified from outside the class or anywhere else
+//    private final String joystickpostion;
+//    //final because the value cant be modified from outside the class or anywhere else
+//
+//    public ScanJoyStickMovement(String joystickpostion) {
+//        this.joystickpostion = joystickpostion;
+//    }
+//
+//    public String getJoystickpostion() {
+//        return joystickpostion;
+//    }
+    private final int speed;
+   
 
-    public ScanJoyStickMovement(String joystickpostion) {
-        this.joystickpostion = joystickpostion;
+    public ScanJoyStickMovement(int speed) {
+        this.speed = speed;
     }
 
-    public String getJoystickpostion() {
-        return joystickpostion;
+    public int getSpeed() {
+        return speed;
     }
+
+    public ScanJoyStickMovement() {
+        speed = 0;
+    }
+    
     
     
     

@@ -59,7 +59,7 @@ public class ObjectDetectionSensor extends Thread{
     public void takeAction(Camera camera)
     
     {
-    
+   
     }
     @Override
     public void run() {

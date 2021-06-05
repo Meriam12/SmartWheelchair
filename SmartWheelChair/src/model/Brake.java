@@ -19,12 +19,19 @@ public class Brake extends Thread{
     
     private int speed;
     private boolean brakeState;
+    private Wheelchair wheelchair;
+
+    public Brake(Wheelchair wheelchair) {
+        this.wheelchair = wheelchair;
+        this.speed = 0;
+    }
+
 
     
     
     public Brake ()
     {
-    
+       
     }
     
     public Brake(int speed) {
@@ -35,11 +42,12 @@ public class Brake extends Thread{
     public void setSpeed(int speed) {
         this.speed = speed;
     }
-    
-   
-    public double getSpeed() {
+
+    public int getSpeed() {
         return speed;
     }
+    
+
     
     
     public String Stop()
@@ -47,6 +55,7 @@ public class Brake extends Thread{
         String m = "";
         
         return m;
+       
     }
     
     
@@ -56,6 +65,7 @@ public class Brake extends Thread{
         
         return m;
     }
+
     
         
         public String accelerate()
@@ -68,6 +78,7 @@ public class Brake extends Thread{
     public void run() {
         while (true) {
             //wheelchair.getFingerprintSensor().raiseTemp();
+            //wheelchair.StartMoving(getSpeed());
             try {
                 this.sleep(1000);
             } catch (InterruptedException ex) {
@@ -75,7 +86,7 @@ public class Brake extends Thread{
             }
             
             //config.sendEvent(new ScanFingerPrint(fingerPrint);
-            config.sendEvent(new CheckBrake(brakeState,speed));
+            config.sendEvent(new CheckBrake(speed));
         }
     }
 }

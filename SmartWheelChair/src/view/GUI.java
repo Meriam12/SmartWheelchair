@@ -5,6 +5,7 @@
  */
 package view;
 
+import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -46,7 +47,6 @@ public class GUI extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         speed = new javax.swing.JLabel();
-        seat_validaton = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         weight = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -58,6 +58,8 @@ public class GUI extends javax.swing.JFrame {
         direction = new javax.swing.JLabel();
         speed_status = new javax.swing.JLabel();
         jRadioButton3 = new javax.swing.JRadioButton();
+        emptySeat = new javax.swing.JLabel();
+        seated = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -68,6 +70,11 @@ public class GUI extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
+        wallPhoto = new javax.swing.JLabel();
+        treePhoto = new javax.swing.JLabel();
+        smokePhoto = new javax.swing.JLabel();
+        doorPhoto = new javax.swing.JLabel();
+        objectLable = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -94,6 +101,7 @@ public class GUI extends javax.swing.JFrame {
         LeftRadio = new javax.swing.JRadioButton();
         BackRadio = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
+        HandBrake = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,7 +110,7 @@ public class GUI extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(236, 236, 236));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 255), new java.awt.Color(204, 204, 255)));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/battary.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Battery111111.png"))); // NOI18N
 
         BatteryField.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         BatteryField.setText("100");
@@ -146,19 +154,6 @@ public class GUI extends javax.swing.JFrame {
         speed.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 36)); // NOI18N
         speed.setText("5 Km/h");
 
-        seat_validaton.setBackground(new java.awt.Color(255, 0, 0));
-
-        javax.swing.GroupLayout seat_validatonLayout = new javax.swing.GroupLayout(seat_validaton);
-        seat_validaton.setLayout(seat_validatonLayout);
-        seat_validatonLayout.setHorizontalGroup(
-            seat_validatonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 54, Short.MAX_VALUE)
-        );
-        seat_validatonLayout.setVerticalGroup(
-            seat_validatonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 49, Short.MAX_VALUE)
-        );
-
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel23.setText("Seat");
 
@@ -197,6 +192,10 @@ public class GUI extends javax.swing.JFrame {
 
         jRadioButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/finger.png"))); // NOI18N
 
+        emptySeat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Empty seat.png"))); // NOI18N
+
+        seated.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/SeatSensor.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -209,28 +208,29 @@ public class GUI extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BatteryField)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(BatteryField))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel25)
-                                .addGap(38, 38, 38)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(seat_validaton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel25)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(seated, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(emptySeat, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26)
                                 .addComponent(jButton2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton1)
                                 .addContainerGap())
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(62, 62, 62)
                                 .addComponent(jLabel23)
-                                .addGap(63, 63, 63)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel4)
-                                .addGap(60, 60, 60))))
+                                .addGap(58, 58, 58))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,18 +290,21 @@ public class GUI extends javax.swing.JFrame {
                                 .addComponent(jLabel2)
                                 .addGap(24, 24, 24)
                                 .addComponent(jLabel5))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel25)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel23))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(seat_validaton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel23))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(17, 17, 17)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButton2))))))))
+                                            .addComponent(jButton2)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(emptySeat))))
+                            .addComponent(seated, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addGap(72, 72, 72)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -416,38 +419,70 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/camera.png"))); // NOI18N
 
+        wallPhoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/wall_1.jpg"))); // NOI18N
+
+        treePhoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/tree_1.jpg"))); // NOI18N
+
+        smokePhoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/smoke_1.jpg"))); // NOI18N
+
+        doorPhoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/door33.jpg"))); // NOI18N
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(34, Short.MAX_VALUE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addComponent(treePhoto)
+                        .addGap(6, 6, 6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addComponent(doorPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(smokePhoto)
+                    .addComponent(wallPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 245, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(treePhoto)
+                    .addComponent(wallPhoto))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(smokePhoto)
+                    .addComponent(doorPhoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
+
+        objectLable.setText("Object: ");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(121, 121, 121)
                 .addComponent(jLabel15)
+                .addGap(59, 59, 59)
+                .addComponent(objectLable, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel15)
-                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15)
+                    .addComponent(objectLable, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(25, 25, 25))
         );
 
         jPanel7.setBackground(new java.awt.Color(0, 204, 204));
@@ -596,8 +631,6 @@ public class GUI extends javax.swing.JFrame {
                         .addContainerGap())))
         );
 
-        jLabel24.setText("stop");
-
         ForwardRadio.setBackground(new java.awt.Color(0, 153, 153));
         ForwardRadio.setForeground(new java.awt.Color(153, 153, 153));
         ForwardRadio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Arrircle-512.png"))); // NOI18N
@@ -637,6 +670,8 @@ public class GUI extends javax.swing.JFrame {
         jRadioButton4.setBackground(new java.awt.Color(102, 102, 102));
         jRadioButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/brake.png"))); // NOI18N
 
+        HandBrake.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/noun_Handbrake_2703761.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -657,6 +692,8 @@ public class GUI extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(37, 37, 37)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -666,9 +703,9 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(220, 220, 220)
-                        .addComponent(jLabel24)
-                        .addGap(43, 43, 43)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(HandBrake, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
                         .addComponent(jRadioButton4)
                         .addGap(32, 32, 32))))
         );
@@ -687,17 +724,15 @@ public class GUI extends javax.swing.JFrame {
                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(37, 37, 37)
                                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(34, 34, 34)
-                                        .addComponent(jLabel24))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton4)))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jRadioButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(HandBrake, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 4, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(ForwardRadio)
@@ -716,7 +751,10 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -784,6 +822,30 @@ public JRadioButton getchangelocation() {
         return speed;
     }
 
+    public JLabel getEmptySeat() {
+        return emptySeat;
+    }
+
+    public JLabel getSeated() {
+        return seated;
+    }
+
+    public JLabel getDoorPhoto() {
+        return doorPhoto;
+    }
+
+    public JLabel getSmokePhoto() {
+        return smokePhoto;
+    }
+
+    public JLabel getTreePhoto() {
+        return treePhoto;
+    }
+
+    public JLabel getWallPhoto() {
+        return wallPhoto;
+    }
+
     
     
         public JLabel getBatteryField() {
@@ -806,10 +868,6 @@ public JRadioButton getchangelocation() {
         return weight;
     }
 
-    public JPanel getjSeat_validatonFromGUI() {
-        return seat_validaton;
-    }
-
 //    public JButton getjButton5() {
 //        return jButton5;
 //    }
@@ -827,7 +885,8 @@ public JRadioButton getchangelocation() {
         return jLabel9;
     }
         
-            
+
+           
       public JRadioButton getLeftRadio() {
         return LeftRadio;
     }
@@ -861,7 +920,241 @@ public JRadioButton getchangelocation() {
     }
     
     
+//
+//    public JTextField getTakeObject() {
+//        return JTextField;
+//    }
+
+    public JLabel getPhoto() {
+        return wallPhoto;
+    }
+
+
+
+    
+
+    public JLabel getObjectLable() {
+        return objectLable;
+    }
+
+//     public JTextField getDistbtn() {
+//         return distbtn;
+//     }
+
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+//     public JButton getjButton10() {
+//         return jButton10;
+//     }
+
+    public JButton getjButton11() {
+        return jButton11;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public JLabel getjLabel16() {
+        return jLabel16;
+    }
+
+    public JLabel getjLabel17() {
+        return jLabel17;
+    }
+
+    public JLabel getjLabel18() {
+        return jLabel18;
+    }
+
+    public JLabel getjLabel19() {
+        return jLabel19;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JLabel getjLabel20() {
+        return jLabel20;
+    }
+
+    public JLabel getjLabel21() {
+        return jLabel21;
+    }
+
+    public JLabel getjLabel22() {
+        return jLabel22;
+    }
+
+    public JLabel getjLabel23() {
+        return jLabel23;
+    }
+
+//    public JLabel getjLabel24() {
+//        return Handbrake;
+//    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+//     public JLabel getjLabel9() {
+//         return jLabel9;
+//     }
+
+    public JRadioButton getHandBrake() {
+        return HandBrake;
+    }
+
+    
+    
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JPanel getjPanel10() {
+        return jPanel10;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public JPanel getjPanel4() {
+        return jPanel4;
+    }
+
+    public JPanel getjPanel5() {
+        return jPanel5;
+    }
+
+    public JPanel getjPanel6() {
+        return jPanel6;
+    }
+
+    public JPanel getjPanel7() {
+        return jPanel7;
+    }
+
+    public JPanel getjPanel8() {
+        return jPanel8;
+    }
+
+//     public JPanel getjPanel9() {
+//         return jPanel9;
+//     }
+
+//    public JTextField getLocbtn() {
+//        return locbtn;
+//    }
+
+//    public JPanel getSeat_validaton() {
+//        return seat_validaton;
+//    }
+
+    public JTextField getWeight() {
+        return weight;
+    }
+
+    public static float getTOP_ALIGNMENT() {
+        return TOP_ALIGNMENT;
+    }
+
+    public static float getCENTER_ALIGNMENT() {
+        return CENTER_ALIGNMENT;
+    }
+
+    public static float getBOTTOM_ALIGNMENT() {
+        return BOTTOM_ALIGNMENT;
+    }
+
+    public static float getLEFT_ALIGNMENT() {
+        return LEFT_ALIGNMENT;
+    }
+
+    public static float getRIGHT_ALIGNMENT() {
+        return RIGHT_ALIGNMENT;
+    }
+
+    public AccessibleContext getAccessibleContext() {
+        return accessibleContext;
+    }
+
+    public static int getDO_NOTHING_ON_CLOSE() {
+        return DO_NOTHING_ON_CLOSE;
+    }
+
+    public static int getHIDE_ON_CLOSE() {
+        return HIDE_ON_CLOSE;
+    }
+
+    public static int getDISPOSE_ON_CLOSE() {
+        return DISPOSE_ON_CLOSE;
+    }
+
+    public static int getEXIT_ON_CLOSE() {
+        return EXIT_ON_CLOSE;
+    }
+
+    public static int getWIDTH() {
+        return WIDTH;
+    }
+
+    public static int getHEIGHT() {
+        return HEIGHT;
+    }
+
  
+ 
+    
+    
 //    /**
 //     * @param args the command line arguments
 //     */
@@ -944,12 +1237,15 @@ public JRadioButton getchangelocation() {
     private javax.swing.JRadioButton Change;
     private javax.swing.JComboBox<String> Currentloc1;
     private javax.swing.JRadioButton ForwardRadio;
+    private javax.swing.JRadioButton HandBrake;
     private javax.swing.JRadioButton LeftRadio;
     private javax.swing.JRadioButton RadioButton50;
     private javax.swing.JRadioButton RightRadio;
     private javax.swing.JLabel direction;
     private javax.swing.JTextField disTXT;
     private javax.swing.JComboBox<String> dist11;
+    private javax.swing.JLabel doorPhoto;
+    private javax.swing.JLabel emptySeat;
     private javax.swing.JTextField fingerprintField;
     private javax.swing.JLabel fingerprint_status;
     private javax.swing.JButton jButton1;
@@ -969,7 +1265,6 @@ public JRadioButton getchangelocation() {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -996,8 +1291,14 @@ public JRadioButton getchangelocation() {
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JPanel seat_validaton;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel objectLable;
+    private javax.swing.JLabel seated;
+    private javax.swing.JLabel smokePhoto;
     private javax.swing.JLabel speed;
     private javax.swing.JLabel speed_status;
+    private javax.swing.JLabel treePhoto;
+    private javax.swing.JLabel wallPhoto;
     private javax.swing.JTextField weight;
     // End of variables declaration//GEN-END:variables
 }

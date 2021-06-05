@@ -10,13 +10,13 @@ package events;
  * @author a_h_s
  */
 public class ScanObject {
-    private final boolean scannedObject;
+    private final String scannedObject;
 
-    public ScanObject(boolean scannedObject) {
+    public ScanObject(String scannedObject) {
         this.scannedObject = scannedObject;
     }
 
-    public boolean getScannedObject() {
+    public String getScannedObject() {
         return scannedObject;
     }
     
