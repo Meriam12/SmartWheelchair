@@ -143,16 +143,16 @@ public class Wheelchair implements Movement {
     }
 
 
-     public void tempSignal(int fingerPrint) throws InterruptedException {
-        //System.out.println("The temp is now " + temp);
-        //gui.getCurrentTempTxt().setText(temp + "");
-        gui.getcurrentFINGERPRINTTxt().setText(fingerPrint +"");
-        
-        if (fingerPrint <= 100) {
-           // beeper.beep();
-            config.sendEvent(new ScanFingerPrint(0));
-        }
-    }
+//     public void tempSignal(int fingerPrint) throws InterruptedException {
+//        //System.out.println("The temp is now " + temp);
+//        //gui.getCurrentTempTxt().setText(temp + "");
+//        gui.getcurrentFINGERPRINTTxt().setText(fingerPrint +"");
+//        
+//        if (fingerPrint <= 100) {
+//           // beeper.beep();
+//            config.sendEvent(new ScanFingerPrint(0));
+//        }
+//    }
 
     public BeltSensor getBeltSensor() {
         return beltSensor;

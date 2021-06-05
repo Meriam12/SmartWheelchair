@@ -11,7 +11,7 @@ import events.ScanSeatSensor;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import view.GUI;
 /**
  *
  * @author Toumie
@@ -19,7 +19,8 @@ import java.util.logging.Logger;
 public class SeatSensor extends Thread {
     
 
-   
+   private GUI gui1;
+
 private boolean seatState;
 private Wheelchair wheelchair;
 private int weight;
@@ -93,6 +94,38 @@ public boolean detectBody()
 //    }
 //  
     
+//public void seatSignal(int weight) throws InterruptedException {
+//       
+//         
+//        System.out.println("The weight is now " + weight);
+//        gui1.getWeightFromGUI().setText(weight +"");
+//
+//
+//                        if(gui1.getjRadioButton1().isSelected()){
+//                             
+//                              weight = SeatSensor.SeatWeight();
+//                              SeatSensor.setWeight(weight);
+//                              gui1.getWeightFromGUI().setText(weight + "");
+//                              
+//                                        if (weight < 20) {
+//                                            gui1.getEmptySeat().setVisible(true);
+//                                            System.out.println("invalid seat");
+//                                        }
+//                                        else{
+//                                             gui1.getSeated().setVisible(true);
+//                                            gui1.getjRadioButton2().setEnabled(true);
+//                                             System.out.println("valid seat");
+//                                         
+//                                        }
+//                        }
+//                        else{
+//                           
+//                            gui1.getjRadioButton2().setEnabled(false);
+//                            
+//                        }
+//    }
+
+ 
 
 
   @Override

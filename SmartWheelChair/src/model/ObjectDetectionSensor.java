@@ -10,6 +10,7 @@ import events.ObjectDetectionReading;
 import events.ScanJoyStickMovement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import view.GUI;
 
 /**
  *
@@ -20,7 +21,8 @@ public class ObjectDetectionSensor extends Thread{
   private  Camera camera;
   
   private Brake brake;
-
+ 
+  private GUI gui1;
   
   
   public ObjectDetectionSensor() {
@@ -61,6 +63,25 @@ public class ObjectDetectionSensor extends Thread{
     {
    
     }
+    
+//     public void DetectObject(String c){ //DetectObject
+//    
+//    
+//      //String s= c.recognizeObject();
+//    
+//    
+//    if (c.equals("wall") || c.equals("door") || c.equals("tree"))
+//    {
+//         
+//         brake.Stop();
+//         gui1.getSpeed().setText("0 Km/H");
+//         
+//
+//    } else if(c.equals("smoke")) {
+//        System.err.println("keep moving");
+//        gui1.getSpeed().setText(Integer.toString((int) brake.getSpeed())+ " Km/H");
+//    }
+    //}
     @Override
     public void run() {
         while (true) {

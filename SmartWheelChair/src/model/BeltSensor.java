@@ -10,6 +10,7 @@ import events.CheckBatteryLevel;
 import events.ScanBeltSensor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import view.GUI;
 
 /**
  *
@@ -17,6 +18,7 @@ import java.util.logging.Logger;
  */
 public class BeltSensor extends Thread {
     
+      private GUI gui1;
 private boolean beltState;
 private Wheelchair wheelchair;
 
@@ -49,7 +51,28 @@ if (beltState == true )
 else 
     this.beltState = false;
 }
-    
+  
+//     public void seatBeltsignal() {
+//     boolean check = gui1.getjRadioButton2().isSelected();
+//     
+//            if( check == true){
+//                       config.sendEvent(new ScanBeltSensor(check));
+//                       this.beltSensor.checkBelt(check);
+//                       System.out.println("the seat is fasten");
+//                       gui1.getjLabel25().setVisible(true); 
+//
+//                //set the icon to true
+//            } else {
+//                        config.sendEvent(new ScanBeltSensor(check));
+//                        this.beltSensor.checkBelt(check);
+//                        System.out.println("the seat is unfasten");
+//                        gui1.getjLabel25().setVisible(false);
+//                //set the icon to false
+//
+//            }
+//     
+//     
+//     }
  //extends Thread
  @Override
     public void run() {

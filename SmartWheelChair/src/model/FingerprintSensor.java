@@ -10,6 +10,7 @@ import java.util.Random;
 import events.ScanFingerPrint;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import view.GUI;
 
 /**
  *
@@ -21,7 +22,8 @@ private boolean fingerprintState;
 private int fingerPrint;   // deh el value ely hangebha mn el GUI
 private Wheelchair wheelchair;
 private int userFingerprint;
-
+ private GUI gui1;
+ 
     public FingerprintSensor() {
     }
 
@@ -71,12 +73,47 @@ private int userFingerprint;
         return fingerPrint;
     }
     
-
-    
+ 
 public boolean IdentifyFingerprint(int temp)
 {
    return true; 
-}   
+} 
+
+//   public void fingerprintScan() throws InterruptedException {
+//       
+//         if(gui1.getjRadioButton4().isSelected() == true){ //power
+//        
+//                gui1.getjRadioButton3().setEnabled(true); //fingerprint
+////                gui1.getjRadioButton1().setEnabled(false);//seat 
+////                gui1.getjRadioButton2().setEnabled(false); //seat belt
+//
+//                                if(gui1.getjRadioButton3().isSelected()){     //fingerprint
+//                                    
+//                                    int f = Integer.parseInt(gui1.getFingerprintField().getText());
+//                                                if (f == this.getUserFingerprint()) {
+//                                                    gui1.getFingerprint_status().setText("Status: Valid fingerprint");
+//                                                    System.out.println("Status: Valid fingerprint");
+//                                                     gui1.getjRadioButton1().setEnabled(true); //seat
+//                                                     
+//                                                }
+//                                                else{
+//                                                    gui1.getFingerprint_status().setText("Status: Invalid fingerprint");
+//                                                     System.out.println("Status: Invalid fingerprint");
+//                                                }
+//                                }
+//                                
+//                                else{
+//                                    
+//                                }
+//            }
+//                 else{ //// else bta3t el power button
+//                     gui1.getjRadioButton3().setEnabled(false);
+//                     gui1.getjRadioButton1().setEnabled(false);
+//                     gui1.getjRadioButton2().setEnabled(false);
+//                 }
+// }
+    
+    
 //extends Thread
  @Override
     public void run() {
