@@ -8,6 +8,7 @@ package esper;
 import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import events.ScanFingerPrint;
 import esper.config;
+import javax.print.attribute.standard.Destination;
 import model.Wheelchair;
 
 /**
@@ -50,13 +51,13 @@ public class SmartWheelChair {
                 });
                     
                     
-//                      config.createStatement("select  beltState from ScanBeltSensor")
-//                .setSubscriber(new Object() {
-//                    public void update( boolean beltState) throws InterruptedException {
-//                        wheelchair.seatBeltsignal();
-//                    }
-//                    
-//                });
+                      config.createStatement("select scanLocation from TakeDistination")
+                .setSubscriber(new Object() {
+                    public void update( String Destination) throws InterruptedException {
+                        wheelchair.calculateDistance();
+                    }
+                    
+                });
                     
 
                   

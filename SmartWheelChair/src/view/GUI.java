@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -67,18 +68,20 @@ public class GUI extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
-        locbtn = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        distbtn = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jButton10 = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jRadioButton50 = new javax.swing.JRadioButton();
+        disTXT = new javax.swing.JTextField();
+        dist11 = new javax.swing.JComboBox<>();
+        Currentloc1 = new javax.swing.JComboBox<>();
         jLabel24 = new javax.swing.JLabel();
         ForwardRadio = new javax.swing.JRadioButton();
         RightRadio = new javax.swing.JRadioButton();
@@ -416,12 +419,6 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(0, 204, 204));
 
-        locbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                locbtnActionPerformed(evt);
-            }
-        });
-
         jLabel17.setText("Current Location ");
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/locat.png"))); // NOI18N
@@ -429,19 +426,6 @@ public class GUI extends javax.swing.JFrame {
         jLabel19.setText("Distenation");
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/des2.png"))); // NOI18N
-
-        jButton10.setText("Start");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 127, Short.MAX_VALUE)
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
 
         jLabel21.setText("Distance Calculation");
 
@@ -454,60 +438,86 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/update.png"))); // NOI18N
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/fast.png"))); // NOI18N
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/k_r.jpg"))); // NOI18N
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 288, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addComponent(jLabel10)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 159, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel10))
+                .addGap(43, 43, 43))
         );
+
+        jRadioButton50.setText("Start");
+
+        disTXT.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        disTXT.setText("0");
+
+        dist11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "choose..", "Room", "Kitchen", "Bathroom" }));
+
+        Currentloc1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "choose..", "Room", "Kitchen", "Bathroom" }));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton11))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(91, 91, 91)
+                                .addComponent(jRadioButton50)))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel21))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(disTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(19, 19, 19))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel20)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(distbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel21)
-                            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                        .addContainerGap())))
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel16))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addComponent(jButton10))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel18)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(locbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(dist11, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGap(44, 44, 44)
+                            .addComponent(jLabel16)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel18)
+                            .addGap(6, 6, 6)
+                            .addComponent(jLabel17)
+                            .addGap(18, 18, 18)
+                            .addComponent(Currentloc1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -519,32 +529,34 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(26, 26, 26)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(locbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel17))
-                    .addComponent(jLabel18))
-                .addGap(38, 38, 38)
+                        .addComponent(jLabel17)
+                        .addComponent(Currentloc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(23, 23, 23)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(distbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel19))
+                        .addComponent(jLabel19)
+                        .addComponent(dist11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel20))
                 .addGap(18, 18, 18)
-                .addComponent(jButton10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(jRadioButton50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel22)))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jButton11)))
-                .addGap(16, 16, 16))
+                            .addComponent(disTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(jButton11)))
+                        .addGap(62, 62, 62))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel22)
+                        .addGap(42, 42, 42))))
         );
 
         jLabel24.setText("stop");
@@ -679,10 +691,6 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
-
     private void ForwardRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForwardRadioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ForwardRadioActionPerformed
@@ -703,10 +711,6 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
-    private void locbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locbtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_locbtnActionPerformed
-
     private void BackRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackRadioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BackRadioActionPerformed
@@ -714,6 +718,10 @@ public class GUI extends javax.swing.JFrame {
     private void fingerprintFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fingerprintFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fingerprintFieldActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     public JTextField getFingerprintField() {
         return fingerprintField;
@@ -737,13 +745,7 @@ public class GUI extends javax.swing.JFrame {
         return BackRadio;
     }
 
-    public JTextField getjTextField1() {
-        return locbtn;
-    }
-
-    public JTextField getjTextField2() {
-        return distbtn;
-    }
+   
 
     public JTextField getWeightFromGUI() {
         return weight;
@@ -777,6 +779,19 @@ public class GUI extends javax.swing.JFrame {
 
     public JLabel getjLabel25() {
         return jLabel25;
+    }
+    public JTextField getdisTXT() {
+        return disTXT;
+    }
+    public JComboBox distenation() {
+        return dist11;
+    }
+    public JComboBox currentloc() {
+        return Currentloc1;
+    }
+
+           public JLabel getgps1() {
+        return jLabel10;
     }
  
 //    /**
@@ -817,10 +832,16 @@ public class GUI extends javax.swing.JFrame {
     public JRadioButton getjRadioButton2() {
         return jRadioButton2;
     }
+     public JLabel getgps() {
+        return jLabel1;
+    }
 
    
     public JRadioButton getjRadioButton4() {
         return jRadioButton4;
+    }
+       public JRadioButton getjRadioButton50() {
+        return jRadioButton50;
     }
        
     
@@ -828,16 +849,19 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton BackRadio;
     private javax.swing.JLabel BatteryField;
+    private javax.swing.JComboBox<String> Currentloc1;
     private javax.swing.JRadioButton ForwardRadio;
     private javax.swing.JRadioButton LeftRadio;
     private javax.swing.JRadioButton RightRadio;
-    private javax.swing.JTextField distbtn;
+    private javax.swing.JTextField disTXT;
+    private javax.swing.JComboBox<String> dist11;
     private javax.swing.JTextField fingerprintField;
     private javax.swing.JLabel fingerprint_status;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -870,12 +894,11 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JTextField locbtn;
+    private javax.swing.JRadioButton jRadioButton50;
     private javax.swing.JPanel seat_validaton;
     private javax.swing.JTextField weight;
     // End of variables declaration//GEN-END:variables

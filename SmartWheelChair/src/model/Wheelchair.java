@@ -30,7 +30,7 @@ public class Wheelchair implements Movement {
     private SeatSensor seatSensor;
     private Screen screen;
     private BatteryConsumption batteryCons;
-    
+     private GPSTracker gps;
     private wheelchairView gui;
     private GUI gui1;
     
@@ -54,12 +54,14 @@ public class Wheelchair implements Movement {
         beltSensor = new BeltSensor(this);
         seatSensor = new SeatSensor(this);
         batteryCons = new BatteryConsumption(this);
-        
+        gps= new GPSTracker(this);
         fingerprintSensor.start();
         beltSensor.start();
         seatSensor.start();
         batteryCons.start();
-        
+          gps.start();
+         gui1.getgps().setVisible(false); 
+         gui1.getgps1().setVisible(false); 
         
         gui1.getjRadioButton3().setEnabled(false);
         gui1.getjRadioButton1().setEnabled(false);
@@ -383,4 +385,47 @@ public class Wheelchair implements Movement {
            
            
      }
+     public void calculateDistance(){
+
+       
+    if(gui1.getjRadioButton50().isSelected()) {
+        
+             String cl = gui1.currentloc().getSelectedItem().toString();
+         String dest = gui1.distenation().getSelectedItem().toString();
+         // System.out.println(cl);
+//          int cl = Integer.parseInt(gui1.getlocbtn().getText());
+//           int dest = Integer.parseInt(gui1.getdistbtn().getText());
+         if (cl.equals("Room") && dest.equals("Kitchen")){
+//         if (cl== 1 && dest== 2){
+         gui1.getdisTXT().setText("2 meters");
+          gui1.getgps().setVisible(true); 
+           gui1.getgps1().setVisible(false); 
+        }
+            else if (cl=="Kitchen" && dest=="Room"){
+     gui1.getdisTXT().setText("2 meters");
+     gui1.getgps().setVisible(false); 
+      gui1.getgps1().setVisible(true); 
+    }
+         else if (cl=="Kitchen" && dest=="Bathroom"){
+     gui1.getdisTXT().setText("1 meter");
+    }
+         else if (cl=="Bathroom" && dest=="Kitchen"){
+     gui1.getdisTXT().setText("1 meter");
+    }
+         
+         else if (cl=="Bathroom" && dest=="Room"){
+     gui1.getdisTXT().setText("3 meter");
+    }
+         else if (cl=="Room" && dest=="Bathroom"){
+     gui1.getdisTXT().setText("3 meter");
+    }
+            System.out.println("Distance is calculated");
+    }else
+    {
+           System.out.println("Distance is not calculated");
+         
+           
+    }
+        
 }
+     }
