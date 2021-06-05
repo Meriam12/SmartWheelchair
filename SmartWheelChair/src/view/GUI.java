@@ -102,7 +102,7 @@ public class GUI extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(236, 236, 236));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 255), new java.awt.Color(204, 204, 255)));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/battary.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Battery111111.png"))); // NOI18N
 
         BatteryField.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         BatteryField.setText("100");
