@@ -146,11 +146,11 @@ public class Wheelchair implements Movement {
     {
          gui1.getObjectLable().setText(c);
          brake.Stop();
-         gui1.getjLabel9().setText("0 Km/H");
+         gui1.getSpeed().setText("0 Km/H");
 
     } else if(c.equals("smoke")) {
         System.err.println("keep moving");
-        gui1.getjLabel9().setText(Integer.toString((int) brake.getSpeed()));
+        gui1.getSpeed().setText(Integer.toString((int) brake.getSpeed()));
     }
     }
     

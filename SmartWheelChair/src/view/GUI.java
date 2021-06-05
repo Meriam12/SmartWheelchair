@@ -385,12 +385,6 @@ public class GUI extends javax.swing.JFrame {
                         .addGap(47, 47, 47)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(201, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -987,9 +981,9 @@ public class GUI extends javax.swing.JFrame {
 //         return jPanel9;
 //     }
 
-    public JTextField getLocbtn() {
-        return locbtn;
-    }
+//    public JTextField getLocbtn() {
+//        return locbtn;
+//    }
 
     public JPanel getSeat_validaton() {
         return seat_validaton;
@@ -1173,13 +1167,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
-
     private javax.swing.JTextField jTextField1;
-
-    private javax.swing.JTextField locbtn;
     private javax.swing.JLabel objectLable;
     private javax.swing.JLabel photo;
-
     private javax.swing.JPanel seat_validaton;
     private javax.swing.JLabel speed;
     private javax.swing.JLabel speed_status;
