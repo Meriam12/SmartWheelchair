@@ -859,12 +859,16 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton RightRadio;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private javax.swing.JTextField disTXT;
     private javax.swing.JComboBox<String> dist11;
 =======
     private javax.swing.JLabel direction;
     private javax.swing.JTextField distbtn;
 >>>>>>> 06b50349822d5f79021a54f1c3d128ec945c6507
+=======
+    private javax.swing.JTextField distbtn;
+>>>>>>> parent of 623f94a (gpppps w gui)
 =======
     private javax.swing.JTextField distbtn;
 >>>>>>> parent of 623f94a (gpppps w gui)
