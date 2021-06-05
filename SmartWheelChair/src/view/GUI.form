@@ -1189,6 +1189,9 @@
               <Image iconType="3" name="/view/noun_Handbrake_2703761.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HandBrakeActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -23,7 +23,10 @@ public class Brake extends Thread{
 
     public Brake(Wheelchair wheelchair) {
         this.wheelchair = wheelchair;
-        this.speed = 0;
+        int zero= 0;
+        if(this.speed > 10){
+        this.speed = zero;
+        }
     }
 
 
@@ -52,9 +55,9 @@ public class Brake extends Thread{
     
     public String Stop()
     {
-        String m = "";
+        this.setSpeed(0);
         
-        return m;
+        return "Stopped";
        
     }
     

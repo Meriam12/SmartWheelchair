@@ -667,6 +667,11 @@ public class GUI extends javax.swing.JFrame {
         jRadioButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/brake.png"))); // NOI18N
 
         HandBrake.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/noun_Handbrake_2703761.png"))); // NOI18N
+        HandBrake.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HandBrakeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -791,6 +796,10 @@ public class GUI extends javax.swing.JFrame {
     private void fingerprintFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fingerprintFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fingerprintFieldActionPerformed
+
+    private void HandBrakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HandBrakeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HandBrakeActionPerformed
 
                                    
 

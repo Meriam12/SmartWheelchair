@@ -92,13 +92,13 @@ public class Wheelchair implements Movement {
         //gui1.getObjectImage().setVisible(true);
 
         joyStick.start();
-<<<<<<< Updated upstream
+
 
 
         
-=======
+
         p.start();
->>>>>>> Stashed changes
+
 
         gui1.getjRadioButton3().setEnabled(false);
         gui1.getjRadioButton1().setEnabled(false);
@@ -215,10 +215,14 @@ public class Wheelchair implements Movement {
          gui1.getForwardRadio().setEnabled(false);
          gui1.getRightRadio().setEnabled(false);
          gui1.getLeftRadio().setEnabled(false);
-         gui1.getjButton11().setEnabled(false);
+       //  gui1.getjButton11().setEnabled(false);
          gui1.getjRadioButton50().setEnabled(false);
          gui1.getSpeed().setVisible(false);
-    
+         gui1.getjPanel8().setVisible(false);
+         gui1.getObjectLable().setVisible(false);
+         gui1.getChangeLoction().setEnabled(false);
+         gui1.getBatteryField().setEnabled(false);
+         
          //config.sendEvent(new PowerON(false));
     }  
     else {
@@ -226,9 +230,14 @@ public class Wheelchair implements Movement {
          gui1.getForwardRadio().setEnabled(true);
          gui1.getRightRadio().setEnabled(true);
          gui1.getLeftRadio().setEnabled(true);
-         gui1.getjButton11().setEnabled(true);
+       //  gui1.getjButton11().setEnabled(true);
          gui1.getjRadioButton50().setEnabled(true);
          gui1.getSpeed().setVisible(true);
+         gui1.getjPanel8().setVisible(true);
+          gui1.getObjectLable().setVisible(true);
+          //gui1.getChangeLoction().setVisible(false);
+          gui1.getChangeLoction().setEnabled(true);
+          gui1.getBatteryField().setEnabled(true);
          
          
      
@@ -248,6 +257,7 @@ public class Wheelchair implements Movement {
          
          brake.Stop();
          gui1.getSpeed().setText("0 Km/H");
+         
 
     } else if(c.equals("smoke")) {
         System.err.println("keep moving");
@@ -584,8 +594,9 @@ public class Wheelchair implements Movement {
      }
 
     public void calculateDistance(){
-
-       
+    
+//    if (gui1.getjRadioButton4().isSelected() == true)
+//    {
     if(gui1.getjRadioButton50().isSelected() == true) {
         
    
@@ -671,6 +682,7 @@ public class Wheelchair implements Movement {
        
         if(gui1.getHandBrake().isSelected()== true) {
          gui1.getSpeed().setText("0 Km/H");
+          brake.Stop();
             System.err.println("handBrake IS PRESSED");
         }
         //    gui1.getSpeed().setText(SpeedNumber + "");
