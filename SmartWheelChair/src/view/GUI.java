@@ -44,7 +44,7 @@ public class GUI extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        speed = new javax.swing.JLabel();
         seat_validaton = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         weight = new javax.swing.JTextField();
@@ -55,6 +55,8 @@ public class GUI extends javax.swing.JFrame {
         fingerprintField = new javax.swing.JTextField();
         jRadioButton3 = new javax.swing.JRadioButton();
         fingerprint_status = new javax.swing.JLabel();
+        direction = new javax.swing.JLabel();
+        speed_status = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -134,8 +136,8 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/proud-clipart-proud-mom-7.png"))); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 36)); // NOI18N
-        jLabel9.setText("5 Km/h");
+        speed.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 36)); // NOI18N
+        speed.setText("5 Km/h");
 
         seat_validaton.setBackground(new java.awt.Color(255, 0, 0));
 
@@ -181,6 +183,12 @@ public class GUI extends javax.swing.JFrame {
         jRadioButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/finger.png"))); // NOI18N
 
         fingerprint_status.setText("Status: ");
+
+        direction.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        direction.setText("The direction is: ");
+
+        speed_status.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        speed_status.setText("Speed Status is: ");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -241,11 +249,17 @@ public class GUI extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
+                                .addComponent(speed)
                                 .addGap(145, 145, 145))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jRadioButton2)
                                 .addGap(49, 49, 49))))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(direction, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(speed_status, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(63, 63, 63))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,10 +292,10 @@ public class GUI extends javax.swing.JFrame {
                 .addGap(72, 72, 72)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
+                .addComponent(speed)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(jRadioButton1)
                         .addGap(37, 37, 37)
                         .addComponent(jLabel3)
@@ -289,7 +303,11 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(weight, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
+                        .addGap(18, 18, 18)
+                        .addComponent(direction)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(speed_status)
+                        .addGap(59, 59, 59)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jRadioButton3)
                             .addComponent(jRadioButton2))
@@ -727,6 +745,14 @@ public class GUI extends javax.swing.JFrame {
         return fingerprint_status;
     }
 
+    public JLabel getDirection() {
+        return direction;
+    }
+
+    public JLabel getSpeed() {
+        return speed;
+    }
+
     
     
         public JLabel getBatteryField() {
@@ -831,6 +857,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton ForwardRadio;
     private javax.swing.JRadioButton LeftRadio;
     private javax.swing.JRadioButton RightRadio;
+    private javax.swing.JLabel direction;
     private javax.swing.JTextField distbtn;
     private javax.swing.JTextField fingerprintField;
     private javax.swing.JLabel fingerprint_status;
@@ -860,7 +887,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
@@ -877,6 +903,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JTextField locbtn;
     private javax.swing.JPanel seat_validaton;
+    private javax.swing.JLabel speed;
+    private javax.swing.JLabel speed_status;
     private javax.swing.JTextField weight;
     // End of variables declaration//GEN-END:variables
 }
