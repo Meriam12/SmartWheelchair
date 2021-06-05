@@ -397,13 +397,13 @@ public class Wheelchair implements Movement {
          if (cl.equals("Room") && dest.equals("Kitchen")){
 //         if (cl== 1 && dest== 2){
          gui1.getdisTXT().setText("2 meters");
-          gui1.getgps().setVisible(true); 
-           gui1.getgps1().setVisible(false); 
+//          gui1.getgps().setVisible(true); 
+//           gui1.getgps1().setVisible(false); 
         }
             else if (cl=="Kitchen" && dest=="Room"){
      gui1.getdisTXT().setText("2 meters");
-     gui1.getgps().setVisible(false); 
-      gui1.getgps1().setVisible(true); 
+//     gui1.getgps().setVisible(false); 
+//      gui1.getgps1().setVisible(true); 
     }
          else if (cl=="Kitchen" && dest=="Bathroom"){
      gui1.getdisTXT().setText("1 meter");
@@ -430,4 +430,5 @@ public class Wheelchair implements Movement {
      
 
  
+}
 }
