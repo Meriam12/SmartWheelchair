@@ -61,7 +61,7 @@ public class SmartWheelChair {
 //                    
 //                });
                     
-<<<<<<< Updated upstream
+
                     config.createStatement("select scannedObject from ScanObject")
                 .setSubscriber(new Object() {
                     public void update(String scannedObject) throws InterruptedException {
@@ -70,7 +70,7 @@ public class SmartWheelChair {
                     
                 });
          
-=======
+
                     config.createStatement("select speed from ScanJoyStickMovement")
                 .setSubscriber(new Object() {
                     public void update(int speed) throws InterruptedException {
@@ -80,7 +80,7 @@ public class SmartWheelChair {
                 });
                   
                     
->>>>>>> Stashed changes
+
     }
     
 }

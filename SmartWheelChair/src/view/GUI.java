@@ -5,11 +5,8 @@
  */
 package view;
 
-<<<<<<< Updated upstream
 import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
-=======
->>>>>>> Stashed changes
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -71,12 +68,10 @@ public class GUI extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
-<<<<<<< Updated upstream
         photo = new javax.swing.JLabel();
         objectLable = new javax.swing.JLabel();
-=======
+
         jLabel1 = new javax.swing.JLabel();
->>>>>>> Stashed changes
         jPanel7 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();

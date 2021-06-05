@@ -32,13 +32,11 @@ public class Wheelchair implements Movement {
     private SeatSensor seatSensor;
     private Screen screen;
     private BatteryConsumption batteryCons;
-<<<<<<< Updated upstream
     private Camera c;
     private Brake brake;
-=======
-    private Brake brake;
+
     private Joystick joyStick;
->>>>>>> Stashed changes
+
     
     private wheelchairView gui;
     private GUI gui1;
@@ -63,26 +61,26 @@ public class Wheelchair implements Movement {
         beltSensor = new BeltSensor(this);
         seatSensor = new SeatSensor(this);
         batteryCons = new BatteryConsumption(this);
-<<<<<<< Updated upstream
+
         c = new Camera(this);
         brake = new Brake(this);
-=======
+
         joyStick =  new Joystick(this);
->>>>>>> Stashed changes
+
         
         fingerprintSensor.start();
         beltSensor.start();
         seatSensor.start();
         batteryCons.start();
-<<<<<<< Updated upstream
+
         c.start();
         brake.start();
         
         //gui1.getObjectImage().setVisible(true);
-=======
+
         joyStick.start();
         
->>>>>>> Stashed changes
+
         gui1.getjRadioButton3().setEnabled(false);
         gui1.getjRadioButton1().setEnabled(false);
         gui1.getjRadioButton2().setEnabled(false);
@@ -504,15 +502,15 @@ public class Wheelchair implements Movement {
     {
            System.out.println("Distance is not calculated");
          
-           
+    }
     }
             
      /////////////////////////////////////////////// Joystick ///////////////////////////////////////////////////
      
-<<<<<<< Updated upstream
+
 
  
-=======
+
   public void StartMoving(int SpeedNumber){
             
         
@@ -563,6 +561,6 @@ public class Wheelchair implements Movement {
     
     }
      
->>>>>>> Stashed changes
+
 }
-}
+

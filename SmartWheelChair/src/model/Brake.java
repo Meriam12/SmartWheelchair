@@ -19,15 +19,13 @@ public class Brake extends Thread{
     
     private int speed = 0;
     private boolean brakeState;
-<<<<<<< Updated upstream
     private Wheelchair wheelchair;
 
     public Brake(Wheelchair wheelchair) {
         this.wheelchair = wheelchair;
     }
 
-=======
->>>>>>> Stashed changes
+
     
     
     public Brake ()
