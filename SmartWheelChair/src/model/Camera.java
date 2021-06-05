@@ -58,7 +58,7 @@ public class Camera extends Thread{
         String random = (getListOfObject() [idx]);
         System.out.println(random);
         setScannedOject(random);
-        return random;
+        return getScannedOject();
     }
    @Override
     public void run() {

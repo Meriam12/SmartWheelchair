@@ -85,8 +85,14 @@ public class Wheelchair implements Movement {
         gui1.getjRadioButton1().setEnabled(false);
         gui1.getjRadioButton2().setEnabled(false);
        
+        gui1.getEmptySeat().setVisible(false);
+        gui1.getSeated().setVisible(false);
         
         
+        gui1.getWallPhoto().setVisible(false);
+        gui1.getDoorPhoto().setVisible(false);
+        gui1.getSmokePhoto().setVisible(false);
+        gui1.getTreePhoto().setVisible(false);
     }
     
 
@@ -156,7 +162,7 @@ public class Wheelchair implements Movement {
     
     if (c.equals("wall") || c.equals("door") || c.equals("tree"))
     {
-         gui1.getObjectLable().setText(c);
+         
          brake.Stop();
          gui1.getSpeed().setText("0 Km/H");
 
@@ -166,17 +172,28 @@ public class Wheelchair implements Movement {
     }
     }
     
+    
+            
+//        gui1.getWallPhoto().setVisible(false);
+//        gui1.getDoorPhoto().setVisible(false);
+//        gui1.getSmokePhoto().setVisible(false);
+//        gui1.getTreePhoto().setVisible(false);
+    
     public void identifyObject(String s){
     
      s= c.recognizeObject();
+     gui1.getObjectLable().setText(s);
      if(s.equals("wall"))
      {
 //         ImageIcon icon = new ImageIcon("wall.jpg");
 //         gui1.getPhoto().setIcon(icon);
          //gui1.getObjectImage().setVisible(true);
+         gui1.getWallPhoto().setVisible(true);
          System.out.println("walaaaaaaaaaaaaaaaaaaaal");
          
-         
+        gui1.getDoorPhoto().setVisible(false);
+        gui1.getSmokePhoto().setVisible(false);
+        gui1.getTreePhoto().setVisible(false);
          
      }
      else if (s.equals("tree"))
@@ -185,7 +202,11 @@ public class Wheelchair implements Movement {
 //         ImageIcon icon = new ImageIcon("tree.jpg");
 //         gui1.getPhoto().setIcon(icon);
           // gui1.getObjectImage().setVisible(true);
+         gui1.getTreePhoto().setVisible(true);
           System.out.println("treeeeeeeeeeeeeeeeeeee");
+                  gui1.getWallPhoto().setVisible(false);
+        gui1.getDoorPhoto().setVisible(false);
+        gui1.getSmokePhoto().setVisible(false);
          
      }
      else if (s.equals("smoke"))
@@ -194,7 +215,11 @@ public class Wheelchair implements Movement {
 //         ImageIcon icon = new ImageIcon("smoke.jpg");
 //         gui1.getPhoto().setIcon(icon);
           // gui1.getObjectImage().setVisible(true);
+         gui1.getSmokePhoto().setVisible(true);
          System.out.println("SMOOOOKE");
+                 gui1.getWallPhoto().setVisible(false);
+        gui1.getDoorPhoto().setVisible(false);
+        gui1.getTreePhoto().setVisible(false);
      }
      else if (s.equals("door"))
     
@@ -202,7 +227,11 @@ public class Wheelchair implements Movement {
 //         ImageIcon icon = new ImageIcon("door.jpg");
 //         gui1.getPhoto().setIcon(icon);
        //    gui1.getObjectImage().setVisible(true);
+          gui1.getDoorPhoto().setVisible(true);
          System.out.println("DOOOOOOOOOOOOOOOOOOOOOOR");
+                 gui1.getWallPhoto().setVisible(false);
+        gui1.getSmokePhoto().setVisible(false);
+        gui1.getTreePhoto().setVisible(false);
      }
     
     }
@@ -271,18 +300,18 @@ public class Wheelchair implements Movement {
                               gui1.getWeightFromGUI().setText(weight + "");
                               
                                         if (weight < 20) {
-                                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);  
+                                            gui1.getEmptySeat().setVisible(true);
                                             System.out.println("invalid seat");
                                         }
                                         else{
-                                             gui1.getjSeat_validatonFromGUI().setBackground(Color.green);
+                                             gui1.getSeated().setVisible(true);
                                             gui1.getjRadioButton2().setEnabled(true);
                                              System.out.println("valid seat");
                                          
                                         }
                         }
                         else{
-                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
+                           
                             gui1.getjRadioButton2().setEnabled(false);
                             
                         }
