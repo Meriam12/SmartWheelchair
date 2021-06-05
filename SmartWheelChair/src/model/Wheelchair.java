@@ -168,7 +168,7 @@ public class Wheelchair implements Movement {
 
     } else if(c.equals("smoke")) {
         System.err.println("keep moving");
-        gui1.getSpeed().setText(Integer.toString((int) brake.getSpeed()));
+        gui1.getSpeed().setText(Integer.toString((int) brake.getSpeed())+ " Km/H");
     }
     }
     
@@ -542,8 +542,11 @@ public class Wheelchair implements Movement {
 
   public void StartMoving(){
             
-        
-        
+       
+        if(gui1.getHandBrake().isSelected()== true) {
+         gui1.getSpeed().setText("0 Km/H");
+            System.err.println("handBrake IS PRESSED");
+        }
         //    gui1.getSpeed().setText(SpeedNumber + "");
           //  this.brake.setSpeed(SpeedNumber);
           
@@ -562,7 +565,7 @@ public class Wheelchair implements Movement {
                     
                     gettingSpeed += 2;
                     this.brake.setSpeed(gettingSpeed);
-                    gui1.getSpeed().setText(gettingSpeed + " km / h");
+                    gui1.getSpeed().setText(gettingSpeed + " Km/H");
                      System.out.println( gui1.getSpeed().getText());
                     System.out.println("YOU 'RE MOVING FORWARD.");
                 
@@ -573,7 +576,7 @@ public class Wheelchair implements Movement {
            {
               gettingSpeed -= 2;
               this.brake.setSpeed(gettingSpeed);
-              gui1.getSpeed().setText(gettingSpeed + " km / h");
+              gui1.getSpeed().setText(gettingSpeed + " Km/H");
               System.out.println("ALERT! YOU 'RE MOVING BACKWARD.");
            }
               
@@ -583,7 +586,7 @@ public class Wheelchair implements Movement {
                 {
                     gettingSpeed -= 1;
                     this.brake.setSpeed(gettingSpeed);
-                    gui1.getSpeed().setText(gettingSpeed + " km / h");
+                    gui1.getSpeed().setText(gettingSpeed + " Km/H");
                     System.out.println("ALERT! YOU 'RE TURNING LEFT.");
                  }
                 
@@ -592,7 +595,7 @@ public class Wheelchair implements Movement {
              {
               gettingSpeed -= 1;
               this.brake.setSpeed(gettingSpeed);
-              gui1.getSpeed().setText(gettingSpeed + " km / h");
+              gui1.getSpeed().setText(gettingSpeed + " Km/H");
               System.out.println("ALERT! YOU 'RE TURNING RIGHT.");
              }
     
