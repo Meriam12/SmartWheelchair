@@ -385,6 +385,7 @@ public class Wheelchair implements Movement {
            
            
      }
+
      public void calculateDistance(){
 
        
@@ -426,6 +427,11 @@ public class Wheelchair implements Movement {
          
            
     }
-        
+            
+     /////////////////////////////////////////////// Joystick ///////////////////////////////////////////////////
+     
+
+     
+
 }
      }
