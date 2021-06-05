@@ -17,19 +17,22 @@ import java.util.logging.Logger;
  */
 public class Brake extends Thread{
     
-    private int speed;
+    private int speed = 0;
     private boolean brakeState;
+<<<<<<< Updated upstream
     private Wheelchair wheelchair;
 
     public Brake(Wheelchair wheelchair) {
         this.wheelchair = wheelchair;
     }
 
+=======
+>>>>>>> Stashed changes
     
     
     public Brake ()
     {
-    
+        speed = 0;
     }
     
     public Brake(int speed) {
@@ -62,6 +65,7 @@ public class Brake extends Thread{
         
         return m;
     }
+
     
         
         public String accelerate()
@@ -81,7 +85,7 @@ public class Brake extends Thread{
             }
             
             //config.sendEvent(new ScanFingerPrint(fingerPrint);
-            config.sendEvent(new CheckBrake(brakeState,speed));
+            config.sendEvent(new CheckBrake(speed));
         }
     }
 }

@@ -5,8 +5,11 @@
  */
 package view;
 
+<<<<<<< Updated upstream
 import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
+=======
+>>>>>>> Stashed changes
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -68,8 +71,12 @@ public class GUI extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
+<<<<<<< Updated upstream
         photo = new javax.swing.JLabel();
         objectLable = new javax.swing.JLabel();
+=======
+        jLabel1 = new javax.swing.JLabel();
+>>>>>>> Stashed changes
         jPanel7 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -412,23 +419,40 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/camera.png"))); // NOI18N
 
+<<<<<<< Updated upstream
         photo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/update.png"))); // NOI18N
+=======
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/SEAAAAT.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+>>>>>>> Stashed changes
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
+<<<<<<< Updated upstream
                 .addGap(223, 223, 223)
                 .addComponent(photo)
+=======
+                .addGap(141, 141, 141)
+                .addComponent(jLabel1)
+>>>>>>> Stashed changes
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< Updated upstream
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(71, 71, 71)
                 .addComponent(photo)
                 .addContainerGap(116, Short.MAX_VALUE))
+=======
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(116, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(115, 115, 115))
+>>>>>>> Stashed changes
         );
 
         objectLable.setText("jLabel1");
@@ -804,7 +828,8 @@ public class GUI extends javax.swing.JFrame {
         return ForwardRadio;
     }
         
-            
+
+           
       public JRadioButton getLeftRadio() {
         return LeftRadio;
     }
@@ -1132,6 +1157,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;

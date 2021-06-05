@@ -10,18 +10,24 @@ package events;
  * @author a_h_s
  */
 public class CheckBrake {
-    private final boolean brakeState;
+   // private final boolean brakeState;
     private final int speed;
 
-    public CheckBrake(boolean brakeState, int speed) {
-        this.brakeState = brakeState;
+//    public CheckBrake(boolean brakeState, int speed) {
+//        this.brakeState = brakeState;
+//        this.speed = speed;
+//    }
+//
+//
+//
+//   
+//
+//    public boolean isBrakeState() {
+//        return brakeState;
+//    }
+
+    public CheckBrake(int speed) {
         this.speed = speed;
-    }
-
-   
-
-    public boolean isBrakeState() {
-        return brakeState;
     }
 
     public int getSpeed() {

@@ -9,7 +9,8 @@ import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import events.ScanFingerPrint;
 import esper.config;
 import model.Wheelchair;
-
+import model.Joystick;
+import model.Brake;
 /**
  *
  * @author meriam
@@ -25,6 +26,8 @@ public class SmartWheelChair {
         config.registerEvents();
         
         final Wheelchair wheelchair = new Wheelchair();
+        final Joystick j = new Joystick();
+        final Brake b = new Brake();
         
          config.createStatement("select fingerPrint from ScanFingerPrint")
                 .setSubscriber(new Object() {
@@ -58,6 +61,7 @@ public class SmartWheelChair {
 //                    
 //                });
                     
+<<<<<<< Updated upstream
                     config.createStatement("select scannedObject from ScanObject")
                 .setSubscriber(new Object() {
                     public void update(String scannedObject) throws InterruptedException {
@@ -66,6 +70,17 @@ public class SmartWheelChair {
                     
                 });
          
+=======
+                    config.createStatement("select speed from ScanJoyStickMovement")
+                .setSubscriber(new Object() {
+                    public void update(int speed) throws InterruptedException {
+                        wheelchair.StartMoving(speed);
+                    }
+                    
+                });
+                  
+                    
+>>>>>>> Stashed changes
     }
     
 }

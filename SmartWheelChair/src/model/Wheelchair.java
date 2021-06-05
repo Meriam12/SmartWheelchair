@@ -32,8 +32,13 @@ public class Wheelchair implements Movement {
     private SeatSensor seatSensor;
     private Screen screen;
     private BatteryConsumption batteryCons;
+<<<<<<< Updated upstream
     private Camera c;
     private Brake brake;
+=======
+    private Brake brake;
+    private Joystick joyStick;
+>>>>>>> Stashed changes
     
     private wheelchairView gui;
     private GUI gui1;
@@ -58,17 +63,26 @@ public class Wheelchair implements Movement {
         beltSensor = new BeltSensor(this);
         seatSensor = new SeatSensor(this);
         batteryCons = new BatteryConsumption(this);
+<<<<<<< Updated upstream
         c = new Camera(this);
         brake = new Brake(this);
+=======
+        joyStick =  new Joystick(this);
+>>>>>>> Stashed changes
         
         fingerprintSensor.start();
         beltSensor.start();
         seatSensor.start();
         batteryCons.start();
+<<<<<<< Updated upstream
         c.start();
         brake.start();
         
         //gui1.getObjectImage().setVisible(true);
+=======
+        joyStick.start();
+        
+>>>>>>> Stashed changes
         gui1.getjRadioButton3().setEnabled(false);
         gui1.getjRadioButton1().setEnabled(false);
         gui1.getjRadioButton2().setEnabled(false);
@@ -495,7 +509,60 @@ public class Wheelchair implements Movement {
             
      /////////////////////////////////////////////// Joystick ///////////////////////////////////////////////////
      
+<<<<<<< Updated upstream
 
  
+=======
+  public void StartMoving(int SpeedNumber){
+            
+        
+        System.out.print("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
+            gui1.getSpeed().setText(SpeedNumber + "");
+            //this.brake.setSpeed(SpeedNumber);
+
+            //Moving Forward "UpperButton"
+            boolean UpperArrow=  gui1.getForwardRadio().isSelected();
+            if(UpperArrow == true)
+                {
+                    SpeedNumber += 2;
+                    this.brake.setSpeed(SpeedNumber);
+                    gui1.getSpeed().setText(SpeedNumber + "");
+                    System.out.println("YOU 'RE MOVING FORWARD.");
+                
+                }
+            // Moving Backward "Down Button"      
+             boolean DownArrow=  gui1.getBackRadio().isSelected();
+              if(DownArrow == true)
+           {
+              SpeedNumber -= 2;
+              this.brake.setSpeed(SpeedNumber);
+              gui1.getSpeed().setText(SpeedNumber + "");
+              System.out.println("ALERT! YOU 'RE MOVING BACKWARD.");
+           }
+              
+               
+            // Turning Left 
+              boolean LeftArrow=  gui1.getLeftRadio().isSelected();
+                if(LeftArrow == true)
+                {
+                    SpeedNumber -= 1;
+                    this.brake.setSpeed(SpeedNumber);
+                    gui1.getSpeed().setText(SpeedNumber + "");
+                    System.out.println("ALERT! YOU 'RE TURNING LEFT.");
+                 }
+                
+            // Turning Right   
+              boolean RightArrow=  gui1.getRightRadio().isSelected();
+            if(RightArrow == true)
+             {
+              SpeedNumber -= 1;
+              this.brake.setSpeed(SpeedNumber);
+              gui1.getSpeed().setText(SpeedNumber + "");
+              System.out.println("ALERT! YOU 'RE TURNING RIGHT.");
+             }
+    
+    }
+     
+>>>>>>> Stashed changes
 }
 }
