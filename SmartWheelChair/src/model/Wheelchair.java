@@ -336,6 +336,7 @@ public class Wheelchair implements Movement {
     System.out.print("Ayyy 7aga");
     
     }
+    
     ///////////////////////////////////////////Fingerprint Sensor/////////////////////////////////////
     
      public void fingerprintScan() throws InterruptedException {
@@ -593,13 +594,22 @@ public class Wheelchair implements Movement {
            
      }
 
-    public void calculateDistance(){
+    public void calculateDistance()
     
-//    if (gui1.getjRadioButton4().isSelected() == true)
-//    {
-    if(gui1.getjRadioButton50().isSelected() == true) {
-        
-   
+    {
+    
+        //FIngerprint
+    if (gui1.getjRadioButton4().isSelected() == true)
+    {
+        //SeatSensor
+    
+       if (gui1.getjRadioButton1().isSelected() == true)
+    {
+        //SeatBeltSensor
+        if (gui1.getjRadioButton2().isSelected() == true)
+        {
+    if(gui1.getjRadioButton50().isSelected() == true) 
+    {
         
          String cl = gui1.currentloc().getSelectedItem().toString();
          String dest = gui1.distenation().getSelectedItem().toString();
@@ -656,18 +666,24 @@ public class Wheelchair implements Movement {
     }
     
     
-      if(gui1.getChangeLoction().isSelected() == true) {
+     
+    if(gui1.getChangeLoction().isSelected() == true) {
         
         gui1.getjTabbedPane1().setVisible(false);
         gui1.getdisTXT().setText("0");
-         gui1.distenation().setSelectedItem("choose..");
-          gui1.currentloc().setSelectedItem("choose..");
+        gui1.distenation().setSelectedItem("choose..");
+         gui1.currentloc().setSelectedItem("choose..");
     
       }
       
   
-     
     }
+    }
+    }
+    }
+    
+    
+
     
     
             
@@ -677,9 +693,21 @@ public class Wheelchair implements Movement {
 
  
 
-  public void StartMoving(){
+  
+
+public void StartMoving(){
             
-       
+          if (gui1.getjRadioButton4().isSelected() == true)
+    {
+        //SeatSensor
+    
+       if (gui1.getjRadioButton1().isSelected() == true)
+    {
+        //SeatBeltSensor
+        if (gui1.getjRadioButton2().isSelected() == true)
+        {
+            
+        
         if(gui1.getHandBrake().isSelected()== true) {
          gui1.getSpeed().setText("0 Km/H");
           brake.Stop();
@@ -739,7 +767,10 @@ public class Wheelchair implements Movement {
     
   }
   
-  
+    }
+    }
+}
+
  
      
 }
