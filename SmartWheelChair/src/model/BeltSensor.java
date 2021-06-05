@@ -54,7 +54,7 @@ else
  @Override
     public void run() {
         while (true) {
-            wheelchair.seatBeltsignal();
+           wheelchair.seatBeltsignal();
             try {
                 this.sleep(1000);
             } catch (InterruptedException ex) {

@@ -20,6 +20,7 @@ public class FingerprintSensor extends Thread {
 private boolean fingerprintState;
 private int fingerPrint;   // deh el value ely hangebha mn el GUI
 private Wheelchair wheelchair;
+private int userFingerprint;
 
     public FingerprintSensor() {
     }
@@ -27,8 +28,14 @@ private Wheelchair wheelchair;
      public FingerprintSensor(Wheelchair wheelchair) {
          this.wheelchair = wheelchair;
          this.fingerPrint = 10;
-                 
+          userFingerprint = 3;
     }
+
+    public int getUserFingerprint() {
+        return userFingerprint;
+    }
+     
+     
 
     public FingerprintSensor(int fingerPrint) {
         this.fingerPrint = fingerPrint;
@@ -63,6 +70,7 @@ private Wheelchair wheelchair;
     public int getFingerPrint() {
         return fingerPrint;
     }
+    
 
     
 public boolean IdentifyFingerprint(int temp)

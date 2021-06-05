@@ -61,6 +61,11 @@ public class Wheelchair implements Movement {
         batteryCons.start();
         
         
+        gui1.getjRadioButton3().setEnabled(false);
+        gui1.getjRadioButton1().setEnabled(false);
+        gui1.getjRadioButton2().setEnabled(false);
+        
+        
     }
     
 
@@ -130,47 +135,81 @@ public class Wheelchair implements Movement {
     System.out.print("Ayyy 7aga");
     
     }
+    ///////////////////////////////////////////Fingerprint Sensor/////////////////////////////////////
+    
+     public void fingerprintScan() throws InterruptedException {
+       
+         if(gui1.getjRadioButton4().isSelected() == true){ //power
+        
+                gui1.getjRadioButton3().setEnabled(true); //fingerprint
+//                gui1.getjRadioButton1().setEnabled(false);//seat 
+//                gui1.getjRadioButton2().setEnabled(false); //seat belt
 
+                                if(gui1.getjRadioButton3().isSelected()){     //fingerprint
+                                    
+                                    int f = Integer.parseInt(gui1.getFingerprintField().getText());
+                                                if (f == fingerprintSensor.getUserFingerprint()) {
+                                                    gui1.getFingerprint_status().setText("Status: Valid fingerprint");
+                                                    System.out.println("Status: Valid fingerprint");
+                                                     gui1.getjRadioButton1().setEnabled(true); //seat
+                                                     
+                                                }
+                                                else{
+                                                    gui1.getFingerprint_status().setText("Status: Invalid fingerprint");
+                                                     System.out.println("Status: Invalid fingerprint");
+                                                }
+                                }
+                                
+                                else{
+                                    
+                                }
+            }
+                 else{ //// else bta3t el power button
+                     gui1.getjRadioButton3().setEnabled(false);
+                     gui1.getjRadioButton1().setEnabled(false);
+                     gui1.getjRadioButton2().setEnabled(false);
+                 }
+ }
+    
+    
+    
+    
+    
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////// Seat Sensor /////////////////////////////////////////
         
-//    public SeatSensorView getGuiSeatSensor(){
-//        return seatSensorView;
-//    }
-//        public void setSeatStatusInGUI(boolean status){
-//            seatStatus = status;
-//            this.seatSensor.setSeatStatusInGUI(status);
-//        }
  public void seatSignal(int weight) throws InterruptedException {
        
-         if(gui1.getjRadioButton4().isSelected() == true){
          
         System.out.println("The weight is now " + weight);
         gui1.getWeightFromGUI().setText(weight +"");
-        gui1.getjRadioButton1().setEnabled(false);
+
 
                         if(gui1.getjRadioButton1().isSelected()){
-                              Thread.sleep(4000);
+                             
                               weight = seatSensor.SeatWeight();
                               this.seatSensor.setWeight(weight);
                               gui1.getWeightFromGUI().setText(weight + "");
                               
                                         if (weight < 20) {
-                                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
-                                            System.out.println("invalid");
+                                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);  
+                                            System.out.println("invalid seat");
                                         }
                                         else{
                                              gui1.getjSeat_validatonFromGUI().setBackground(Color.green);
-                                             System.out.println("valid ");
+                                            gui1.getjRadioButton2().setEnabled(true);
+                                             System.out.println("valid seat");
+                                         
                                         }
                         }
                         else{
                             gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
+                            gui1.getjRadioButton2().setEnabled(false);
+                            
                         }
     }
-         else{
-             gui1.getjRadioButton1().setEnabled(false);
-         }
- }
+
+ 
     ////////////////////////////////////////////////////////////////////////////////////////////////
      
           //inclasswheelchair
@@ -178,28 +217,22 @@ public class Wheelchair implements Movement {
      public void seatBeltsignal() {
      boolean check = gui1.getjRadioButton2().isSelected();
      
-     if(gui1.getjRadioButton4().isSelected() == true){
-          gui1.getjRadioButton2().setEnabled(true);
-     if( check == true){
-          config.sendEvent(new ScanBeltSensor(check));
-         this.beltSensor.checkBelt(check);
-         System.out.println("the seat is fasten");
-         gui1.getjLabel25().setVisible(true);
-         
-         //set the icon to true
-     } else {
-         config.sendEvent(new ScanBeltSensor(check));
-         this.beltSensor.checkBelt(check);
-         System.out.println("the seat is unfasten");
-         gui1.getjLabel25().setVisible(false);
-         //set the icon to false
+            if( check == true){
+                       config.sendEvent(new ScanBeltSensor(check));
+                       this.beltSensor.checkBelt(check);
+                       System.out.println("the seat is fasten");
+                       gui1.getjLabel25().setVisible(true); 
+
+                //set the icon to true
+            } else {
+                        config.sendEvent(new ScanBeltSensor(check));
+                        this.beltSensor.checkBelt(check);
+                        System.out.println("the seat is unfasten");
+                        gui1.getjLabel25().setVisible(false);
+                //set the icon to false
+
+            }
      
-     }
-     } else {
-     
-     gui1.getjRadioButton2().setEnabled(false);
-     
-     }
      
      }
      
