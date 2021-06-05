@@ -76,6 +76,7 @@ public class Brake extends Thread{
     public void run() {
         while (true) {
             //wheelchair.getFingerprintSensor().raiseTemp();
+            wheelchair.StartMoving(getSpeed());
             try {
                 this.sleep(1000);
             } catch (InterruptedException ex) {

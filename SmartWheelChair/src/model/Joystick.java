@@ -34,7 +34,7 @@ public class Joystick extends Thread {
 
     public Joystick(Wheelchair wheelchair) {
         this.wheelchair = wheelchair;
-        brake.setSpeed(0);
+     //   brake.setSpeed(0);
     }
 
     public void setCurrentSelection(String currentSelection) {

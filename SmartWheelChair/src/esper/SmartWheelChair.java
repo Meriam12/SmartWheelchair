@@ -79,7 +79,6 @@ public class SmartWheelChair {
                     
                 });
                   
-                    System.out.println("ssssssssssssssssssssssssss  "+b.getSpeed());
 
     }
     
