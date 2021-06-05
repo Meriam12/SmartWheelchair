@@ -10,13 +10,14 @@ import events.ScanObject;
 import events.TakeDistination;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import view.GUI;
 
 /**
  *
  * @author TOUMIE
  */
 public class GPSTracker extends Thread {
-    
+     private GUI gui;
     private String currentLocation;
     private String Destination;
 
@@ -24,11 +25,18 @@ public class GPSTracker extends Thread {
     }
 
     public GPSTracker(String currentLocation, String Destination) {
+        gui = new GUI();
         this.currentLocation = currentLocation;
         this.Destination = Destination;
     }
 
     public String getCurrentLocation() {
+        currentLocation = gui.getjTextField1().getText();
+         if (currentLocation=="cairo")
+         {
+             String res= currentLocation= one;
+         } else {
+         String res= currentLocation= two;}
         return currentLocation;
     }
 
@@ -37,7 +45,10 @@ public class GPSTracker extends Thread {
     }
 
     public void setCurrentLocation(String currentLocation) {
-        this.currentLocation = currentLocation;
+       
+      //  this.currentLocation = currentLocation;
+         this.currentLocation = gui.getjTextField1().getText();
+         
     }
 
     public void setDestination(String Destination) {
@@ -52,7 +63,7 @@ public class GPSTracker extends Thread {
     public String changeDirection()
     {
     return ("");
-    }//[82,82,142]
+    }
     
      @Override
     public void run() {
