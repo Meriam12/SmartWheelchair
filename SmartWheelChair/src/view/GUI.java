@@ -864,10 +864,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel direction;
     private javax.swing.JTextField distbtn;
 
-    private javax.swing.JTextField distbtn;
-
-    private javax.swing.JTextField distbtn;
-
     private javax.swing.JTextField fingerprintField;
     private javax.swing.JLabel fingerprint_status;
     private javax.swing.JButton jButton1;
