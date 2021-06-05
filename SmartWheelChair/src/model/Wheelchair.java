@@ -30,7 +30,7 @@ public class Wheelchair implements Movement {
     private SeatSensor seatSensor;
     private Screen screen;
     private BatteryConsumption batteryCons;
-    
+    private GPSTracker gps;
     private wheelchairView gui;
     private GUI gui1;
     
@@ -39,6 +39,9 @@ public class Wheelchair implements Movement {
     // This acts as our ON/OFF switch
     private boolean state = false;
 
+    
+    
+    
     public Wheelchair() {
        // gui = new wheelchairView();
        // seatSensorView = new    SeatSensorView();
@@ -54,20 +57,30 @@ public class Wheelchair implements Movement {
         beltSensor = new BeltSensor(this);
         seatSensor = new SeatSensor(this);
         batteryCons = new BatteryConsumption(this);
-        
+        gps = new GPSTracker(this);
         fingerprintSensor.start();
         beltSensor.start();
         seatSensor.start();
         batteryCons.start();
-        
+        gps.start();
         
         gui1.getjRadioButton3().setEnabled(false);
         gui1.getjRadioButton1().setEnabled(false);
         gui1.getjRadioButton2().setEnabled(false);
-        
-        
+        // gui1.getgps().setVisible(false);
+//      gui1.getgps1().setVisible(false);
+
+        gui1.getjTabbedPane1().setVisible(false);
+        gui1.getjLabel9().setVisible(false);
+        gui1.getjLabel10().setVisible(false);
+        gui1.getjLabel26().setVisible(false);
+        gui1.getjLabel27().setVisible(false);
+        gui1.getjLabel28().setVisible(false);
+        gui1.getjLabel29().setVisible(false);
+//      
     }
-    
+//     
+//    
 
 
     public Wheelchair(BeltSensor beltSensor, FingerprintSensor fingerprintSensor, SeatSensor seatSensor, Screen screen, BatteryConsumption batteryCons) {
@@ -396,39 +409,61 @@ public class Wheelchair implements Movement {
 //           int dest = Integer.parseInt(gui1.getdistbtn().getText());
          if (cl.equals("Room") && dest.equals("Kitchen")){
 //         if (cl== 1 && dest== 2){
+gui1.getjTabbedPane1().setVisible(true);
+          gui1.getjTabbedPane1().setSelectedIndex(0);
          gui1.getdisTXT().setText("2 meters");
-//          gui1.getgps().setVisible(true); 
-//           gui1.getgps1().setVisible(false); 
+        //  gui1.getgps().setVisible(true); 
+//        gui1.getgps1().setVisible(false); 
         }
             else if (cl=="Kitchen" && dest=="Room"){
+                gui1.getjTabbedPane1().setVisible(true);
+                gui1.getjTabbedPane1().setSelectedIndex(5);
      gui1.getdisTXT().setText("2 meters");
-//     gui1.getgps().setVisible(false); 
+     //gui1.getgps().setVisible(false); 
 //      gui1.getgps1().setVisible(true); 
     }
          else if (cl=="Kitchen" && dest=="Bathroom"){
+             gui1.getjTabbedPane1().setVisible(true);
+             gui1.getjTabbedPane1().setSelectedIndex(4);
      gui1.getdisTXT().setText("1 meter");
     }
          else if (cl=="Bathroom" && dest=="Kitchen"){
+             gui1.getjTabbedPane1().setVisible(true);
+             gui1.getjTabbedPane1().setSelectedIndex(3);
      gui1.getdisTXT().setText("1 meter");
     }
          
          else if (cl=="Bathroom" && dest=="Room"){
+             gui1.getjTabbedPane1().setVisible(true);
+             gui1.getjTabbedPane1().setSelectedIndex(2);
      gui1.getdisTXT().setText("3 meter");
     }
          else if (cl=="Room" && dest=="Bathroom"){
+             gui1.getjTabbedPane1().setVisible(true);
+             gui1.getjTabbedPane1().setSelectedIndex(1);
      gui1.getdisTXT().setText("3 meter");
     }
             System.out.println("Distance is calculated");
     }else
     {
            System.out.println("Distance is not calculated");
-         
+         gui1.getjTabbedPane1().setVisible(false);
            
-    }
+    }}
+    
+     public void changeDirection(){
+          if(gui1.getchangelocation().isSelected()) {
+         gui1.getjTabbedPane1().setVisible(false);
+
+        //gui1.currentloc().setSelectedIndex(0);
+         gui1.distenation().setSelectedItem("choose..");
+        gui1.getdisTXT().setText("0");
+          }
+     
+     }}
             
      /////////////////////////////////////////////// Joystick ///////////////////////////////////////////////////
      
 
  
-}
-}
+

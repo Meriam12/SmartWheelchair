@@ -49,7 +49,13 @@ public class SmartWheelChair {
                     
                 });
                     
+              config.createStatement("select scanLocation from TakeDistination")
+                .setSubscriber(new Object() {
+                    public void update(String scanLocation) throws InterruptedException {
+                        wheelchair.calculateDistance();
+                    }
                     
+                });
 //                      config.createStatement("select  beltState from ScanBeltSensor")
 //                .setSubscriber(new Object() {
 //                    public void update( boolean beltState) throws InterruptedException {
