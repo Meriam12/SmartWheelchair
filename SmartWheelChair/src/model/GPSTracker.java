@@ -33,11 +33,24 @@ private Wheelchair wheelchair;
         this.Destination = Destination;
     }
 
+
     public String getCurrentLocation() {
         //this.currentLocation = gui.getjTextField1().getText();
    
         return currentLocation;
     }
+
+//
+//    public String getCurrentLocation() {
+//        currentLocation = gui.getjTextField1().getText();
+//         if (currentLocation=="cairo")
+//         {
+//             String res= currentLocation= one;
+//         } else {
+//         String res= currentLocation= two;}
+//        return currentLocation;
+//    }
+
 
     public String getDestination() {
         return Destination;
