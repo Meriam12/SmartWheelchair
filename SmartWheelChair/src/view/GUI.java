@@ -192,7 +192,10 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(183, 183, 183)
+                                .addComponent(jLabel10))
                             .addComponent(weight, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -231,9 +234,6 @@ public class GUI extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(145, 145, 145))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(158, 158, 158))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jRadioButton1)
                                 .addGap(71, 71, 71)
@@ -694,10 +694,6 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LeftRadioActionPerformed
 
-    private void BackRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackRadioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BackRadioActionPerformed
-
     private void weightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weightActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_weightActionPerformed
@@ -709,6 +705,10 @@ public class GUI extends javax.swing.JFrame {
     private void locbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locbtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_locbtnActionPerformed
+
+    private void BackRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BackRadioActionPerformed
 
         public JLabel getBatteryField() {
         return BatteryField;
