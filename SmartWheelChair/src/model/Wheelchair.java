@@ -143,17 +143,17 @@ public class Wheelchair implements Movement {
                                 if(gui1.getjRadioButton3().isSelected()){    
                                       int f = Integer.parseInt(gui1.getFingerprintField().getText());
                                                 if (f ==  Integer.parseInt(gui1.getFingerprintField().getText())) {
-                                                    gui1.getFingerprint_status().setText("Valid");
+                                                    gui1.getFingerprint_status().setText("Status: Valid fingerprint");
                                                     System.out.println("Status: Valid fingerprint");
                                                      gui1.getjRadioButton1().setEnabled(true);
                                                 }
                                                 else{
-                                                    gui1.getFingerprint_status().setText("Invalid");
+                                                    gui1.getFingerprint_status().setText("Status: Invalid fingerprint");
                                                      System.out.println("Status: Invalid fingerprint");
                                                 }
                                 }
                                 else{
-                                                     System.out.println("Status: ");
+                                    
                                 }
             }
                  else{
@@ -188,6 +188,7 @@ public class Wheelchair implements Movement {
                                         else{
                                              gui1.getjSeat_validatonFromGUI().setBackground(Color.green);
                                              System.out.println("valid seat");
+                                             gui1.getjRadioButton2().setEnabled(true);
                                         }
                         }
                         else{

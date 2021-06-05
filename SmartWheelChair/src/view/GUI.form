@@ -171,17 +171,20 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                      <EmptySpace min="98" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jRadioButton3" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="fingerprintField" alignment="1" min="-2" pref="85" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -234,11 +237,6 @@
                               </Group>
                           </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="fingerprintField" min="-2" pref="85" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
