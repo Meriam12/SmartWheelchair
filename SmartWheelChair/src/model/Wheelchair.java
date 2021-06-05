@@ -169,7 +169,7 @@ public class Wheelchair implements Movement {
                         }
         }
         else{
-            
+            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
         }
     }
 
