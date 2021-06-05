@@ -158,6 +158,8 @@ public class Wheelchair implements Movement {
             }
                  else{
                      gui1.getjRadioButton3().setEnabled(false);
+                     gui1.getjRadioButton1().setEnabled(false);
+                     gui1.getjRadioButton2().setEnabled(false);
                  }
  }
     
@@ -182,7 +184,7 @@ public class Wheelchair implements Movement {
                               gui1.getWeightFromGUI().setText(weight + "");
                               
                                         if (weight < 20) {
-                                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);  ///a2ol please take a seat
+                                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);  
                                             System.out.println("invalid seat");
                                         }
                                         else{
@@ -192,7 +194,7 @@ public class Wheelchair implements Movement {
                                         }
                         }
                         else{
-                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
+                            //gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
                         }
     }
 
@@ -204,23 +206,21 @@ public class Wheelchair implements Movement {
      public void seatBeltsignal() {
      boolean check = gui1.getjRadioButton2().isSelected();
      
+            if( check == true){
+                        config.sendEvent(new ScanBeltSensor(check));
+                       this.beltSensor.checkBelt(check);
+                       System.out.println("the seat is fasten");
+                       gui1.getjLabel25().setVisible(true);
 
-          gui1.getjRadioButton2().setEnabled(true);
-     if( check == true){
-          config.sendEvent(new ScanBeltSensor(check));
-         this.beltSensor.checkBelt(check);
-         System.out.println("the seat is fasten");
-         gui1.getjLabel25().setVisible(true);
-         
-         //set the icon to true
-     } else {
-         config.sendEvent(new ScanBeltSensor(check));
-         this.beltSensor.checkBelt(check);
-         System.out.println("the seat is unfasten");
-         gui1.getjLabel25().setVisible(false);
-         //set the icon to false
-     
-     }
+                //set the icon to true
+            } else {
+                        config.sendEvent(new ScanBeltSensor(check));
+                        this.beltSensor.checkBelt(check);
+                        System.out.println("the seat is unfasten");
+                        gui1.getjLabel25().setVisible(false);
+                //set the icon to false
+
+            }
      
      
      }
