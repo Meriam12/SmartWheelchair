@@ -62,7 +62,7 @@ public class Joystick extends Thread {
     public void run() {
         while (true) {
             //wheelchair.getFingerprintSensor().raiseTemp();
-         wheelchair.StartMoving(brake.getSpeed());
+        // wheelchair.StartMoving(brake.getSpeed());
             try {
                 this.sleep(1000);
             } catch (InterruptedException ex) {
