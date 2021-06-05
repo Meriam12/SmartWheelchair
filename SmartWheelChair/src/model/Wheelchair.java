@@ -91,6 +91,13 @@ public class Wheelchair implements Movement {
 
         joyStick.start();
 
+        gui1.getjTabbedPane1().setVisible(false);
+        gui1.getjLabel9().setVisible(false);
+        gui1.getjLabel10().setVisible(false);
+        gui1.getjLabel26().setVisible(false);
+        gui1.getjLabel27().setVisible(false);
+        gui1.getjLabel28().setVisible(false);
+        gui1.getjLabel29().setVisible(false);
         
 
         gui1.getjRadioButton3().setEnabled(false);
@@ -100,13 +107,7 @@ public class Wheelchair implements Movement {
         // gui1.getgps().setVisible(false);
 //      gui1.getgps1().setVisible(false);
 
-        gui1.getjTabbedPane1().setVisible(false);
-        gui1.getjLabel9().setVisible(false);
-        gui1.getjLabel10().setVisible(false);
-        gui1.getjLabel26().setVisible(false);
-        gui1.getjLabel27().setVisible(false);
-        gui1.getjLabel28().setVisible(false);
-        gui1.getjLabel29().setVisible(false);
+
 //      
 
        
@@ -519,7 +520,7 @@ public class Wheelchair implements Movement {
            
      }
 
-     public void calculateDistance(){
+    public void calculateDistance(){
 
        
     if(gui1.getjRadioButton50().isSelected()) {
@@ -531,21 +532,19 @@ public class Wheelchair implements Movement {
 //           int dest = Integer.parseInt(gui1.getdistbtn().getText());
          if (cl.equals("Room") && dest.equals("Kitchen")){
 //         if (cl== 1 && dest== 2){
-gui1.getjTabbedPane1().setVisible(true);
+          gui1.getjTabbedPane1().setVisible(true);
           gui1.getjTabbedPane1().setSelectedIndex(0);
          gui1.getdisTXT().setText("2 meters");
-        //  gui1.getgps().setVisible(true); 
+          //  gui1.getgps().setVisible(true); 
 //        gui1.getgps1().setVisible(false); 
         }
             else if (cl=="Kitchen" && dest=="Room"){
                 gui1.getjTabbedPane1().setVisible(true);
                 gui1.getjTabbedPane1().setSelectedIndex(5);
      gui1.getdisTXT().setText("2 meters");
-     //gui1.getgps().setVisible(false); 
-//      gui1.getgps1().setVisible(true); 
-    }
+     }
          else if (cl=="Kitchen" && dest=="Bathroom"){
-             gui1.getjTabbedPane1().setVisible(true);
+                 gui1.getjTabbedPane1().setVisible(true);
              gui1.getjTabbedPane1().setSelectedIndex(4);
      gui1.getdisTXT().setText("1 meter");
     }
@@ -569,10 +568,11 @@ gui1.getjTabbedPane1().setVisible(true);
     }else
     {
            System.out.println("Distance is not calculated");
-         gui1.getjTabbedPane1().setVisible(false);
-           
-    }}
-    
+         }
+     gui1.getjTabbedPane1().setVisible(false);
+    }
+     
+     
      public void changeDirection(){
           if(gui1.getchangelocation().isSelected()) {
          gui1.getjTabbedPane1().setVisible(false);
