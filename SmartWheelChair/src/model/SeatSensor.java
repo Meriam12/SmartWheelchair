@@ -29,7 +29,7 @@ private int weight;
 
     public SeatSensor(Wheelchair wheelchair) {
         this.wheelchair = wheelchair;
-        this.weight = 0;; //////////////////////////////////////////
+        this.weight = 0; 
     }
 
     

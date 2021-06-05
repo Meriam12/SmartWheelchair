@@ -142,37 +142,35 @@ public class Wheelchair implements Movement {
 //        }
  public void seatSignal(int weight) throws InterruptedException {
        
-         
+         if(gui1.getjRadioButton4().isSelected() == true){
          
         System.out.println("The weight is now " + weight);
         gui1.getWeightFromGUI().setText(weight +"");
-        
-        if(gui1.getjRadioButton1().isSelected()){
-        //config.sendEvent(new ScanSeatSensor(weight));
-              Thread.sleep(4000);
-              weight = seatSensor.SeatWeight();
-              this.seatSensor.setWeight(weight);
-              gui1.getWeightFromGUI().setText(weight + "");
-//              Thread.sleep(5000);
-//              weight = seatSensor.SeatNoWeight();
-//              this.seatSensor.setWeight(weight);
-//              gui1.getWeightFromGUI().setText(weight + "");
-              
-                        if (weight < 20) {
-                           // beeper.beep();
-                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
-                            System.out.println("invalid");
+        gui1.getjRadioButton1().setEnabled(false);
+
+                        if(gui1.getjRadioButton1().isSelected()){
+                              Thread.sleep(4000);
+                              weight = seatSensor.SeatWeight();
+                              this.seatSensor.setWeight(weight);
+                              gui1.getWeightFromGUI().setText(weight + "");
+                              
+                                        if (weight < 20) {
+                                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
+                                            System.out.println("invalid");
+                                        }
+                                        else{
+                                             gui1.getjSeat_validatonFromGUI().setBackground(Color.green);
+                                             System.out.println("valid ");
+                                        }
                         }
                         else{
-                             gui1.getjSeat_validatonFromGUI().setBackground(Color.green);
-                             System.out.println("valid ");
+                            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
                         }
-        }
-        else{
-            gui1.getjSeat_validatonFromGUI().setBackground(Color.red);
-        }
     }
-
+         else{
+             gui1.getjRadioButton1().setEnabled(false);
+         }
+ }
     ////////////////////////////////////////////////////////////////////////////////////////////////
      
           //inclasswheelchair
