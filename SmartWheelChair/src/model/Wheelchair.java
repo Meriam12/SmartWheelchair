@@ -511,51 +511,59 @@ public class Wheelchair implements Movement {
 
  
 
-  public void StartMoving(int SpeedNumber){
+  public void StartMoving(){
             
         
-        System.out.print("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
-            gui1.getSpeed().setText(SpeedNumber + "");
-            //this.brake.setSpeed(SpeedNumber);
-
+        
+        //    gui1.getSpeed().setText(SpeedNumber + "");
+          //  this.brake.setSpeed(SpeedNumber);
+          
+          int gettingSpeed = brake.getSpeed();
             //Moving Forward "UpperButton"
             boolean UpperArrow=  gui1.getForwardRadio().isSelected();
+             // Moving Backward "Down Button"      
+            boolean DownArrow=  gui1.getBackRadio().isSelected();
+              // Turning Left 
+              boolean LeftArrow=  gui1.getLeftRadio().isSelected();
+               // Turning Right   
+              boolean RightArrow=  gui1.getRightRadio().isSelected();
+              
             if(UpperArrow == true)
                 {
-                    SpeedNumber += 2;
-                    this.brake.setSpeed(SpeedNumber);
-                    gui1.getSpeed().setText(SpeedNumber + "");
+                    
+                    gettingSpeed += 2;
+                    this.brake.setSpeed(gettingSpeed);
+                    gui1.getSpeed().setText(gettingSpeed + " km / h");
+                     System.out.println( gui1.getSpeed().getText());
                     System.out.println("YOU 'RE MOVING FORWARD.");
                 
                 }
-            // Moving Backward "Down Button"      
-             boolean DownArrow=  gui1.getBackRadio().isSelected();
-              if(DownArrow == true)
+           
+             
+             else if(DownArrow == true)
            {
-              SpeedNumber -= 2;
-              this.brake.setSpeed(SpeedNumber);
-              gui1.getSpeed().setText(SpeedNumber + "");
+              gettingSpeed -= 2;
+              this.brake.setSpeed(gettingSpeed);
+              gui1.getSpeed().setText(gettingSpeed + " km / h");
               System.out.println("ALERT! YOU 'RE MOVING BACKWARD.");
            }
               
                
-            // Turning Left 
-              boolean LeftArrow=  gui1.getLeftRadio().isSelected();
-                if(LeftArrow == true)
+          
+               else if(LeftArrow == true)
                 {
-                    SpeedNumber -= 1;
-                    this.brake.setSpeed(SpeedNumber);
-                    gui1.getSpeed().setText(SpeedNumber + "");
+                    gettingSpeed -= 1;
+                    this.brake.setSpeed(gettingSpeed);
+                    gui1.getSpeed().setText(gettingSpeed + " km / h");
                     System.out.println("ALERT! YOU 'RE TURNING LEFT.");
                  }
                 
-            // Turning Right   
-              boolean RightArrow=  gui1.getRightRadio().isSelected();
-            if(RightArrow == true)
+
+           else if(RightArrow == true)
              {
-              SpeedNumber -= 1;
-              this.brake.setSpeed(SpeedNumber);
-              gui1.getSpeed().setText(SpeedNumber + "");
+              gettingSpeed -= 1;
+              this.brake.setSpeed(gettingSpeed);
+              gui1.getSpeed().setText(gettingSpeed + " km / h");
               System.out.println("ALERT! YOU 'RE TURNING RIGHT.");
              }
     

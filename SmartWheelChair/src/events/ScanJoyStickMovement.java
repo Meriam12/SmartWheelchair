@@ -22,6 +22,7 @@ public class ScanJoyStickMovement {
 //        return joystickpostion;
 //    }
     private final int speed;
+   
 
     public ScanJoyStickMovement(int speed) {
         this.speed = speed;
@@ -29,6 +30,10 @@ public class ScanJoyStickMovement {
 
     public int getSpeed() {
         return speed;
+    }
+
+    public ScanJoyStickMovement() {
+        speed = 0;
     }
     
     

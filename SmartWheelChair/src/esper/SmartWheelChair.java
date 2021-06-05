@@ -74,7 +74,7 @@ public class SmartWheelChair {
                     config.createStatement("select speed from ScanJoyStickMovement")
                 .setSubscriber(new Object() {
                     public void update(int speed) throws InterruptedException {
-                        wheelchair.StartMoving(speed);
+                        wheelchair.StartMoving();
                     }
                     
                 });

@@ -17,12 +17,13 @@ import java.util.logging.Logger;
  */
 public class Brake extends Thread{
     
-    private int speed = 0;
+    private int speed;
     private boolean brakeState;
     private Wheelchair wheelchair;
 
     public Brake(Wheelchair wheelchair) {
         this.wheelchair = wheelchair;
+        this.speed = 0;
     }
 
 
@@ -30,7 +31,7 @@ public class Brake extends Thread{
     
     public Brake ()
     {
-        speed = 0;
+       
     }
     
     public Brake(int speed) {
@@ -41,11 +42,12 @@ public class Brake extends Thread{
     public void setSpeed(int speed) {
         this.speed = speed;
     }
-    
-   
+
     public int getSpeed() {
         return speed;
     }
+    
+
     
     
     public String Stop()
@@ -76,7 +78,7 @@ public class Brake extends Thread{
     public void run() {
         while (true) {
             //wheelchair.getFingerprintSensor().raiseTemp();
-            wheelchair.StartMoving(getSpeed());
+            //wheelchair.StartMoving(getSpeed());
             try {
                 this.sleep(1000);
             } catch (InterruptedException ex) {

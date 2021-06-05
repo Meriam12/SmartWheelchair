@@ -56,7 +56,10 @@ public class Joystick extends Thread {
        return direction;
     }
     
-  
+    public int getBrakeSpeed(){
+      int s = brake.getSpeed();
+      return s;
+    }
     
  @Override
     public void run() {
@@ -70,7 +73,7 @@ public class Joystick extends Thread {
             }
             
             //config.sendEvent(new ScanFingerPrint(fingerPrint);
-            config.sendEvent(new ScanJoyStickMovement(brake.getSpeed()));
+            config.sendEvent(new ScanJoyStickMovement());
         }
     }
 }
